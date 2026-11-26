@@ -3,7 +3,16 @@
 # Runs under qemu-user on GitHub Actions.
 set -euxo pipefail
 
+HOST_UID=${HOST_UID:-1001}
+HOST_GID=${HOST_GID:-1001}
+
+cleanup() {
+	chown -R "${HOST_UID}:${HOST_GID}" /src/out /src/pkgcache 2>/dev/null || true
+}
+trap cleanup EXIT
+
 export DEBIAN_FRONTEND=noninteractive
+mkdir -p /src/out /src/pkgcache
 
 if command -v apt-get >/dev/null 2>&1; then
 	apt-get update -o Acquire::Retries=10
@@ -22,7 +31,7 @@ elif command -v dnf >/dev/null 2>&1; then
 	dnf_install() {
 		dnf install -y --setopt=install_weak_deps=False \
 			--setopt=max_parallel_downloads=1 --setopt=retries=20 \
-			--setopt=timeout=120 "$@"
+			--setopt=timeout=120 --setopt=tsflags=nodocs "$@"
 	}
 	retry_dnf() {
 		local i
@@ -45,7 +54,11 @@ else
 	exit 1
 fi
 
-cd /src
+# Build out of tree so that the checked out source stays untouched.
+rm -rf /build
+mkdir -p /build
+tar -C /src --exclude=./.git --exclude=./out --exclude=./pkgcache -cf - . | tar -C /build -xf -
+cd /build
 
 VERSION=$(sed -n 's/^AC_INIT(\[Keepalived\], \[\([^]]*\)\].*/\1/p' configure.ac)
 echo "Building keepalived ${VERSION}"
@@ -59,13 +72,13 @@ echo "Building keepalived ${VERSION}"
 
 make -j4
 
-rm -rf /src/out
-mkdir -p /src/out
-make install DESTDIR=/src/out/rootfs
-
 OUT=/src/out
 ROOT=${OUT}/rootfs
 NAME="keepalived-${VERSION}-kylin-v11-loongarch64"
+
+rm -rf "${ROOT}"
+mkdir -p "${ROOT}"
+make install DESTDIR="${ROOT}"
 
 {
 	echo "name: ${NAME}"
@@ -93,8 +106,6 @@ NAME="keepalived-${VERSION}-kylin-v11-loongarch64"
 cp "${ROOT}/usr/sbin/keepalived" "${OUT}/keepalived"
 tar -C "${ROOT}" -czf "${OUT}/${NAME}.tar.gz" .
 sha256sum "${OUT}/${NAME}.tar.gz" "${OUT}/keepalived" > "${OUT}/SHA256SUMS"
-
-chown -R "${HOST_UID:-1001}:${HOST_GID:-1001}" /src/out || true
 
 echo "=== BUILD-INFO.txt ==="
 cat "${OUT}/BUILD-INFO.txt"

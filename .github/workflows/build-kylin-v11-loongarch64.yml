@@ -55,14 +55,26 @@ jobs:
           fi
           echo "image=$(cat /tmp/loong64-image.txt)" >> "$GITHUB_OUTPUT"
 
+      - name: Cache downloaded packages
+        uses: actions/cache@v4
+        with:
+          path: pkgcache
+          key: pkgcache-${{ steps.img.outputs.image }}-v1
+          restore-keys: |
+            pkgcache-${{ steps.img.outputs.image }}-
+            pkgcache-
+
       - name: Build in loongarch64 container
         env:
           BASE_IMAGE: ${{ steps.img.outputs.image }}
         run: |
           set -o pipefail
+          mkdir -p out pkgcache/dnf pkgcache/apt
           docker run --rm --platform linux/loong64 \
             -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
             -v "$PWD":/src -w /src \
+            -v "$PWD/pkgcache/dnf":/var/cache/dnf \
+            -v "$PWD/pkgcache/apt":/var/cache/apt/archives \
             "$BASE_IMAGE" \
             bash /src/.github/scripts/build-kylin-v11-loongarch64.sh \
             2>&1 | tee out/build.log
@@ -83,15 +95,22 @@ jobs:
 
       - name: Publish results to artifacts branch
         if: always()
+        continue-on-error: true
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cd out
-          rm -rf .git
+          set -x
+          mkdir -p out
+          work=$(mktemp -d)
+          cp -a out/. "$work"/
+          cd "$work"
           git init -q
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -qm "keepalived 2.3.2 loongarch64 build $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
             || git commit -q --allow-empty -m "empty"
-          git push --force "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:artifacts
+          for i in 1 2 3; do
+            git push --force "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:artifacts && break
+            sleep 5
+          done
