@@ -1,0 +1,3966 @@
++ HOST_UID=1001
++ HOST_GID=1001
++ trap cleanup EXIT
++ export DEBIAN_FRONTEND=noninteractive
++ DEBIAN_FRONTEND=noninteractive
++ mkdir -p /src/out /src/pkgcache
++ command -v apt-get
++ command -v dnf
++ retry_dnf gcc make autoconf automake libtool pkgconf-pkg-config openssl-devel libnl3-devel popt-devel file tar gzip which
++ local i
++ for i in 1 2 3 4
++ dnf_install gcc make autoconf automake libtool pkgconf-pkg-config openssl-devel libnl3-devel popt-devel file tar gzip which
++ dnf install -y --setopt=install_weak_deps=False --setopt=max_parallel_downloads=1 --setopt=retries=20 --setopt=timeout=120 --setopt=tsflags=nodocs gcc make autoconf automake libtool pkgconf-pkg-config openssl-devel libnl3-devel popt-devel file tar gzip which
+OS                                              202 kB/s | 2.6 MB     00:13    
+everything                                      1.2 MB/s |  16 MB     00:13    
+EPOL                                            342 kB/s | 3.6 MB     00:10    
+debuginfo                                       381 kB/s | 4.0 MB     00:10    
+source                                          227 kB/s | 1.7 MB     00:07    
+update                                           24  B/s | 241  B     00:10    
+update-source                                   225 kB/s | 1.7 MB     00:07    
+Last metadata expiration check: 0:00:02 ago on Thu Nov 26 13:11:27 2026.
+Package tar-2:1.35-2.oe2403sp2.loongarch64 is already installed.
+Package gzip-1.12-5.oe2403sp2.loongarch64 is already installed.
+Package which-2.21-17.oe2403sp2.loongarch64 is already installed.
+Dependencies resolved.
+================================================================================
+ Package                      Arch        Version                      Repo
+                                                                           Size
+================================================================================
+Installing:
+ autoconf                     noarch      2.71-9.oe2403sp2             OS 657 k
+ automake                     noarch      1.16.5-9.oe2403sp2           OS 457 k
+ file                         loongarch64 5.45-2.oe2403sp2             OS  33 k
+ gcc                          loongarch64 12.3.1-93.oe2403sp2          OS  28 M
+ libnl3-devel                 loongarch64 3.7.0-5.oe2403sp2            OS  67 k
+ libtool                      loongarch64 2.4.7-4.oe2403sp2            OS 591 k
+ make                         loongarch64 1:4.4.1-2.oe2403sp2          OS 351 k
+ openssl-devel                loongarch64 1:3.0.12-17.oe2403sp2        OS 7.0 M
+ pkgconf                      loongarch64 1.9.5-1.oe2403sp2            OS  57 k
+ popt-devel                   loongarch64 1.19-4.oe2403sp2             OS  69 k
+Installing dependencies:
+ binutils                     loongarch64 2.41-16.oe2403sp2            OS 4.1 M
+ cpp                          loongarch64 12.3.1-93.oe2403sp2          OS 8.7 M
+ efi-srpm-macros              noarch      4-10.oe2403sp2               OS  18 k
+ emacs-filesystem             noarch      1:29.1-5.oe2403sp2           OS 3.7 k
+ findutils                    loongarch64 2:4.9.0-1.oe2403sp2          OS 326 k
+ gc                           loongarch64 8.2.4-1.oe2403sp2            OS 241 k
+ glibc-devel                  loongarch64 2.38-59.oe2403sp2            OS 3.2 M
+ groff-base                   loongarch64 1.23.0-3.oe2403sp2           OS 902 k
+ guile                        loongarch64 5:2.2.7-6.oe2403sp2          OS 6.3 M
+ kernel-headers               loongarch64 6.6.0-97.0.0.102.oe2403sp2   OS 1.9 M
+ libmpc                       loongarch64 1.3.1-2.oe2403sp2            OS  65 k
+ libnl3                       loongarch64 3.7.0-5.oe2403sp2            OS 389 k
+ libtool-ltdl                 loongarch64 2.4.7-4.oe2403sp2            OS  27 k
+ libxcrypt-devel              loongarch64 4.4.36-3.oe2403sp2           OS 190 k
+ m4                           loongarch64 1.4.19-5.oe2403sp2           OS 177 k
+ mpfr                         loongarch64 4.2.1-2.oe2403sp2            OS 270 k
+ openEuler-rpm-config         loongarch64 30-58.oe2403sp2              OS  54 k
+ perl                         loongarch64 4:5.38.0-10.oe2403sp2        OS 3.3 M
+ perl-Algorithm-Diff          noarch      1:1.201-2.oe2403sp2          OS  23 k
+ perl-Archive-Tar             noarch      3.02-1.oe2403sp2             OS  37 k
+ perl-B-Debug                 noarch      1.26-7.oe2403sp2             OS  14 k
+ perl-CPAN-Meta               noarch      2.150010-421.oe2403sp2       OS 103 k
+ perl-CPAN-Meta-Requirements  noarch      2.143-2.oe2403sp2            OS  23 k
+ perl-CPAN-Meta-YAML          noarch      0.018-421.oe2403sp2          OS  19 k
+ perl-Carp                    noarch      1.50-420.oe2403sp2           OS  17 k
+ perl-Compress-Raw-Bzip2      loongarch64 2.206-2.oe2403sp2            OS  21 k
+ perl-Compress-Raw-Zlib       loongarch64 1:2.206-1.oe2403sp2          OS  37 k
+ perl-Config-Perl-V           noarch      0.36-1.oe2403sp2             OS  12 k
+ perl-Data-Dumper             loongarch64 2.183-2.oe2403sp2            OS  39 k
+ perl-Devel-PPPort            loongarch64 3.71-1.oe2403sp2             OS 186 k
+ perl-Digest                  noarch      1.20-4.oe2403sp2             OS  12 k
+ perl-Digest-MD5              loongarch64 2.58-2.oe2403sp2             OS  23 k
+ perl-Digest-SHA              loongarch64 1:6.04-1.oe2403sp2           OS  44 k
+ perl-Encode                  loongarch64 4:3.21-2.oe2403sp2           OS 1.4 M
+ perl-Encode-devel            loongarch64 4:3.21-2.oe2403sp2           OS  41 k
+ perl-Env                     noarch      1.04-398.oe2403sp2           OS  12 k
+ perl-Exporter                noarch      5.77-1.oe2403sp2             OS  17 k
+ perl-ExtUtils-Command        noarch      1:7.70-3.oe2403sp2           OS 6.5 k
+ perl-ExtUtils-Install        noarch      2.22-1.oe2403sp2             OS  29 k
+ perl-ExtUtils-MakeMaker      noarch      1:7.70-3.oe2403sp2           OS 163 k
+ perl-ExtUtils-Manifest       noarch      1:1.75-1.oe2403sp2           OS  19 k
+ perl-ExtUtils-ParseXS        noarch      2:3.51-1.oe2403sp2           OS  52 k
+ perl-File-Fetch              noarch      1.04-1.oe2403sp2             OS  18 k
+ perl-File-Path               noarch      2.18-2.oe2403sp2             OS  17 k
+ perl-File-Temp               noarch      1:0.2311-3.oe2403sp2         OS  45 k
+ perl-Filter                  loongarch64 2:1.64-1.oe2403sp2           OS  43 k
+ perl-Filter-Simple           noarch      1:0.94-2.oe2403sp2           OS  11 k
+ perl-Getopt-Long             noarch      1:2.57-1.oe2403sp2           OS  43 k
+ perl-HTTP-Tiny               noarch      0.088-1.oe2403sp2            OS  31 k
+ perl-IO-Compress             noarch      2.206-1.oe2403sp2            OS 109 k
+ perl-IO-Socket-IP            noarch      0.42-1.oe2403sp2             OS  27 k
+ perl-IPC-Cmd                 noarch      2:1.04-4.oe2403sp2           OS  28 k
+ perl-IPC-SysV                loongarch64 2.09-2.oe2403sp2             OS  19 k
+ perl-IPC-System-Simple       noarch      1.30-3.oe2403sp2             OS  27 k
+ perl-JSON-PP                 noarch      1:4.16-1.oe2403sp2           OS  40 k
+ perl-Locale-Codes            noarch      3.77-1.oe2403sp2             OS 261 k
+ perl-Locale-Maketext         noarch      1:1.33-1.oe2403sp2           OS  49 k
+ perl-MIME-Base64             loongarch64 3.16-2.oe2403sp2             OS  14 k
+ perl-Math-BigInt             noarch      1:2.0030.02-1.oe2403sp2      OS 136 k
+ perl-Math-BigInt-FastCalc    loongarch64 0.5018-1.oe2403sp2           OS  14 k
+ perl-Module-CoreList         noarch      1:5.20231230-1.oe2403sp2     OS  87 k
+ perl-Module-Load             noarch      1:0.36-2.oe2403sp2           OS 8.9 k
+ perl-Module-Load-Conditional noarch      0.74-2.oe2403sp2             OS  13 k
+ perl-Module-Metadata         noarch      1.000038-1.oe2403sp2         OS  26 k
+ perl-Params-Check            noarch      1:0.38-420.oe2403sp2         OS  11 k
+ perl-PathTools               loongarch64 3.89-1.oe2403sp2             OS  54 k
+ perl-Perl-OSType             noarch      1.010-422.oe2403sp2          OS  15 k
+ perl-PerlIO-via-QuotedPrint  noarch      0.10-1.oe2403sp2             OS 6.0 k
+ perl-Pod-Checker             noarch      4:1.75-1.oe2403sp2           OS  18 k
+ perl-Pod-Escapes             noarch      1:1.07_01-1.oe2403sp2        OS 9.5 k
+ perl-Pod-Parser              noarch      1.66-1.oe2403sp2             OS  53 k
+ perl-Pod-Perldoc             noarch      1:3.28-5.oe2403sp2           OS  39 k
+ perl-Pod-Simple              noarch      1:3.45-1.oe2403sp2           OS 133 k
+ perl-Pod-Usage               noarch      4:2.03-2.oe2403sp2           OS  20 k
+ perl-Scalar-List-Utils       loongarch64 4:1.63-1.oe2403sp2           OS  47 k
+ perl-Socket                  loongarch64 4:2.037-1.oe2403sp2          OS  39 k
+ perl-Storable                loongarch64 1:3.25-3.oe2403sp2           OS  75 k
+ perl-Sys-Syslog              loongarch64 0.36-2.oe2403sp2             OS  31 k
+ perl-Term-ANSIColor          noarch      5.01-2.oe2403sp2             OS  25 k
+ perl-Term-Cap                noarch      1.18-1.oe2403sp2             OS  13 k
+ perl-Test-Harness            noarch      2:3.48-1.oe2403sp2           OS 126 k
+ perl-Test-Simple             noarch      2:1.302198-1.oe2403sp2       OS 198 k
+ perl-Text-Balanced           noarch      2.06-1.oe2403sp2             OS  25 k
+ perl-Text-Diff               noarch      1.45-8.oe2403sp2             OS  22 k
+ perl-Text-ParseWords         noarch      3.30-420.oe2403sp2           OS 7.8 k
+ perl-Text-Tabs+Wrap          noarch      2023.0511-1.oe2403sp2        OS 9.1 k
+ perl-Thread-Queue            noarch      3.13-4.oe2403sp2             OS 9.5 k
+ perl-Time-HiRes              loongarch64 4:1.9775-1.oe2403sp2         OS  42 k
+ perl-Time-Local              noarch      2:1.350-1.oe2403sp2          OS  17 k
+ perl-Unicode-Collate         loongarch64 1.31-3.oe2403sp2             OS 653 k
+ perl-Unicode-Normalize       loongarch64 1.32-1.oe2403sp2             OS  68 k
+ perl-autodie                 noarch      2.36-1.oe2403sp2             OS  51 k
+ perl-bignum                  noarch      0.66-3.oe2403sp2             OS  18 k
+ perl-constant                noarch      1.33-423.oe2403sp2           OS  12 k
+ perl-experimental            noarch      0.031-2.oe2403sp2            OS  16 k
+ perl-libnet                  noarch      3.15-1.oe2403sp2             OS  71 k
+ perl-libs                    loongarch64 4:5.38.0-10.oe2403sp2        OS 1.9 M
+ perl-parent                  noarch      1:0.241-1.oe2403sp2          OS 7.1 k
+ perl-perlfaq                 noarch      5.20230812-1.oe2403sp2       OS 174 k
+ perl-podlators               noarch      1:5.01-2.oe2403sp2           OS  60 k
+ perl-threads                 loongarch64 2:2.36-2.oe2403sp2           OS  31 k
+ perl-threads-shared          loongarch64 1.62-2.oe2403sp2             OS  27 k
+ perl-version                 loongarch64 8:0.99.30-1.oe2403sp2        OS  40 k
+ qt5-srpm-macros              noarch      5.15.10-6.oe2403sp2          OS 4.6 k
+ zip                          loongarch64 3.0-32.oe2403sp2             OS 210 k
+
+Transaction Summary
+================================================================================
+Install  115 Packages
+
+Total download size: 75 M
+Installed size: 318 M
+Downloading Packages:
+(1/115): autoconf-2.71-9.oe2403sp2.noarch.rpm   117 kB/s | 657 kB     00:05    
+(2/115): automake-1.16.5-9.oe2403sp2.noarch.rpm 325 kB/s | 457 kB     00:01    
+(3/115): binutils-2.41-16.oe2403sp2.loongarch64 300 kB/s | 4.1 MB     00:14    
+(4/115): cpp-12.3.1-93.oe2403sp2.loongarch64.rp 850 kB/s | 8.7 MB     00:10    
+(5/115): efi-srpm-macros-4-10.oe2403sp2.noarch.  88 kB/s |  18 kB     00:00    
+(6/115): emacs-filesystem-29.1-5.oe2403sp2.noar  18 kB/s | 3.7 kB     00:00    
+(7/115): file-5.45-2.oe2403sp2.loongarch64.rpm  162 kB/s |  33 kB     00:00    
+(8/115): findutils-4.9.0-1.oe2403sp2.loongarch6 793 kB/s | 326 kB     00:00    
+(9/115): gc-8.2.4-1.oe2403sp2.loongarch64.rpm   591 kB/s | 241 kB     00:00    
+(10/115): gcc-12.3.1-93.oe2403sp2.loongarch64.r 1.0 MB/s |  28 MB     00:28    
+(11/115): glibc-devel-2.38-59.oe2403sp2.loongar 1.1 MB/s | 3.2 MB     00:03    
+(12/115): groff-base-1.23.0-3.oe2403sp2.loongar 742 kB/s | 902 kB     00:01    
+(13/115): guile-2.2.7-6.oe2403sp2.loongarch64.r 760 kB/s | 6.3 MB     00:08    
+(14/115): kernel-headers-6.6.0-97.0.0.102.oe240 1.1 MB/s | 1.9 MB     00:01    
+(15/115): libmpc-1.3.1-2.oe2403sp2.loongarch64. 313 kB/s |  65 kB     00:00    
+(16/115): libnl3-3.7.0-5.oe2403sp2.loongarch64. 939 kB/s | 389 kB     00:00    
+(17/115): libnl3-devel-3.7.0-5.oe2403sp2.loonga 323 kB/s |  67 kB     00:00    
+(18/115): libtool-2.4.7-4.oe2403sp2.loongarch64 968 kB/s | 591 kB     00:00    
+(19/115): libtool-ltdl-2.4.7-4.oe2403sp2.loonga 134 kB/s |  27 kB     00:00    
+(20/115): libxcrypt-devel-4.4.36-3.oe2403sp2.lo 893 kB/s | 190 kB     00:00    
+(21/115): m4-1.4.19-5.oe2403sp2.loongarch64.rpm 831 kB/s | 177 kB     00:00    
+(22/115): make-4.4.1-2.oe2403sp2.loongarch64.rp 855 kB/s | 351 kB     00:00    
+(23/115): mpfr-4.2.1-2.oe2403sp2.loongarch64.rp 665 kB/s | 270 kB     00:00    
+(24/115): openEuler-rpm-config-30-58.oe2403sp2. 262 kB/s |  54 kB     00:00    
+(25/115): openssl-devel-3.0.12-17.oe2403sp2.loo 1.6 MB/s | 7.0 MB     00:04    
+(26/115): perl-5.38.0-10.oe2403sp2.loongarch64. 828 kB/s | 3.3 MB     00:04    
+(27/115): perl-Algorithm-Diff-1.201-2.oe2403sp2 108 kB/s |  23 kB     00:00    
+(28/115): perl-Archive-Tar-3.02-1.oe2403sp2.noa 182 kB/s |  37 kB     00:00    
+(29/115): perl-B-Debug-1.26-7.oe2403sp2.noarch.  69 kB/s |  14 kB     00:00    
+(30/115): perl-CPAN-Meta-2.150010-421.oe2403sp2 497 kB/s | 103 kB     00:00    
+(31/115): perl-CPAN-Meta-Requirements-2.143-2.o 112 kB/s |  23 kB     00:00    
+(32/115): perl-CPAN-Meta-YAML-0.018-421.oe2403s  95 kB/s |  19 kB     00:00    
+(33/115): perl-Carp-1.50-420.oe2403sp2.noarch.r  84 kB/s |  17 kB     00:00    
+(34/115): perl-Compress-Raw-Bzip2-2.206-2.oe240 101 kB/s |  21 kB     00:00    
+(35/115): perl-Compress-Raw-Zlib-2.206-1.oe2403 182 kB/s |  37 kB     00:00    
+(36/115): perl-Config-Perl-V-0.36-1.oe2403sp2.n  59 kB/s |  12 kB     00:00    
+(37/115): perl-Data-Dumper-2.183-2.oe2403sp2.lo 192 kB/s |  39 kB     00:00    
+(38/115): perl-Devel-PPPort-3.71-1.oe2403sp2.lo 457 kB/s | 186 kB     00:00    
+(39/115): perl-Digest-1.20-4.oe2403sp2.noarch.r  61 kB/s |  12 kB     00:00    
+(40/115): perl-Digest-MD5-2.58-2.oe2403sp2.loon 110 kB/s |  23 kB     00:00    
+(41/115): perl-Digest-SHA-6.04-1.oe2403sp2.loon 216 kB/s |  44 kB     00:00    
+(42/115): perl-Encode-3.21-2.oe2403sp2.loongarc 778 kB/s | 1.4 MB     00:01    
+(43/115): perl-Encode-devel-3.21-2.oe2403sp2.lo 200 kB/s |  41 kB     00:00    
+(44/115): perl-Env-1.04-398.oe2403sp2.noarch.rp  59 kB/s |  12 kB     00:00    
+(45/115): perl-Exporter-5.77-1.oe2403sp2.noarch  82 kB/s |  17 kB     00:00    
+(46/115): perl-ExtUtils-Command-7.70-3.oe2403sp  32 kB/s | 6.5 kB     00:00    
+(47/115): perl-ExtUtils-Install-2.22-1.oe2403sp 141 kB/s |  29 kB     00:00    
+(48/115): perl-ExtUtils-MakeMaker-7.70-3.oe2403 403 kB/s | 163 kB     00:00    
+(49/115): perl-ExtUtils-Manifest-1.75-1.oe2403s  87 kB/s |  19 kB     00:00    
+(50/115): perl-ExtUtils-ParseXS-3.51-1.oe2403sp 254 kB/s |  52 kB     00:00    
+(51/115): perl-File-Fetch-1.04-1.oe2403sp2.noar  87 kB/s |  18 kB     00:00    
+(52/115): perl-File-Path-2.18-2.oe2403sp2.noarc  84 kB/s |  17 kB     00:00    
+(53/115): perl-File-Temp-0.2311-3.oe2403sp2.noa 221 kB/s |  45 kB     00:00    
+(54/115): perl-Filter-1.64-1.oe2403sp2.loongarc 208 kB/s |  43 kB     00:00    
+(55/115): perl-Filter-Simple-0.94-2.oe2403sp2.n  56 kB/s |  11 kB     00:00    
+(56/115): perl-Getopt-Long-2.57-1.oe2403sp2.noa 209 kB/s |  43 kB     00:00    
+(57/115): perl-HTTP-Tiny-0.088-1.oe2403sp2.noar 152 kB/s |  31 kB     00:00    
+(58/115): perl-IO-Compress-2.206-1.oe2403sp2.no 522 kB/s | 109 kB     00:00    
+(59/115): perl-IO-Socket-IP-0.42-1.oe2403sp2.no 133 kB/s |  27 kB     00:00    
+(60/115): perl-IPC-Cmd-1.04-4.oe2403sp2.noarch. 137 kB/s |  28 kB     00:00    
+(61/115): perl-IPC-SysV-2.09-2.oe2403sp2.loonga  93 kB/s |  19 kB     00:00    
+(62/115): perl-IPC-System-Simple-1.30-3.oe2403s 131 kB/s |  27 kB     00:00    
+(63/115): perl-JSON-PP-4.16-1.oe2403sp2.noarch. 197 kB/s |  40 kB     00:00    
+(64/115): perl-Locale-Codes-3.77-1.oe2403sp2.no 636 kB/s | 261 kB     00:00    
+(65/115): perl-Locale-Maketext-1.33-1.oe2403sp2 239 kB/s |  49 kB     00:00    
+(66/115): perl-MIME-Base64-3.16-2.oe2403sp2.loo  71 kB/s |  14 kB     00:00    
+(67/115): perl-Math-BigInt-2.0030.02-1.oe2403sp 647 kB/s | 136 kB     00:00    
+(68/115): perl-Math-BigInt-FastCalc-0.5018-1.oe  69 kB/s |  14 kB     00:00    
+(69/115): perl-Module-CoreList-5.20231230-1.oe2 421 kB/s |  87 kB     00:00    
+(70/115): perl-Module-Load-0.36-2.oe2403sp2.noa  44 kB/s | 8.9 kB     00:00    
+(71/115): perl-Module-Load-Conditional-0.74-2.o  65 kB/s |  13 kB     00:00    
+(72/115): perl-Module-Metadata-1.000038-1.oe240 127 kB/s |  26 kB     00:00    
+(73/115): perl-Params-Check-0.38-420.oe2403sp2.  53 kB/s |  11 kB     00:00    
+(74/115): perl-PathTools-3.89-1.oe2403sp2.loong 261 kB/s |  54 kB     00:00    
+(75/115): perl-Perl-OSType-1.010-422.oe2403sp2.  74 kB/s |  15 kB     00:00    
+(76/115): perl-PerlIO-via-QuotedPrint-0.10-1.oe  30 kB/s | 6.0 kB     00:00    
+(77/115): perl-Pod-Checker-1.75-1.oe2403sp2.noa  88 kB/s |  18 kB     00:00    
+(78/115): perl-Pod-Escapes-1.07_01-1.oe2403sp2.  47 kB/s | 9.5 kB     00:00    
+(79/115): perl-Pod-Parser-1.66-1.oe2403sp2.noar 256 kB/s |  53 kB     00:00    
+(80/115): perl-Pod-Perldoc-3.28-5.oe2403sp2.noa  84 kB/s |  39 kB     00:00    
+(81/115): perl-Pod-Simple-3.45-1.oe2403sp2.noar 219 kB/s | 133 kB     00:00    
+(82/115): perl-Pod-Usage-2.03-2.oe2403sp2.noarc  99 kB/s |  20 kB     00:00    
+(83/115): perl-Scalar-List-Utils-1.63-1.oe2403s 230 kB/s |  47 kB     00:00    
+(84/115): perl-Socket-2.037-1.oe2403sp2.loongar 190 kB/s |  39 kB     00:00    
+(85/115): perl-Storable-3.25-3.oe2403sp2.loonga 185 kB/s |  75 kB     00:00    
+(86/115): perl-Sys-Syslog-0.36-2.oe2403sp2.loon 151 kB/s |  31 kB     00:00    
+(87/115): perl-Term-ANSIColor-5.01-2.oe2403sp2. 122 kB/s |  25 kB     00:00    
+(88/115): perl-Term-Cap-1.18-1.oe2403sp2.noarch  65 kB/s |  13 kB     00:00    
+(89/115): perl-Test-Harness-3.48-1.oe2403sp2.no 203 kB/s | 126 kB     00:00    
+(90/115): perl-Test-Simple-1.302198-1.oe2403sp2 246 kB/s | 198 kB     00:00    
+(91/115): perl-Text-Balanced-2.06-1.oe2403sp2.n 123 kB/s |  25 kB     00:00    
+(92/115): perl-Text-Diff-1.45-8.oe2403sp2.noarc 109 kB/s |  22 kB     00:00    
+(93/115): perl-Text-ParseWords-3.30-420.oe2403s  38 kB/s | 7.8 kB     00:00    
+(94/115): perl-Text-Tabs+Wrap-2023.0511-1.oe240  45 kB/s | 9.1 kB     00:00    
+(95/115): perl-Thread-Queue-3.13-4.oe2403sp2.no  47 kB/s | 9.5 kB     00:00    
+(96/115): perl-Time-HiRes-1.9775-1.oe2403sp2.lo 205 kB/s |  42 kB     00:00    
+(97/115): perl-Time-Local-1.350-1.oe2403sp2.noa  84 kB/s |  17 kB     00:00    
+(98/115): perl-Unicode-Collate-1.31-3.oe2403sp2 360 kB/s | 653 kB     00:01    
+(99/115): perl-Unicode-Normalize-1.32-1.oe2403s 170 kB/s |  68 kB     00:00    
+(100/115): perl-autodie-2.36-1.oe2403sp2.noarch 245 kB/s |  51 kB     00:00    
+(101/115): perl-bignum-0.66-3.oe2403sp2.noarch.  19 kB/s |  18 kB     00:00    
+(102/115): perl-constant-1.33-423.oe2403sp2.noa  61 kB/s |  12 kB     00:00    
+(103/115): perl-experimental-0.031-2.oe2403sp2.  79 kB/s |  16 kB     00:00    
+(104/115): perl-libnet-3.15-1.oe2403sp2.noarch. 178 kB/s |  71 kB     00:00    
+(105/115): perl-libs-5.38.0-10.oe2403sp2.loonga 511 kB/s | 1.9 MB     00:03    
+(106/115): perl-parent-0.241-1.oe2403sp2.noarch  35 kB/s | 7.1 kB     00:00    
+(107/115): perl-perlfaq-5.20230812-1.oe2403sp2. 432 kB/s | 174 kB     00:00    
+(108/115): perl-podlators-5.01-2.oe2403sp2.noar 295 kB/s |  60 kB     00:00    
+(109/115): perl-threads-2.36-2.oe2403sp2.loonga 154 kB/s |  31 kB     00:00    
+(110/115): perl-threads-shared-1.62-2.oe2403sp2 133 kB/s |  27 kB     00:00    
+(111/115): perl-version-0.99.30-1.oe2403sp2.loo 196 kB/s |  40 kB     00:00    
+(112/115): pkgconf-1.9.5-1.oe2403sp2.loongarch6 279 kB/s |  57 kB     00:00    
+(113/115): popt-devel-1.19-4.oe2403sp2.loongarc 334 kB/s |  69 kB     00:00    
+(114/115): qt5-srpm-macros-5.15.10-6.oe2403sp2.  23 kB/s | 4.6 kB     00:00    
+(115/115): zip-3.0-32.oe2403sp2.loongarch64.rpm 518 kB/s | 210 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           624 kB/s |  75 MB     02:03     
+retrieving repo key for OS unencrypted from http://repo.openeuler.org/openEuler-24.03-LTS-SP2/OS/loongarch64/RPM-GPG-KEY-openEuler
+OS                                              3.2 kB/s | 3.0 kB     00:00    
+Importing GPG key 0xB675600B:
+ Userid     : "openeuler <openeuler@compass-ci.com>"
+ Fingerprint: 8AA1 6BF9 F2CA 5244 010D CA96 3B47 7C60 B675 600B
+ From       : http://repo.openeuler.org/openEuler-24.03-LTS-SP2/OS/loongarch64/RPM-GPG-KEY-openEuler
+Key imported successfully
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : perl-Exporter-5.77-1.oe2403sp2.noarch                1/115 
+  Installing       : perl-libs-4:5.38.0-10.oe2403sp2.loongarch64          2/115 
+  Installing       : perl-Carp-1.50-420.oe2403sp2.noarch                  3/115 
+  Running scriptlet: perl-Scalar-List-Utils-4:1.63-1.oe2403sp2.loonga     4/115 
+  Installing       : perl-Scalar-List-Utils-4:1.63-1.oe2403sp2.loonga     4/115 
+  Running scriptlet: perl-Scalar-List-Utils-4:1.63-1.oe2403sp2.loonga     4/115 
+  Installing       : perl-Text-ParseWords-3.30-420.oe2403sp2.noarch       5/115 
+  Running scriptlet: perl-MIME-Base64-3.16-2.oe2403sp2.loongarch64        6/115 
+  Installing       : perl-MIME-Base64-3.16-2.oe2403sp2.loongarch64        6/115 
+  Running scriptlet: perl-MIME-Base64-3.16-2.oe2403sp2.loongarch64        6/115 
+  Installing       : perl-parent-1:0.241-1.oe2403sp2.noarch               7/115 
+  Running scriptlet: perl-Time-HiRes-4:1.9775-1.oe2403sp2.loongarch64     8/115 
+  Installing       : perl-Time-HiRes-4:1.9775-1.oe2403sp2.loongarch64     8/115 
+  Running scriptlet: perl-Time-HiRes-4:1.9775-1.oe2403sp2.loongarch64     8/115 
+  Installing       : perl-Term-ANSIColor-5.01-2.oe2403sp2.noarch          9/115 
+  Installing       : pkgconf-1.9.5-1.oe2403sp2.loongarch64               10/115 
+  Installing       : perl-Digest-1.20-4.oe2403sp2.noarch                 11/115 
+  Installing       : perl-Digest-MD5-2.58-2.oe2403sp2.loongarch64        12/115 
+  Installing       : mpfr-4.2.1-2.oe2403sp2.loongarch64                  13/115 
+  Installing       : libmpc-1.3.1-2.oe2403sp2.loongarch64                14/115 
+  Installing       : perl-Pod-Escapes-1:1.07_01-1.oe2403sp2.noarch       15/115 
+  Installing       : m4-1.4.19-5.oe2403sp2.loongarch64                   16/115 
+  Installing       : kernel-headers-6.6.0-97.0.0.102.oe2403sp2.loonga    17/115 
+  Installing       : libxcrypt-devel-4.4.36-3.oe2403sp2.loongarch64      18/115 
+  Running scriptlet: glibc-devel-2.38-59.oe2403sp2.loongarch64           19/115 
+  Installing       : glibc-devel-2.38-59.oe2403sp2.loongarch64           19/115 
+  Running scriptlet: findutils-2:4.9.0-1.oe2403sp2.loongarch64           20/115 
+  Installing       : findutils-2:4.9.0-1.oe2403sp2.loongarch64           20/115 
+  Installing       : cpp-12.3.1-93.oe2403sp2.loongarch64                 21/115 
+  Installing       : perl-PerlIO-via-QuotedPrint-0.10-1.oe2403sp2.noa    22/115 
+  Installing       : perl-Perl-OSType-1.010-422.oe2403sp2.noarch         23/115 
+  Installing       : perl-perlfaq-5.20230812-1.oe2403sp2.noarch          24/115 
+  Installing       : zip-3.0-32.oe2403sp2.loongarch64                    25/115 
+  Installing       : qt5-srpm-macros-5.15.10-6.oe2403sp2.noarch          26/115 
+  Installing       : libtool-ltdl-2.4.7-4.oe2403sp2.loongarch64          27/115 
+  Installing       : libnl3-3.7.0-5.oe2403sp2.loongarch64                28/115 
+  Installing       : groff-base-1.23.0-3.oe2403sp2.loongarch64           29/115 
+  Installing       : gc-8.2.4-1.oe2403sp2.loongarch64                    30/115 
+  Installing       : guile-5:2.2.7-6.oe2403sp2.loongarch64               31/115 
+  Installing       : make-1:4.4.1-2.oe2403sp2.loongarch64                32/115 
+  Running scriptlet: make-1:4.4.1-2.oe2403sp2.loongarch64                32/115 
+  Installing       : file-5.45-2.oe2403sp2.loongarch64                   33/115 
+  Installing       : emacs-filesystem-1:29.1-5.oe2403sp2.noarch          34/115 
+  Installing       : efi-srpm-macros-4-10.oe2403sp2.noarch               35/115 
+  Installing       : openEuler-rpm-config-30-58.oe2403sp2.loongarch64    36/115 
+  Installing       : binutils-2.41-16.oe2403sp2.loongarch64              37/115 
+  Running scriptlet: binutils-2.41-16.oe2403sp2.loongarch64              37/115 
+  Installing       : gcc-12.3.1-93.oe2403sp2.loongarch64                 38/115 
+  Installing       : perl-Algorithm-Diff-1:1.201-2.oe2403sp2.noarch      39/115 
+  Installing       : perl-B-Debug-1.26-7.oe2403sp2.noarch                40/115 
+  Installing       : perl-CPAN-Meta-YAML-0.018-421.oe2403sp2.noarch      41/115 
+  Running scriptlet: perl-Config-Perl-V-0.36-1.oe2403sp2.noarch          42/115 
+  Installing       : perl-Config-Perl-V-0.36-1.oe2403sp2.noarch          42/115 
+  Running scriptlet: perl-Config-Perl-V-0.36-1.oe2403sp2.noarch          42/115 
+  Installing       : perl-Devel-PPPort-3.71-1.oe2403sp2.loongarch64      43/115 
+  Installing       : perl-Env-1.04-398.oe2403sp2.noarch                  44/115 
+  Installing       : perl-IPC-SysV-2.09-2.oe2403sp2.loongarch64          45/115 
+  Running scriptlet: perl-Locale-Maketext-1:1.33-1.oe2403sp2.noarch      46/115 
+  Installing       : perl-Locale-Maketext-1:1.33-1.oe2403sp2.noarch      46/115 
+  Running scriptlet: perl-Locale-Maketext-1:1.33-1.oe2403sp2.noarch      46/115 
+  Installing       : perl-Params-Check-1:0.38-420.oe2403sp2.noarch       47/115 
+  Running scriptlet: perl-Socket-4:2.037-1.oe2403sp2.loongarch64         48/115 
+  Installing       : perl-Socket-4:2.037-1.oe2403sp2.loongarch64         48/115 
+  Running scriptlet: perl-Socket-4:2.037-1.oe2403sp2.loongarch64         48/115 
+  Running scriptlet: perl-Storable-1:3.25-3.oe2403sp2.loongarch64        49/115 
+  Installing       : perl-Storable-1:3.25-3.oe2403sp2.loongarch64        49/115 
+  Running scriptlet: perl-Storable-1:3.25-3.oe2403sp2.loongarch64        49/115 
+  Installing       : perl-Term-Cap-1.18-1.oe2403sp2.noarch               50/115 
+  Installing       : perl-Text-Balanced-2.06-1.oe2403sp2.noarch          51/115 
+  Installing       : perl-Text-Tabs+Wrap-2023.0511-1.oe2403sp2.noarch    52/115 
+  Running scriptlet: perl-Unicode-Normalize-1.32-1.oe2403sp2.loongarc    53/115 
+  Installing       : perl-Unicode-Normalize-1.32-1.oe2403sp2.loongarc    53/115 
+  Running scriptlet: perl-Unicode-Normalize-1.32-1.oe2403sp2.loongarc    53/115 
+  Installing       : perl-Compress-Raw-Bzip2-2.206-2.oe2403sp2.loonga    54/115 
+  Installing       : perl-Compress-Raw-Zlib-1:2.206-1.oe2403sp2.loong    55/115 
+  Running scriptlet: perl-Data-Dumper-2.183-2.oe2403sp2.loongarch64      56/115 
+  Installing       : perl-Data-Dumper-2.183-2.oe2403sp2.loongarch64      56/115 
+  Running scriptlet: perl-Data-Dumper-2.183-2.oe2403sp2.loongarch64      56/115 
+  Installing       : perl-IO-Socket-IP-0.42-1.oe2403sp2.noarch           57/115 
+  Installing       : perl-IPC-System-Simple-1.30-3.oe2403sp2.noarch      58/115 
+  Running scriptlet: perl-Locale-Codes-3.77-1.oe2403sp2.noarch           59/115 
+  Installing       : perl-Locale-Codes-3.77-1.oe2403sp2.noarch           59/115 
+  Running scriptlet: perl-Locale-Codes-3.77-1.oe2403sp2.noarch           59/115 
+  Running scriptlet: perl-Math-BigInt-FastCalc-0.5018-1.oe2403sp2.loo    60/115 
+  Installing       : perl-Math-BigInt-FastCalc-0.5018-1.oe2403sp2.loo    60/115 
+  Running scriptlet: perl-Math-BigInt-FastCalc-0.5018-1.oe2403sp2.loo    60/115 
+  Running scriptlet: perl-Math-BigInt-1:2.0030.02-1.oe2403sp2.noarch     61/115 
+  Installing       : perl-Math-BigInt-1:2.0030.02-1.oe2403sp2.noarch     61/115 
+  Running scriptlet: perl-Math-BigInt-1:2.0030.02-1.oe2403sp2.noarch     61/115 
+  Installing       : perl-ExtUtils-Command-1:7.70-3.oe2403sp2.noarch     62/115 
+  Installing       : perl-ExtUtils-Manifest-1:1.75-1.oe2403sp2.noarch    63/115 
+  Installing       : perl-File-Path-2.18-2.oe2403sp2.noarch              64/115 
+  Installing       : perl-File-Temp-1:0.2311-3.oe2403sp2.noarch          65/115 
+  Installing       : perl-Module-Load-1:0.36-2.oe2403sp2.noarch          66/115 
+  Installing       : perl-PathTools-3.89-1.oe2403sp2.loongarch64         67/115 
+  Installing       : perl-Sys-Syslog-0.36-2.oe2403sp2.loongarch64        68/115 
+  Installing       : perl-Text-Diff-1.45-8.oe2403sp2.noarch              69/115 
+  Installing       : perl-HTTP-Tiny-0.088-1.oe2403sp2.noarch             70/115 
+  Installing       : perl-Time-Local-2:1.350-1.oe2403sp2.noarch          71/115 
+  Installing       : perl-Unicode-Collate-1.31-3.oe2403sp2.loongarch6    72/115 
+  Installing       : perl-autodie-2.36-1.oe2403sp2.noarch                73/115 
+  Installing       : perl-bignum-0.66-3.oe2403sp2.noarch                 74/115 
+  Running scriptlet: perl-constant-1.33-423.oe2403sp2.noarch             75/115 
+  Installing       : perl-constant-1.33-423.oe2403sp2.noarch             75/115 
+  Running scriptlet: perl-constant-1.33-423.oe2403sp2.noarch             75/115 
+  Installing       : perl-libnet-3.15-1.oe2403sp2.noarch                 76/115 
+  Installing       : perl-Digest-SHA-1:6.04-1.oe2403sp2.loongarch64      77/115 
+  Installing       : perl-Encode-devel-4:3.21-2.oe2403sp2.loongarch64    78/115 
+  Installing       : perl-Encode-4:3.21-2.oe2403sp2.loongarch64          79/115 
+  Installing       : perl-ExtUtils-ParseXS-2:3.51-1.oe2403sp2.noarch     80/115 
+  Installing       : perl-Archive-Tar-3.02-1.oe2403sp2.noarch            81/115 
+  Installing       : perl-IO-Compress-2.206-1.oe2403sp2.noarch           82/115 
+  Running scriptlet: perl-JSON-PP-1:4.16-1.oe2403sp2.noarch              83/115 
+  Installing       : perl-JSON-PP-1:4.16-1.oe2403sp2.noarch              83/115 
+  Running scriptlet: perl-JSON-PP-1:4.16-1.oe2403sp2.noarch              83/115 
+  Installing       : perl-Pod-Perldoc-1:3.28-5.oe2403sp2.noarch          84/115 
+  Installing       : perl-Pod-Simple-1:3.45-1.oe2403sp2.noarch           85/115 
+  Installing       : perl-Test-Harness-2:3.48-1.oe2403sp2.noarch         86/115 
+  Running scriptlet: perl-Getopt-Long-1:2.57-1.oe2403sp2.noarch          87/115 
+  Installing       : perl-Getopt-Long-1:2.57-1.oe2403sp2.noarch          87/115 
+  Running scriptlet: perl-Getopt-Long-1:2.57-1.oe2403sp2.noarch          87/115 
+  Installing       : perl-Pod-Checker-4:1.75-1.oe2403sp2.noarch          88/115 
+  Installing       : perl-Pod-Parser-1.66-1.oe2403sp2.noarch             89/115 
+  Installing       : perl-Pod-Usage-4:2.03-2.oe2403sp2.noarch            90/115 
+  Installing       : perl-podlators-1:5.01-2.oe2403sp2.noarch            91/115 
+  Installing       : perl-threads-2:2.36-2.oe2403sp2.loongarch64         92/115 
+  Installing       : perl-Test-Simple-2:1.302198-1.oe2403sp2.noarch      93/115 
+  Installing       : perl-Thread-Queue-3.13-4.oe2403sp2.noarch           94/115 
+  Installing       : perl-threads-shared-1.62-2.oe2403sp2.loongarch64    95/115 
+  Running scriptlet: perl-CPAN-Meta-2.150010-421.oe2403sp2.noarch        96/115 
+  Installing       : perl-CPAN-Meta-2.150010-421.oe2403sp2.noarch        96/115 
+  Running scriptlet: perl-CPAN-Meta-2.150010-421.oe2403sp2.noarch        96/115 
+  Installing       : perl-ExtUtils-Install-2.22-1.oe2403sp2.noarch       97/115 
+  Installing       : perl-ExtUtils-MakeMaker-1:7.70-3.oe2403sp2.noarc    98/115 
+  Running scriptlet: perl-CPAN-Meta-Requirements-2.143-2.oe2403sp2.no    99/115 
+  Installing       : perl-CPAN-Meta-Requirements-2.143-2.oe2403sp2.no    99/115 
+  Running scriptlet: perl-CPAN-Meta-Requirements-2.143-2.oe2403sp2.no    99/115 
+  Installing       : perl-Module-CoreList-1:5.20231230-1.oe2403sp2.no   100/115 
+  Installing       : perl-File-Fetch-1.04-1.oe2403sp2.noarch            101/115 
+  Installing       : perl-IPC-Cmd-2:1.04-4.oe2403sp2.noarch             102/115 
+  Installing       : perl-Module-Load-Conditional-0.74-2.oe2403sp2.no   103/115 
+  Installing       : perl-Module-Metadata-1.000038-1.oe2403sp2.noarch   104/115 
+  Installing       : perl-experimental-0.031-2.oe2403sp2.noarch         105/115 
+  Installing       : perl-version-8:0.99.30-1.oe2403sp2.loongarch64     106/115 
+  Installing       : perl-4:5.38.0-10.oe2403sp2.loongarch64             107/115 
+  Installing       : perl-Filter-2:1.64-1.oe2403sp2.loongarch64         108/115 
+  Installing       : perl-Filter-Simple-1:0.94-2.oe2403sp2.noarch       109/115 
+  Installing       : autoconf-2.71-9.oe2403sp2.noarch                   110/115 
+  Installing       : automake-1.16.5-9.oe2403sp2.noarch                 111/115 
+  Installing       : libtool-2.4.7-4.oe2403sp2.loongarch64              112/115 
+  Installing       : libnl3-devel-3.7.0-5.oe2403sp2.loongarch64         113/115 
+  Installing       : openssl-devel-1:3.0.12-17.oe2403sp2.loongarch64    114/115 
+  Installing       : popt-devel-1.19-4.oe2403sp2.loongarch64            115/115 
+  Running scriptlet: popt-devel-1.19-4.oe2403sp2.loongarch64            115/115 
+  Verifying        : autoconf-2.71-9.oe2403sp2.noarch                     1/115 
+  Verifying        : automake-1.16.5-9.oe2403sp2.noarch                   2/115 
+  Verifying        : binutils-2.41-16.oe2403sp2.loongarch64               3/115 
+  Verifying        : cpp-12.3.1-93.oe2403sp2.loongarch64                  4/115 
+  Verifying        : efi-srpm-macros-4-10.oe2403sp2.noarch                5/115 
+  Verifying        : emacs-filesystem-1:29.1-5.oe2403sp2.noarch           6/115 
+  Verifying        : file-5.45-2.oe2403sp2.loongarch64                    7/115 
+  Verifying        : findutils-2:4.9.0-1.oe2403sp2.loongarch64            8/115 
+  Verifying        : gc-8.2.4-1.oe2403sp2.loongarch64                     9/115 
+  Verifying        : gcc-12.3.1-93.oe2403sp2.loongarch64                 10/115 
+  Verifying        : glibc-devel-2.38-59.oe2403sp2.loongarch64           11/115 
+  Verifying        : groff-base-1.23.0-3.oe2403sp2.loongarch64           12/115 
+  Verifying        : guile-5:2.2.7-6.oe2403sp2.loongarch64               13/115 
+  Verifying        : kernel-headers-6.6.0-97.0.0.102.oe2403sp2.loonga    14/115 
+  Verifying        : libmpc-1.3.1-2.oe2403sp2.loongarch64                15/115 
+  Verifying        : libnl3-3.7.0-5.oe2403sp2.loongarch64                16/115 
+  Verifying        : libnl3-devel-3.7.0-5.oe2403sp2.loongarch64          17/115 
+  Verifying        : libtool-2.4.7-4.oe2403sp2.loongarch64               18/115 
+  Verifying        : libtool-ltdl-2.4.7-4.oe2403sp2.loongarch64          19/115 
+  Verifying        : libxcrypt-devel-4.4.36-3.oe2403sp2.loongarch64      20/115 
+  Verifying        : m4-1.4.19-5.oe2403sp2.loongarch64                   21/115 
+  Verifying        : make-1:4.4.1-2.oe2403sp2.loongarch64                22/115 
+  Verifying        : mpfr-4.2.1-2.oe2403sp2.loongarch64                  23/115 
+  Verifying        : openEuler-rpm-config-30-58.oe2403sp2.loongarch64    24/115 
+  Verifying        : openssl-devel-1:3.0.12-17.oe2403sp2.loongarch64     25/115 
+  Verifying        : perl-4:5.38.0-10.oe2403sp2.loongarch64              26/115 
+  Verifying        : perl-Algorithm-Diff-1:1.201-2.oe2403sp2.noarch      27/115 
+  Verifying        : perl-Archive-Tar-3.02-1.oe2403sp2.noarch            28/115 
+  Verifying        : perl-B-Debug-1.26-7.oe2403sp2.noarch                29/115 
+  Verifying        : perl-CPAN-Meta-2.150010-421.oe2403sp2.noarch        30/115 
+  Verifying        : perl-CPAN-Meta-Requirements-2.143-2.oe2403sp2.no    31/115 
+  Verifying        : perl-CPAN-Meta-YAML-0.018-421.oe2403sp2.noarch      32/115 
+  Verifying        : perl-Carp-1.50-420.oe2403sp2.noarch                 33/115 
+  Verifying        : perl-Compress-Raw-Bzip2-2.206-2.oe2403sp2.loonga    34/115 
+  Verifying        : perl-Compress-Raw-Zlib-1:2.206-1.oe2403sp2.loong    35/115 
+  Verifying        : perl-Config-Perl-V-0.36-1.oe2403sp2.noarch          36/115 
+  Verifying        : perl-Data-Dumper-2.183-2.oe2403sp2.loongarch64      37/115 
+  Verifying        : perl-Devel-PPPort-3.71-1.oe2403sp2.loongarch64      38/115 
+  Verifying        : perl-Digest-1.20-4.oe2403sp2.noarch                 39/115 
+  Verifying        : perl-Digest-MD5-2.58-2.oe2403sp2.loongarch64        40/115 
+  Verifying        : perl-Digest-SHA-1:6.04-1.oe2403sp2.loongarch64      41/115 
+  Verifying        : perl-Encode-4:3.21-2.oe2403sp2.loongarch64          42/115 
+  Verifying        : perl-Encode-devel-4:3.21-2.oe2403sp2.loongarch64    43/115 
+  Verifying        : perl-Env-1.04-398.oe2403sp2.noarch                  44/115 
+  Verifying        : perl-Exporter-5.77-1.oe2403sp2.noarch               45/115 
+  Verifying        : perl-ExtUtils-Command-1:7.70-3.oe2403sp2.noarch     46/115 
+  Verifying        : perl-ExtUtils-Install-2.22-1.oe2403sp2.noarch       47/115 
+  Verifying        : perl-ExtUtils-MakeMaker-1:7.70-3.oe2403sp2.noarc    48/115 
+  Verifying        : perl-ExtUtils-Manifest-1:1.75-1.oe2403sp2.noarch    49/115 
+  Verifying        : perl-ExtUtils-ParseXS-2:3.51-1.oe2403sp2.noarch     50/115 
+  Verifying        : perl-File-Fetch-1.04-1.oe2403sp2.noarch             51/115 
+  Verifying        : perl-File-Path-2.18-2.oe2403sp2.noarch              52/115 
+  Verifying        : perl-File-Temp-1:0.2311-3.oe2403sp2.noarch          53/115 
+  Verifying        : perl-Filter-2:1.64-1.oe2403sp2.loongarch64          54/115 
+  Verifying        : perl-Filter-Simple-1:0.94-2.oe2403sp2.noarch        55/115 
+  Verifying        : perl-Getopt-Long-1:2.57-1.oe2403sp2.noarch          56/115 
+  Verifying        : perl-HTTP-Tiny-0.088-1.oe2403sp2.noarch             57/115 
+  Verifying        : perl-IO-Compress-2.206-1.oe2403sp2.noarch           58/115 
+  Verifying        : perl-IO-Socket-IP-0.42-1.oe2403sp2.noarch           59/115 
+  Verifying        : perl-IPC-Cmd-2:1.04-4.oe2403sp2.noarch              60/115 
+  Verifying        : perl-IPC-SysV-2.09-2.oe2403sp2.loongarch64          61/115 
+  Verifying        : perl-IPC-System-Simple-1.30-3.oe2403sp2.noarch      62/115 
+  Verifying        : perl-JSON-PP-1:4.16-1.oe2403sp2.noarch              63/115 
+  Verifying        : perl-Locale-Codes-3.77-1.oe2403sp2.noarch           64/115 
+  Verifying        : perl-Locale-Maketext-1:1.33-1.oe2403sp2.noarch      65/115 
+  Verifying        : perl-MIME-Base64-3.16-2.oe2403sp2.loongarch64       66/115 
+  Verifying        : perl-Math-BigInt-1:2.0030.02-1.oe2403sp2.noarch     67/115 
+  Verifying        : perl-Math-BigInt-FastCalc-0.5018-1.oe2403sp2.loo    68/115 
+  Verifying        : perl-Module-CoreList-1:5.20231230-1.oe2403sp2.no    69/115 
+  Verifying        : perl-Module-Load-1:0.36-2.oe2403sp2.noarch          70/115 
+  Verifying        : perl-Module-Load-Conditional-0.74-2.oe2403sp2.no    71/115 
+  Verifying        : perl-Module-Metadata-1.000038-1.oe2403sp2.noarch    72/115 
+  Verifying        : perl-Params-Check-1:0.38-420.oe2403sp2.noarch       73/115 
+  Verifying        : perl-PathTools-3.89-1.oe2403sp2.loongarch64         74/115 
+  Verifying        : perl-Perl-OSType-1.010-422.oe2403sp2.noarch         75/115 
+  Verifying        : perl-PerlIO-via-QuotedPrint-0.10-1.oe2403sp2.noa    76/115 
+  Verifying        : perl-Pod-Checker-4:1.75-1.oe2403sp2.noarch          77/115 
+  Verifying        : perl-Pod-Escapes-1:1.07_01-1.oe2403sp2.noarch       78/115 
+  Verifying        : perl-Pod-Parser-1.66-1.oe2403sp2.noarch             79/115 
+  Verifying        : perl-Pod-Perldoc-1:3.28-5.oe2403sp2.noarch          80/115 
+  Verifying        : perl-Pod-Simple-1:3.45-1.oe2403sp2.noarch           81/115 
+  Verifying        : perl-Pod-Usage-4:2.03-2.oe2403sp2.noarch            82/115 
+  Verifying        : perl-Scalar-List-Utils-4:1.63-1.oe2403sp2.loonga    83/115 
+  Verifying        : perl-Socket-4:2.037-1.oe2403sp2.loongarch64         84/115 
+  Verifying        : perl-Storable-1:3.25-3.oe2403sp2.loongarch64        85/115 
+  Verifying        : perl-Sys-Syslog-0.36-2.oe2403sp2.loongarch64        86/115 
+  Verifying        : perl-Term-ANSIColor-5.01-2.oe2403sp2.noarch         87/115 
+  Verifying        : perl-Term-Cap-1.18-1.oe2403sp2.noarch               88/115 
+  Verifying        : perl-Test-Harness-2:3.48-1.oe2403sp2.noarch         89/115 
+  Verifying        : perl-Test-Simple-2:1.302198-1.oe2403sp2.noarch      90/115 
+  Verifying        : perl-Text-Balanced-2.06-1.oe2403sp2.noarch          91/115 
+  Verifying        : perl-Text-Diff-1.45-8.oe2403sp2.noarch              92/115 
+  Verifying        : perl-Text-ParseWords-3.30-420.oe2403sp2.noarch      93/115 
+  Verifying        : perl-Text-Tabs+Wrap-2023.0511-1.oe2403sp2.noarch    94/115 
+  Verifying        : perl-Thread-Queue-3.13-4.oe2403sp2.noarch           95/115 
+  Verifying        : perl-Time-HiRes-4:1.9775-1.oe2403sp2.loongarch64    96/115 
+  Verifying        : perl-Time-Local-2:1.350-1.oe2403sp2.noarch          97/115 
+  Verifying        : perl-Unicode-Collate-1.31-3.oe2403sp2.loongarch6    98/115 
+  Verifying        : perl-Unicode-Normalize-1.32-1.oe2403sp2.loongarc    99/115 
+  Verifying        : perl-autodie-2.36-1.oe2403sp2.noarch               100/115 
+  Verifying        : perl-bignum-0.66-3.oe2403sp2.noarch                101/115 
+  Verifying        : perl-constant-1.33-423.oe2403sp2.noarch            102/115 
+  Verifying        : perl-experimental-0.031-2.oe2403sp2.noarch         103/115 
+  Verifying        : perl-libnet-3.15-1.oe2403sp2.noarch                104/115 
+  Verifying        : perl-libs-4:5.38.0-10.oe2403sp2.loongarch64        105/115 
+  Verifying        : perl-parent-1:0.241-1.oe2403sp2.noarch             106/115 
+  Verifying        : perl-perlfaq-5.20230812-1.oe2403sp2.noarch         107/115 
+  Verifying        : perl-podlators-1:5.01-2.oe2403sp2.noarch           108/115 
+  Verifying        : perl-threads-2:2.36-2.oe2403sp2.loongarch64        109/115 
+  Verifying        : perl-threads-shared-1.62-2.oe2403sp2.loongarch64   110/115 
+  Verifying        : perl-version-8:0.99.30-1.oe2403sp2.loongarch64     111/115 
+  Verifying        : pkgconf-1.9.5-1.oe2403sp2.loongarch64              112/115 
+  Verifying        : popt-devel-1.19-4.oe2403sp2.loongarch64            113/115 
+  Verifying        : qt5-srpm-macros-5.15.10-6.oe2403sp2.noarch         114/115 
+  Verifying        : zip-3.0-32.oe2403sp2.loongarch64                   115/115 
+
+Installed:
+  autoconf-2.71-9.oe2403sp2.noarch                                              
+  automake-1.16.5-9.oe2403sp2.noarch                                            
+  binutils-2.41-16.oe2403sp2.loongarch64                                        
+  cpp-12.3.1-93.oe2403sp2.loongarch64                                           
+  efi-srpm-macros-4-10.oe2403sp2.noarch                                         
+  emacs-filesystem-1:29.1-5.oe2403sp2.noarch                                    
+  file-5.45-2.oe2403sp2.loongarch64                                             
+  findutils-2:4.9.0-1.oe2403sp2.loongarch64                                     
+  gc-8.2.4-1.oe2403sp2.loongarch64                                              
+  gcc-12.3.1-93.oe2403sp2.loongarch64                                           
+  glibc-devel-2.38-59.oe2403sp2.loongarch64                                     
+  groff-base-1.23.0-3.oe2403sp2.loongarch64                                     
+  guile-5:2.2.7-6.oe2403sp2.loongarch64                                         
+  kernel-headers-6.6.0-97.0.0.102.oe2403sp2.loongarch64                         
+  libmpc-1.3.1-2.oe2403sp2.loongarch64                                          
+  libnl3-3.7.0-5.oe2403sp2.loongarch64                                          
+  libnl3-devel-3.7.0-5.oe2403sp2.loongarch64                                    
+  libtool-2.4.7-4.oe2403sp2.loongarch64                                         
+  libtool-ltdl-2.4.7-4.oe2403sp2.loongarch64                                    
+  libxcrypt-devel-4.4.36-3.oe2403sp2.loongarch64                                
+  m4-1.4.19-5.oe2403sp2.loongarch64                                             
+  make-1:4.4.1-2.oe2403sp2.loongarch64                                          
+  mpfr-4.2.1-2.oe2403sp2.loongarch64                                            
+  openEuler-rpm-config-30-58.oe2403sp2.loongarch64                              
+  openssl-devel-1:3.0.12-17.oe2403sp2.loongarch64                               
+  perl-4:5.38.0-10.oe2403sp2.loongarch64                                        
+  perl-Algorithm-Diff-1:1.201-2.oe2403sp2.noarch                                
+  perl-Archive-Tar-3.02-1.oe2403sp2.noarch                                      
+  perl-B-Debug-1.26-7.oe2403sp2.noarch                                          
+  perl-CPAN-Meta-2.150010-421.oe2403sp2.noarch                                  
+  perl-CPAN-Meta-Requirements-2.143-2.oe2403sp2.noarch                          
+  perl-CPAN-Meta-YAML-0.018-421.oe2403sp2.noarch                                
+  perl-Carp-1.50-420.oe2403sp2.noarch                                           
+  perl-Compress-Raw-Bzip2-2.206-2.oe2403sp2.loongarch64                         
+  perl-Compress-Raw-Zlib-1:2.206-1.oe2403sp2.loongarch64                        
+  perl-Config-Perl-V-0.36-1.oe2403sp2.noarch                                    
+  perl-Data-Dumper-2.183-2.oe2403sp2.loongarch64                                
+  perl-Devel-PPPort-3.71-1.oe2403sp2.loongarch64                                
+  perl-Digest-1.20-4.oe2403sp2.noarch                                           
+  perl-Digest-MD5-2.58-2.oe2403sp2.loongarch64                                  
+  perl-Digest-SHA-1:6.04-1.oe2403sp2.loongarch64                                
+  perl-Encode-4:3.21-2.oe2403sp2.loongarch64                                    
+  perl-Encode-devel-4:3.21-2.oe2403sp2.loongarch64                              
+  perl-Env-1.04-398.oe2403sp2.noarch                                            
+  perl-Exporter-5.77-1.oe2403sp2.noarch                                         
+  perl-ExtUtils-Command-1:7.70-3.oe2403sp2.noarch                               
+  perl-ExtUtils-Install-2.22-1.oe2403sp2.noarch                                 
+  perl-ExtUtils-MakeMaker-1:7.70-3.oe2403sp2.noarch                             
+  perl-ExtUtils-Manifest-1:1.75-1.oe2403sp2.noarch                              
+  perl-ExtUtils-ParseXS-2:3.51-1.oe2403sp2.noarch                               
+  perl-File-Fetch-1.04-1.oe2403sp2.noarch                                       
+  perl-File-Path-2.18-2.oe2403sp2.noarch                                        
+  perl-File-Temp-1:0.2311-3.oe2403sp2.noarch                                    
+  perl-Filter-2:1.64-1.oe2403sp2.loongarch64                                    
+  perl-Filter-Simple-1:0.94-2.oe2403sp2.noarch                                  
+  perl-Getopt-Long-1:2.57-1.oe2403sp2.noarch                                    
+  perl-HTTP-Tiny-0.088-1.oe2403sp2.noarch                                       
+  perl-IO-Compress-2.206-1.oe2403sp2.noarch                                     
+  perl-IO-Socket-IP-0.42-1.oe2403sp2.noarch                                     
+  perl-IPC-Cmd-2:1.04-4.oe2403sp2.noarch                                        
+  perl-IPC-SysV-2.09-2.oe2403sp2.loongarch64                                    
+  perl-IPC-System-Simple-1.30-3.oe2403sp2.noarch                                
+  perl-JSON-PP-1:4.16-1.oe2403sp2.noarch                                        
+  perl-Locale-Codes-3.77-1.oe2403sp2.noarch                                     
+  perl-Locale-Maketext-1:1.33-1.oe2403sp2.noarch                                
+  perl-MIME-Base64-3.16-2.oe2403sp2.loongarch64                                 
+  perl-Math-BigInt-1:2.0030.02-1.oe2403sp2.noarch                               
+  perl-Math-BigInt-FastCalc-0.5018-1.oe2403sp2.loongarch64                      
+  perl-Module-CoreList-1:5.20231230-1.oe2403sp2.noarch                          
+  perl-Module-Load-1:0.36-2.oe2403sp2.noarch                                    
+  perl-Module-Load-Conditional-0.74-2.oe2403sp2.noarch                          
+  perl-Module-Metadata-1.000038-1.oe2403sp2.noarch                              
+  perl-Params-Check-1:0.38-420.oe2403sp2.noarch                                 
+  perl-PathTools-3.89-1.oe2403sp2.loongarch64                                   
+  perl-Perl-OSType-1.010-422.oe2403sp2.noarch                                   
+  perl-PerlIO-via-QuotedPrint-0.10-1.oe2403sp2.noarch                           
+  perl-Pod-Checker-4:1.75-1.oe2403sp2.noarch                                    
+  perl-Pod-Escapes-1:1.07_01-1.oe2403sp2.noarch                                 
+  perl-Pod-Parser-1.66-1.oe2403sp2.noarch                                       
+  perl-Pod-Perldoc-1:3.28-5.oe2403sp2.noarch                                    
+  perl-Pod-Simple-1:3.45-1.oe2403sp2.noarch                                     
+  perl-Pod-Usage-4:2.03-2.oe2403sp2.noarch                                      
+  perl-Scalar-List-Utils-4:1.63-1.oe2403sp2.loongarch64                         
+  perl-Socket-4:2.037-1.oe2403sp2.loongarch64                                   
+  perl-Storable-1:3.25-3.oe2403sp2.loongarch64                                  
+  perl-Sys-Syslog-0.36-2.oe2403sp2.loongarch64                                  
+  perl-Term-ANSIColor-5.01-2.oe2403sp2.noarch                                   
+  perl-Term-Cap-1.18-1.oe2403sp2.noarch                                         
+  perl-Test-Harness-2:3.48-1.oe2403sp2.noarch                                   
+  perl-Test-Simple-2:1.302198-1.oe2403sp2.noarch                                
+  perl-Text-Balanced-2.06-1.oe2403sp2.noarch                                    
+  perl-Text-Diff-1.45-8.oe2403sp2.noarch                                        
+  perl-Text-ParseWords-3.30-420.oe2403sp2.noarch                                
+  perl-Text-Tabs+Wrap-2023.0511-1.oe2403sp2.noarch                              
+  perl-Thread-Queue-3.13-4.oe2403sp2.noarch                                     
+  perl-Time-HiRes-4:1.9775-1.oe2403sp2.loongarch64                              
+  perl-Time-Local-2:1.350-1.oe2403sp2.noarch                                    
+  perl-Unicode-Collate-1.31-3.oe2403sp2.loongarch64                             
+  perl-Unicode-Normalize-1.32-1.oe2403sp2.loongarch64                           
+  perl-autodie-2.36-1.oe2403sp2.noarch                                          
+  perl-bignum-0.66-3.oe2403sp2.noarch                                           
+  perl-constant-1.33-423.oe2403sp2.noarch                                       
+  perl-experimental-0.031-2.oe2403sp2.noarch                                    
+  perl-libnet-3.15-1.oe2403sp2.noarch                                           
+  perl-libs-4:5.38.0-10.oe2403sp2.loongarch64                                   
+  perl-parent-1:0.241-1.oe2403sp2.noarch                                        
+  perl-perlfaq-5.20230812-1.oe2403sp2.noarch                                    
+  perl-podlators-1:5.01-2.oe2403sp2.noarch                                      
+  perl-threads-2:2.36-2.oe2403sp2.loongarch64                                   
+  perl-threads-shared-1.62-2.oe2403sp2.loongarch64                              
+  perl-version-8:0.99.30-1.oe2403sp2.loongarch64                                
+  pkgconf-1.9.5-1.oe2403sp2.loongarch64                                         
+  popt-devel-1.19-4.oe2403sp2.loongarch64                                       
+  qt5-srpm-macros-5.15.10-6.oe2403sp2.noarch                                    
+  zip-3.0-32.oe2403sp2.loongarch64                                              
+
+Complete!
++ return 0
++ for p in libnfnetlink-devel ipset-devel libmnl-devel libnftnl-devel libdbus-1-devel net-snmp-devel systemd-devel glib2-devel
++ retry_dnf libnfnetlink-devel
++ local i
++ for i in 1 2 3 4
++ dnf_install libnfnetlink-devel
++ dnf install -y --setopt=install_weak_deps=False --setopt=max_parallel_downloads=1 --setopt=retries=20 --setopt=timeout=120 --setopt=tsflags=nodocs libnfnetlink-devel
+Last metadata expiration check: 0:03:13 ago on Thu Nov 26 13:11:27 2026.
+Dependencies resolved.
+================================================================================
+ Package               Architecture   Version               Repository     Size
+================================================================================
+Installing:
+ libnfnetlink-devel    loongarch64    1.0.2-2.oe2403sp2     everything    8.0 k
+Installing dependencies:
+ libnfnetlink          loongarch64    1.0.2-2.oe2403sp2     OS             22 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 30 k
+Installed size: 64 k
+Downloading Packages:
+(1/2): libnfnetlink-1.0.2-2.oe2403sp2.loongarch 8.2 kB/s |  22 kB     00:02    
+(2/2): libnfnetlink-devel-1.0.2-2.oe2403sp2.loo  13 kB/s | 8.0 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           1.4 kB/s |  30 kB     00:21     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : libnfnetlink-1.0.2-2.oe2403sp2.loongarch64             1/2 
+  Installing       : libnfnetlink-devel-1.0.2-2.oe2403sp2.loongarch64       2/2 
+  Running scriptlet: libnfnetlink-devel-1.0.2-2.oe2403sp2.loongarch64       2/2 
+  Verifying        : libnfnetlink-1.0.2-2.oe2403sp2.loongarch64             1/2 
+  Verifying        : libnfnetlink-devel-1.0.2-2.oe2403sp2.loongarch64       2/2 
+
+Installed:
+  libnfnetlink-1.0.2-2.oe2403sp2.loongarch64                                    
+  libnfnetlink-devel-1.0.2-2.oe2403sp2.loongarch64                              
+
+Complete!
++ return 0
++ for p in libnfnetlink-devel ipset-devel libmnl-devel libnftnl-devel libdbus-1-devel net-snmp-devel systemd-devel glib2-devel
++ retry_dnf ipset-devel
++ local i
++ for i in 1 2 3 4
++ dnf_install ipset-devel
++ dnf install -y --setopt=install_weak_deps=False --setopt=max_parallel_downloads=1 --setopt=retries=20 --setopt=timeout=120 --setopt=tsflags=nodocs ipset-devel
+Last metadata expiration check: 0:03:38 ago on Thu Nov 26 13:11:27 2026.
+Dependencies resolved.
+================================================================================
+ Package          Architecture    Version                  Repository      Size
+================================================================================
+Installing:
+ ipset-devel      loongarch64     7.19-1.oe2403sp2         everything      16 k
+Installing dependencies:
+ ipset-libs       loongarch64     7.19-1.oe2403sp2         OS              59 k
+ libmnl           loongarch64     1.0.5-2.oe2403sp2        OS              21 k
+ libmnl-devel     loongarch64     1.0.5-2.oe2403sp2        OS              43 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total download size: 138 k
+Installed size: 640 k
+Downloading Packages:
+(1/4): ipset-libs-7.19-1.oe2403sp2.loongarch64.  58 kB/s |  59 kB     00:01    
+(2/4): libmnl-1.0.5-2.oe2403sp2.loongarch64.rpm 104 kB/s |  21 kB     00:00    
+(3/4): libmnl-devel-1.0.5-2.oe2403sp2.loongarch 209 kB/s |  43 kB     00:00    
+(4/4): ipset-devel-7.19-1.oe2403sp2.loongarch64  78 kB/s |  16 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           9.8 kB/s | 138 kB     00:14     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : libmnl-1.0.5-2.oe2403sp2.loongarch64                   1/4 
+  Running scriptlet: libmnl-1.0.5-2.oe2403sp2.loongarch64                   1/4 
+  Installing       : ipset-libs-7.19-1.oe2403sp2.loongarch64                2/4 
+  Installing       : libmnl-devel-1.0.5-2.oe2403sp2.loongarch64             3/4 
+  Installing       : ipset-devel-7.19-1.oe2403sp2.loongarch64               4/4 
+  Running scriptlet: ipset-devel-7.19-1.oe2403sp2.loongarch64               4/4 
+  Verifying        : ipset-libs-7.19-1.oe2403sp2.loongarch64                1/4 
+  Verifying        : libmnl-1.0.5-2.oe2403sp2.loongarch64                   2/4 
+  Verifying        : libmnl-devel-1.0.5-2.oe2403sp2.loongarch64             3/4 
+  Verifying        : ipset-devel-7.19-1.oe2403sp2.loongarch64               4/4 
+
+Installed:
+  ipset-devel-7.19-1.oe2403sp2.loongarch64                                      
+  ipset-libs-7.19-1.oe2403sp2.loongarch64                                       
+  libmnl-1.0.5-2.oe2403sp2.loongarch64                                          
+  libmnl-devel-1.0.5-2.oe2403sp2.loongarch64                                    
+
+Complete!
++ return 0
++ for p in libnfnetlink-devel ipset-devel libmnl-devel libnftnl-devel libdbus-1-devel net-snmp-devel systemd-devel glib2-devel
++ retry_dnf libmnl-devel
++ local i
++ for i in 1 2 3 4
++ dnf_install libmnl-devel
++ dnf install -y --setopt=install_weak_deps=False --setopt=max_parallel_downloads=1 --setopt=retries=20 --setopt=timeout=120 --setopt=tsflags=nodocs libmnl-devel
+Last metadata expiration check: 0:03:57 ago on Thu Nov 26 13:11:27 2026.
+Package libmnl-devel-1.0.5-2.oe2403sp2.loongarch64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
++ return 0
++ for p in libnfnetlink-devel ipset-devel libmnl-devel libnftnl-devel libdbus-1-devel net-snmp-devel systemd-devel glib2-devel
++ retry_dnf libnftnl-devel
++ local i
++ for i in 1 2 3 4
++ dnf_install libnftnl-devel
++ dnf install -y --setopt=install_weak_deps=False --setopt=max_parallel_downloads=1 --setopt=retries=20 --setopt=timeout=120 --setopt=tsflags=nodocs libnftnl-devel
+Last metadata expiration check: 0:03:59 ago on Thu Nov 26 13:11:27 2026.
+Dependencies resolved.
+================================================================================
+ Package            Architecture    Version                Repository      Size
+================================================================================
+Installing:
+ libnftnl-devel     loongarch64     1.2.6-2.oe2403sp2      everything      13 k
+Installing dependencies:
+ libnftnl           loongarch64     1.2.6-2.oe2403sp2      OS              70 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 83 k
+Installed size: 308 k
+Downloading Packages:
+(1/2): libnftnl-1.2.6-2.oe2403sp2.loongarch64.r  45 kB/s |  70 kB     00:01    
+(2/2): libnftnl-devel-1.2.6-2.oe2403sp2.loongar  65 kB/s |  13 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           4.2 kB/s |  83 kB     00:19     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : libnftnl-1.2.6-2.oe2403sp2.loongarch64                 1/2 
+  Installing       : libnftnl-devel-1.2.6-2.oe2403sp2.loongarch64           2/2 
+  Running scriptlet: libnftnl-devel-1.2.6-2.oe2403sp2.loongarch64           2/2 
+  Verifying        : libnftnl-1.2.6-2.oe2403sp2.loongarch64                 1/2 
+  Verifying        : libnftnl-devel-1.2.6-2.oe2403sp2.loongarch64           2/2 
+
+Installed:
+  libnftnl-1.2.6-2.oe2403sp2.loongarch64                                        
+  libnftnl-devel-1.2.6-2.oe2403sp2.loongarch64                                  
+
+Complete!
++ return 0
++ for p in libnfnetlink-devel ipset-devel libmnl-devel libnftnl-devel libdbus-1-devel net-snmp-devel systemd-devel glib2-devel
++ retry_dnf libdbus-1-devel
++ local i
++ for i in 1 2 3 4
++ dnf_install libdbus-1-devel
++ dnf install -y --setopt=install_weak_deps=False --setopt=max_parallel_downloads=1 --setopt=retries=20 --setopt=timeout=120 --setopt=tsflags=nodocs libdbus-1-devel
+Last metadata expiration check: 0:04:23 ago on Thu Nov 26 13:11:27 2026.
+No match for argument: libdbus-1-devel
+Error: Unable to find a match: libdbus-1-devel
++ echo 'WARNING: dnf install failed (attempt 1), retrying: libdbus-1-devel'
+WARNING: dnf install failed (attempt 1), retrying: libdbus-1-devel
++ dnf clean packages
++ sleep 10
++ for i in 1 2 3 4
++ dnf_install libdbus-1-devel
++ dnf install -y --setopt=install_weak_deps=False --setopt=max_parallel_downloads=1 --setopt=retries=20 --setopt=timeout=120 --setopt=tsflags=nodocs libdbus-1-devel
+Last metadata expiration check: 0:04:37 ago on Thu Nov 26 13:11:27 2026.
+No match for argument: libdbus-1-devel
+Error: Unable to find a match: libdbus-1-devel
++ echo 'WARNING: dnf install failed (attempt 2), retrying: libdbus-1-devel'
++ dnf clean packages
+WARNING: dnf install failed (attempt 2), retrying: libdbus-1-devel
++ sleep 10
++ for i in 1 2 3 4
++ dnf_install libdbus-1-devel
++ dnf install -y --setopt=install_weak_deps=False --setopt=max_parallel_downloads=1 --setopt=retries=20 --setopt=timeout=120 --setopt=tsflags=nodocs libdbus-1-devel
+Last metadata expiration check: 0:04:51 ago on Thu Nov 26 13:11:27 2026.
+No match for argument: libdbus-1-devel
+Error: Unable to find a match: libdbus-1-devel
+WARNING: dnf install failed (attempt 3), retrying: libdbus-1-devel
++ echo 'WARNING: dnf install failed (attempt 3), retrying: libdbus-1-devel'
++ dnf clean packages
++ sleep 10
++ for i in 1 2 3 4
++ dnf_install libdbus-1-devel
++ dnf install -y --setopt=install_weak_deps=False --setopt=max_parallel_downloads=1 --setopt=retries=20 --setopt=timeout=120 --setopt=tsflags=nodocs libdbus-1-devel
+Last metadata expiration check: 0:05:05 ago on Thu Nov 26 13:11:27 2026.
+No match for argument: libdbus-1-devel
+Error: Unable to find a match: libdbus-1-devel
++ echo 'WARNING: dnf install failed (attempt 4), retrying: libdbus-1-devel'
++ dnf clean packages
+WARNING: dnf install failed (attempt 4), retrying: libdbus-1-devel
++ sleep 10
++ return 1
+WARNING: optional package libdbus-1-devel not available
++ echo 'WARNING: optional package libdbus-1-devel not available'
++ for p in libnfnetlink-devel ipset-devel libmnl-devel libnftnl-devel libdbus-1-devel net-snmp-devel systemd-devel glib2-devel
++ retry_dnf net-snmp-devel
++ local i
++ for i in 1 2 3 4
++ dnf_install net-snmp-devel
++ dnf install -y --setopt=install_weak_deps=False --setopt=max_parallel_downloads=1 --setopt=retries=20 --setopt=timeout=120 --setopt=tsflags=nodocs net-snmp-devel
+Last metadata expiration check: 0:05:20 ago on Thu Nov 26 13:11:27 2026.
+Dependencies resolved.
+================================================================================
+ Package                  Architecture   Version                    Repo   Size
+================================================================================
+Installing:
+ net-snmp-devel           loongarch64    1:5.9.3-4.oe2403sp2        OS    168 k
+Installing dependencies:
+ acl                      loongarch64    2.3.1-3.oe2403sp2          OS     47 k
+ dbus                     loongarch64    1:1.14.8-3.oe2403sp2       OS     69 k
+ dbus-common              noarch         1:1.14.8-3.oe2403sp2       OS    8.1 k
+ dbus-daemon              loongarch64    1:1.14.8-3.oe2403sp2       OS    177 k
+ dbus-libs                loongarch64    1:1.14.8-3.oe2403sp2       OS    142 k
+ dbus-tools               loongarch64    1:1.14.8-3.oe2403sp2       OS     21 k
+ elfutils-devel           loongarch64    0.190-10.oe2403sp2         OS    947 k
+ elfutils-libelf-devel    loongarch64    0.190-10.oe2403sp2         OS     14 k
+ kmod                     loongarch64    30-4.oe2403sp2             OS     84 k
+ kmod-libs                loongarch64    30-4.oe2403sp2             OS     55 k
+ libseccomp               loongarch64    2.5.4-3.oe2403sp2          OS     56 k
+ libsemanage              loongarch64    3.5-7.oe2403sp2            OS     99 k
+ lm_sensors               loongarch64    3.6.0-8.oe2403sp2          OS    128 k
+ lm_sensors-devel         loongarch64    3.6.0-8.oe2403sp2          OS    7.9 k
+ mariadb-connector-c      loongarch64    3.3.8-3.oe2403sp2          OS    182 k
+ net-snmp                 loongarch64    1:5.9.3-4.oe2403sp2        OS    779 k
+ net-snmp-libs            loongarch64    1:5.9.3-4.oe2403sp2        OS    600 k
+ perl-devel               loongarch64    4:5.38.0-10.oe2403sp2      OS    2.2 M
+ python3-pyparsing        noarch         3.1.1-1.oe2403sp2          OS    276 k
+ rpm-devel                loongarch64    4.18.2-23.oe2403sp2        OS     78 k
+ shadow                   loongarch64    2:4.14.3-8.oe2403sp2       OS    640 k
+ shadow-subid-devel       loongarch64    2:4.14.3-8.oe2403sp2       OS     65 k
+ systemd                  loongarch64    255-43.oe2403sp2           OS    3.6 M
+ systemtap-sdt-devel      loongarch64    5.0-3.oe2403sp2            OS     16 k
+ xz                       loongarch64    5.4.7-6.oe2403sp2          OS    316 k
+ xz-devel                 loongarch64    5.4.7-6.oe2403sp2          OS    309 k
+ zlib-devel               loongarch64    1.2.13-4.oe2403sp2         OS    142 k
+ zstd-devel               loongarch64    1.5.5-3.oe2403sp2          OS    1.3 M
+
+Transaction Summary
+================================================================================
+Install  29 Packages
+
+Total download size: 12 M
+Installed size: 67 M
+Downloading Packages:
+(1/29): acl-2.3.1-3.oe2403sp2.loongarch64.rpm    30 kB/s |  47 kB     00:01    
+(2/29): dbus-1.14.8-3.oe2403sp2.loongarch64.rpm  48 kB/s |  69 kB     00:01    
+(3/29): dbus-common-1.14.8-3.oe2403sp2.noarch.r  40 kB/s | 8.1 kB     00:00    
+(4/29): dbus-daemon-1.14.8-3.oe2403sp2.loongarc  74 kB/s | 177 kB     00:02    
+(5/29): dbus-libs-1.14.8-3.oe2403sp2.loongarch6  80 kB/s | 142 kB     00:01    
+(6/29): dbus-tools-1.14.8-3.oe2403sp2.loongarch  53 kB/s |  21 kB     00:00    
+(7/29): elfutils-devel-0.190-10.oe2403sp2.loong 125 kB/s | 947 kB     00:07    
+(8/29): elfutils-libelf-devel-0.190-10.oe2403sp  68 kB/s |  14 kB     00:00    
+(9/29): kmod-30-4.oe2403sp2.loongarch64.rpm     208 kB/s |  84 kB     00:00    
+(10/29): kmod-libs-30-4.oe2403sp2.loongarch64.r 135 kB/s |  55 kB     00:00    
+(11/29): libseccomp-2.5.4-3.oe2403sp2.loongarch 140 kB/s |  56 kB     00:00    
+(12/29): libsemanage-3.5-7.oe2403sp2.loongarch6 166 kB/s |  99 kB     00:00    
+(13/29): lm_sensors-3.6.0-8.oe2403sp2.loongarch 213 kB/s | 128 kB     00:00    
+(14/29): lm_sensors-devel-3.6.0-8.oe2403sp2.loo  39 kB/s | 7.9 kB     00:00    
+(15/29): mariadb-connector-c-3.3.8-3.oe2403sp2. 228 kB/s | 182 kB     00:00    
+(16/29): net-snmp-5.9.3-4.oe2403sp2.loongarch64 278 kB/s | 779 kB     00:02    
+(17/29): net-snmp-devel-5.9.3-4.oe2403sp2.loong 210 kB/s | 168 kB     00:00    
+(18/29): net-snmp-libs-5.9.3-4.oe2403sp2.loonga 301 kB/s | 600 kB     00:01    
+(19/29): perl-devel-5.38.0-10.oe2403sp2.loongar 592 kB/s | 2.2 MB     00:03    
+(20/29): python3-pyparsing-3.1.1-1.oe2403sp2.no 677 kB/s | 276 kB     00:00    
+(21/29): rpm-devel-4.18.2-23.oe2403sp2.loongarc 376 kB/s |  78 kB     00:00    
+(22/29): shadow-4.14.3-8.oe2403sp2.loongarch64. 1.0 MB/s | 640 kB     00:00    
+(23/29): shadow-subid-devel-4.14.3-8.oe2403sp2. 320 kB/s |  65 kB     00:00    
+(24/29): systemd-255-43.oe2403sp2.loongarch64.r 1.6 MB/s | 3.6 MB     00:02    
+(25/29): systemtap-sdt-devel-5.0-3.oe2403sp2.lo  77 kB/s |  16 kB     00:00    
+(26/29): xz-5.4.7-6.oe2403sp2.loongarch64.rpm   1.4 MB/s | 316 kB     00:00    
+(27/29): xz-devel-5.4.7-6.oe2403sp2.loongarch64 1.4 MB/s | 309 kB     00:00    
+(28/29): zlib-devel-1.2.13-4.oe2403sp2.loongarc 678 kB/s | 142 kB     00:00    
+(29/29): zstd-devel-1.5.5-3.oe2403sp2.loongarch 1.3 MB/s | 1.3 MB     00:01    
+--------------------------------------------------------------------------------
+Total                                           291 kB/s |  12 MB     00:43     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Running scriptlet: mariadb-connector-c-3.3.8-3.oe2403sp2.loongarch64      1/1 
+  Preparing        :                                                        1/1 
+  Installing       : zstd-devel-1.5.5-3.oe2403sp2.loongarch64              1/29 
+  Installing       : zlib-devel-1.2.13-4.oe2403sp2.loongarch64             2/29 
+  Installing       : elfutils-libelf-devel-0.190-10.oe2403sp2.loongarch    3/29 
+  Installing       : net-snmp-libs-1:5.9.3-4.oe2403sp2.loongarch64         4/29 
+  Installing       : libsemanage-3.5-7.oe2403sp2.loongarch64               5/29 
+  Installing       : dbus-libs-1:1.14.8-3.oe2403sp2.loongarch64            6/29 
+  Running scriptlet: dbus-libs-1:1.14.8-3.oe2403sp2.loongarch64            6/29 
+  Installing       : dbus-tools-1:1.14.8-3.oe2403sp2.loongarch64           7/29 
+  Installing       : shadow-subid-devel-2:4.14.3-8.oe2403sp2.loongarch6    8/29 
+  Installing       : shadow-2:4.14.3-8.oe2403sp2.loongarch64               9/29 
+  Installing       : rpm-devel-4.18.2-23.oe2403sp2.loongarch64            10/29 
+  Installing       : xz-5.4.7-6.oe2403sp2.loongarch64                     11/29 
+  Installing       : xz-devel-5.4.7-6.oe2403sp2.loongarch64               12/29 
+  Installing       : elfutils-devel-0.190-10.oe2403sp2.loongarch64        13/29 
+  Installing       : python3-pyparsing-3.1.1-1.oe2403sp2.noarch           14/29 
+  Installing       : systemtap-sdt-devel-5.0-3.oe2403sp2.loongarch64      15/29 
+  Installing       : perl-devel-4:5.38.0-10.oe2403sp2.loongarch64         16/29 
+  Installing       : mariadb-connector-c-3.3.8-3.oe2403sp2.loongarch64    17/29 
+  Running scriptlet: libseccomp-2.5.4-3.oe2403sp2.loongarch64             18/29 
+  Installing       : libseccomp-2.5.4-3.oe2403sp2.loongarch64             18/29 
+  Running scriptlet: libseccomp-2.5.4-3.oe2403sp2.loongarch64             18/29 
+  Installing       : kmod-libs-30-4.oe2403sp2.loongarch64                 19/29 
+  Installing       : kmod-30-4.oe2403sp2.loongarch64                      20/29 
+  Running scriptlet: kmod-30-4.oe2403sp2.loongarch64                      20/29 
+  Installing       : acl-2.3.1-3.oe2403sp2.loongarch64                    21/29 
+  Installing       : dbus-1:1.14.8-3.oe2403sp2.loongarch64                22/29 
+  Running scriptlet: systemd-255-43.oe2403sp2.loongarch64                 23/29 
+  Installing       : systemd-255-43.oe2403sp2.loongarch64                 23/29 
+  Running scriptlet: systemd-255-43.oe2403sp2.loongarch64                 23/29 
+  Installing       : dbus-common-1:1.14.8-3.oe2403sp2.noarch              24/29 
+  Running scriptlet: dbus-daemon-1:1.14.8-3.oe2403sp2.loongarch64         25/29 
+  Installing       : dbus-daemon-1:1.14.8-3.oe2403sp2.loongarch64         25/29 
+  Running scriptlet: dbus-daemon-1:1.14.8-3.oe2403sp2.loongarch64         25/29 
+  Installing       : lm_sensors-3.6.0-8.oe2403sp2.loongarch64             26/29 
+  Running scriptlet: lm_sensors-3.6.0-8.oe2403sp2.loongarch64             26/29 
+Created symlink /etc/systemd/system/multi-user.target.wants/lm_sensors.service → /usr/lib/systemd/system/lm_sensors.service.
+
+  Installing       : lm_sensors-devel-3.6.0-8.oe2403sp2.loongarch64       27/29 
+  Installing       : net-snmp-1:5.9.3-4.oe2403sp2.loongarch64             28/29 
+  Running scriptlet: net-snmp-1:5.9.3-4.oe2403sp2.loongarch64             28/29 
+  Installing       : net-snmp-devel-1:5.9.3-4.oe2403sp2.loongarch64       29/29 
+  Running scriptlet: net-snmp-devel-1:5.9.3-4.oe2403sp2.loongarch64       29/29 
+  Running scriptlet: systemd-255-43.oe2403sp2.loongarch64                 29/29 
+  Verifying        : acl-2.3.1-3.oe2403sp2.loongarch64                     1/29 
+  Verifying        : dbus-1:1.14.8-3.oe2403sp2.loongarch64                 2/29 
+  Verifying        : dbus-common-1:1.14.8-3.oe2403sp2.noarch               3/29 
+  Verifying        : dbus-daemon-1:1.14.8-3.oe2403sp2.loongarch64          4/29 
+  Verifying        : dbus-libs-1:1.14.8-3.oe2403sp2.loongarch64            5/29 
+  Verifying        : dbus-tools-1:1.14.8-3.oe2403sp2.loongarch64           6/29 
+  Verifying        : elfutils-devel-0.190-10.oe2403sp2.loongarch64         7/29 
+  Verifying        : elfutils-libelf-devel-0.190-10.oe2403sp2.loongarch    8/29 
+  Verifying        : kmod-30-4.oe2403sp2.loongarch64                       9/29 
+  Verifying        : kmod-libs-30-4.oe2403sp2.loongarch64                 10/29 
+  Verifying        : libseccomp-2.5.4-3.oe2403sp2.loongarch64             11/29 
+  Verifying        : libsemanage-3.5-7.oe2403sp2.loongarch64              12/29 
+  Verifying        : lm_sensors-3.6.0-8.oe2403sp2.loongarch64             13/29 
+  Verifying        : lm_sensors-devel-3.6.0-8.oe2403sp2.loongarch64       14/29 
+  Verifying        : mariadb-connector-c-3.3.8-3.oe2403sp2.loongarch64    15/29 
+  Verifying        : net-snmp-1:5.9.3-4.oe2403sp2.loongarch64             16/29 
+  Verifying        : net-snmp-devel-1:5.9.3-4.oe2403sp2.loongarch64       17/29 
+  Verifying        : net-snmp-libs-1:5.9.3-4.oe2403sp2.loongarch64        18/29 
+  Verifying        : perl-devel-4:5.38.0-10.oe2403sp2.loongarch64         19/29 
+  Verifying        : python3-pyparsing-3.1.1-1.oe2403sp2.noarch           20/29 
+  Verifying        : rpm-devel-4.18.2-23.oe2403sp2.loongarch64            21/29 
+  Verifying        : shadow-2:4.14.3-8.oe2403sp2.loongarch64              22/29 
+  Verifying        : shadow-subid-devel-2:4.14.3-8.oe2403sp2.loongarch6   23/29 
+  Verifying        : systemd-255-43.oe2403sp2.loongarch64                 24/29 
+  Verifying        : systemtap-sdt-devel-5.0-3.oe2403sp2.loongarch64      25/29 
+  Verifying        : xz-5.4.7-6.oe2403sp2.loongarch64                     26/29 
+  Verifying        : xz-devel-5.4.7-6.oe2403sp2.loongarch64               27/29 
+  Verifying        : zlib-devel-1.2.13-4.oe2403sp2.loongarch64            28/29 
+  Verifying        : zstd-devel-1.5.5-3.oe2403sp2.loongarch64             29/29 
+
+Installed:
+  acl-2.3.1-3.oe2403sp2.loongarch64                                             
+  dbus-1:1.14.8-3.oe2403sp2.loongarch64                                         
+  dbus-common-1:1.14.8-3.oe2403sp2.noarch                                       
+  dbus-daemon-1:1.14.8-3.oe2403sp2.loongarch64                                  
+  dbus-libs-1:1.14.8-3.oe2403sp2.loongarch64                                    
+  dbus-tools-1:1.14.8-3.oe2403sp2.loongarch64                                   
+  elfutils-devel-0.190-10.oe2403sp2.loongarch64                                 
+  elfutils-libelf-devel-0.190-10.oe2403sp2.loongarch64                          
+  kmod-30-4.oe2403sp2.loongarch64                                               
+  kmod-libs-30-4.oe2403sp2.loongarch64                                          
+  libseccomp-2.5.4-3.oe2403sp2.loongarch64                                      
+  libsemanage-3.5-7.oe2403sp2.loongarch64                                       
+  lm_sensors-3.6.0-8.oe2403sp2.loongarch64                                      
+  lm_sensors-devel-3.6.0-8.oe2403sp2.loongarch64                                
+  mariadb-connector-c-3.3.8-3.oe2403sp2.loongarch64                             
+  net-snmp-1:5.9.3-4.oe2403sp2.loongarch64                                      
+  net-snmp-devel-1:5.9.3-4.oe2403sp2.loongarch64                                
+  net-snmp-libs-1:5.9.3-4.oe2403sp2.loongarch64                                 
+  perl-devel-4:5.38.0-10.oe2403sp2.loongarch64                                  
+  python3-pyparsing-3.1.1-1.oe2403sp2.noarch                                    
+  rpm-devel-4.18.2-23.oe2403sp2.loongarch64                                     
+  shadow-2:4.14.3-8.oe2403sp2.loongarch64                                       
+  shadow-subid-devel-2:4.14.3-8.oe2403sp2.loongarch64                           
+  systemd-255-43.oe2403sp2.loongarch64                                          
+  systemtap-sdt-devel-5.0-3.oe2403sp2.loongarch64                               
+  xz-5.4.7-6.oe2403sp2.loongarch64                                              
+  xz-devel-5.4.7-6.oe2403sp2.loongarch64                                        
+  zlib-devel-1.2.13-4.oe2403sp2.loongarch64                                     
+  zstd-devel-1.5.5-3.oe2403sp2.loongarch64                                      
+
+Complete!
++ return 0
++ for p in libnfnetlink-devel ipset-devel libmnl-devel libnftnl-devel libdbus-1-devel net-snmp-devel systemd-devel glib2-devel
++ retry_dnf systemd-devel
++ local i
++ for i in 1 2 3 4
++ dnf_install systemd-devel
++ dnf install -y --setopt=install_weak_deps=False --setopt=max_parallel_downloads=1 --setopt=retries=20 --setopt=timeout=120 --setopt=tsflags=nodocs systemd-devel
+Last metadata expiration check: 0:06:21 ago on Thu Nov 26 13:11:27 2026.
+Dependencies resolved.
+================================================================================
+ Package             Architecture      Version                   Repo      Size
+================================================================================
+Installing:
+ systemd-devel       loongarch64       255-43.oe2403sp2          OS       502 k
+Installing dependencies:
+ systemd-pam         loongarch64       255-43.oe2403sp2          OS       226 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 729 k
+Installed size: 1.1 M
+Downloading Packages:
+(1/2): systemd-devel-255-43.oe2403sp2.loongarch  35 kB/s | 502 kB     00:14    
+(2/2): systemd-pam-255-43.oe2403sp2.loongarch64 114 kB/s | 226 kB     00:01    
+--------------------------------------------------------------------------------
+Total                                            33 kB/s | 729 kB     00:21     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : systemd-pam-255-43.oe2403sp2.loongarch64               1/2 
+  Installing       : systemd-devel-255-43.oe2403sp2.loongarch64             2/2 
+  Running scriptlet: systemd-devel-255-43.oe2403sp2.loongarch64             2/2 
+  Verifying        : systemd-devel-255-43.oe2403sp2.loongarch64             1/2 
+  Verifying        : systemd-pam-255-43.oe2403sp2.loongarch64               2/2 
+
+Installed:
+  systemd-devel-255-43.oe2403sp2.loongarch64                                    
+  systemd-pam-255-43.oe2403sp2.loongarch64                                      
+
+Complete!
++ return 0
++ for p in libnfnetlink-devel ipset-devel libmnl-devel libnftnl-devel libdbus-1-devel net-snmp-devel systemd-devel glib2-devel
++ retry_dnf glib2-devel
++ local i
++ for i in 1 2 3 4
++ dnf_install glib2-devel
++ dnf install -y --setopt=install_weak_deps=False --setopt=max_parallel_downloads=1 --setopt=retries=20 --setopt=timeout=120 --setopt=tsflags=nodocs glib2-devel
+Last metadata expiration check: 0:06:47 ago on Thu Nov 26 13:11:27 2026.
+Dependencies resolved.
+================================================================================
+ Package               Architecture     Version                   Repo     Size
+================================================================================
+Installing:
+ glib2-devel           loongarch64      2.78.3-8.oe2403sp2        OS      458 k
+Installing dependencies:
+ babeltrace            loongarch64      1.5.11-1.oe2403sp2        OS      202 k
+ gdb-headless          loongarch64      14.1-4.oe2403sp2          OS      3.6 M
+ libfdisk              loongarch64      2.39.1-22.oe2403sp2       OS      213 k
+ libffi-devel          loongarch64      3.4.4-4.oe2403sp2         OS      8.5 k
+ libselinux-devel      loongarch64      3.5-4.oe2403sp2           OS      232 k
+ libsepol-devel        loongarch64      3.5-10.oe2403sp2          OS      1.0 M
+ libutempter           loongarch64      1.2.1-3.oe2403sp2         OS       18 k
+ pcre2-devel           loongarch64      10.42-13.oe2403sp2        OS      946 k
+ util-linux            loongarch64      2.39.1-22.oe2403sp2       OS      2.8 M
+ util-linux-devel      loongarch64      2.39.1-22.oe2403sp2       OS       30 k
+
+Transaction Summary
+================================================================================
+Install  11 Packages
+
+Total download size: 9.4 M
+Installed size: 52 M
+Downloading Packages:
+(1/11): babeltrace-1.5.11-1.oe2403sp2.loongarch  94 kB/s | 202 kB     00:02    
+(2/11): gdb-headless-14.1-4.oe2403sp2.loongarch 362 kB/s | 3.6 MB     00:10    
+(3/11): glib2-devel-2.78.3-8.oe2403sp2.loongarc 1.1 MB/s | 458 kB     00:00    
+(4/11): libfdisk-2.39.1-22.oe2403sp2.loongarch6 993 kB/s | 213 kB     00:00    
+(5/11): libffi-devel-3.4.4-4.oe2403sp2.loongarc  42 kB/s | 8.5 kB     00:00    
+(6/11): libselinux-devel-3.5-4.oe2403sp2.loonga 1.1 MB/s | 232 kB     00:00    
+(7/11): libsepol-devel-3.5-10.oe2403sp2.loongar 1.2 MB/s | 1.0 MB     00:00    
+(8/11): libutempter-1.2.1-3.oe2403sp2.loongarch  90 kB/s |  18 kB     00:00    
+(9/11): pcre2-devel-10.42-13.oe2403sp2.loongarc 1.5 MB/s | 946 kB     00:00    
+(10/11): util-linux-2.39.1-22.oe2403sp2.loongar 2.2 MB/s | 2.8 MB     00:01    
+(11/11): util-linux-devel-2.39.1-22.oe2403sp2.l 142 kB/s |  30 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                           408 kB/s | 9.4 MB     00:23     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : pcre2-devel-10.42-13.oe2403sp2.loongarch64            1/11 
+  Running scriptlet: libutempter-1.2.1-3.oe2403sp2.loongarch64             2/11 
+  Installing       : libutempter-1.2.1-3.oe2403sp2.loongarch64             2/11 
+  Installing       : libsepol-devel-3.5-10.oe2403sp2.loongarch64           3/11 
+  Installing       : libselinux-devel-3.5-4.oe2403sp2.loongarch64          4/11 
+  Installing       : libffi-devel-3.4.4-4.oe2403sp2.loongarch64            5/11 
+  Installing       : libfdisk-2.39.1-22.oe2403sp2.loongarch64              6/11 
+  Running scriptlet: libfdisk-2.39.1-22.oe2403sp2.loongarch64              6/11 
+  Installing       : util-linux-2.39.1-22.oe2403sp2.loongarch64            7/11 
+  Running scriptlet: util-linux-2.39.1-22.oe2403sp2.loongarch64            7/11 
+  Installing       : util-linux-devel-2.39.1-22.oe2403sp2.loongarch64      8/11 
+  Running scriptlet: babeltrace-1.5.11-1.oe2403sp2.loongarch64             9/11 
+  Installing       : babeltrace-1.5.11-1.oe2403sp2.loongarch64             9/11 
+  Running scriptlet: babeltrace-1.5.11-1.oe2403sp2.loongarch64             9/11 
+  Installing       : gdb-headless-14.1-4.oe2403sp2.loongarch64            10/11 
+  Installing       : glib2-devel-2.78.3-8.oe2403sp2.loongarch64           11/11 
+  Running scriptlet: glib2-devel-2.78.3-8.oe2403sp2.loongarch64           11/11 
+  Verifying        : babeltrace-1.5.11-1.oe2403sp2.loongarch64             1/11 
+  Verifying        : gdb-headless-14.1-4.oe2403sp2.loongarch64             2/11 
+  Verifying        : glib2-devel-2.78.3-8.oe2403sp2.loongarch64            3/11 
+  Verifying        : libfdisk-2.39.1-22.oe2403sp2.loongarch64              4/11 
+  Verifying        : libffi-devel-3.4.4-4.oe2403sp2.loongarch64            5/11 
+  Verifying        : libselinux-devel-3.5-4.oe2403sp2.loongarch64          6/11 
+  Verifying        : libsepol-devel-3.5-10.oe2403sp2.loongarch64           7/11 
+  Verifying        : libutempter-1.2.1-3.oe2403sp2.loongarch64             8/11 
+  Verifying        : pcre2-devel-10.42-13.oe2403sp2.loongarch64            9/11 
+  Verifying        : util-linux-2.39.1-22.oe2403sp2.loongarch64           10/11 
+  Verifying        : util-linux-devel-2.39.1-22.oe2403sp2.loongarch64     11/11 
+
+Installed:
+  babeltrace-1.5.11-1.oe2403sp2.loongarch64                                     
+  gdb-headless-14.1-4.oe2403sp2.loongarch64                                     
+  glib2-devel-2.78.3-8.oe2403sp2.loongarch64                                    
+  libfdisk-2.39.1-22.oe2403sp2.loongarch64                                      
+  libffi-devel-3.4.4-4.oe2403sp2.loongarch64                                    
+  libselinux-devel-3.5-4.oe2403sp2.loongarch64                                  
+  libsepol-devel-3.5-10.oe2403sp2.loongarch64                                   
+  libutempter-1.2.1-3.oe2403sp2.loongarch64                                     
+  pcre2-devel-10.42-13.oe2403sp2.loongarch64                                    
+  util-linux-2.39.1-22.oe2403sp2.loongarch64                                    
+  util-linux-devel-2.39.1-22.oe2403sp2.loongarch64                              
+
+Complete!
++ return 0
++ rm -rf /build
++ mkdir -p /build
++ tar -C /src --exclude=./.git --exclude=./out --exclude=./pkgcache -cf - .
++ tar -C /build -xf -
++ cd /build
+++ sed -n 's/^AC_INIT(\[Keepalived\], \[\([^]]*\)\].*/\1/p' configure.ac
++ VERSION=2.3.2
++ echo 'Building keepalived 2.3.2'
+Building keepalived 2.3.2
++ ./autogen.sh
+aclocal: installing 'm4/pkg.m4' from '/usr/share/aclocal/pkg.m4'
+configure.ac:423: installing 'build-aux/ar-lib'
+configure.ac:413: installing 'build-aux/compile'
+configure.ac:101: installing 'build-aux/install-sh'
+configure.ac:101: installing 'build-aux/missing'
+keepalived/Makefile.am: installing 'build-aux/depcomp'
++ ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --runstatedir=/run
+configure: loading site script /usr/share/config.site
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of gcc... gcc3
+checking whether make sets $(MAKE)... (cached) yes
+checking for ranlib... ranlib
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking whether ln -s works... yes
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for strip... strip
+checking for ldd... ldd
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking if using GCC Link Time Optimisation... no
+checking msghdr.msg_controllen is size_t... yes
+checking time print types... done
+checking diagnostic pragmas in functions... yes
+checking diagnostic push/pop pragmas... yes
+checking for -Wall... yes
+checking for -Wextra... yes
+checking for -Wunused... yes
+checking for -Wstrict-prototypes... yes
+checking for -Wabi... no
+checking for -Wabsolute-value... yes
+checking for -Waddress-of-packed-member... yes
+checking for -Walloca... yes
+checking for -Walloc-larger-than=4096... no
+checking for -Walloc-zero... yes
+checking for -Warith-conversion... yes
+checking for -Warray-bounds=2... yes
+checking for -Wattribute-alias=2... yes
+checking for -Wbad-function-cast... yes
+checking for -Wc11-c2x-compat... yes
+checking for -Wcast-align... yes
+checking for -Wcast-qual... yes
+checking for -Wchkp... no
+checking for -Wdate-time... yes
+checking for -Wdisabled-optimization... yes
+checking for -Wdouble-promotion... yes
+checking for -Wduplicated-branches... yes
+checking for -Wduplicated-cond... yes
+checking for -Wfloat-conversion... yes
+checking for -Wfloat-equal... yes
+checking for -Wformat-overflow... yes
+checking for -Wformat-security... no
+checking for -Wformat-signedness... yes
+checking for -Wformat-truncation... yes
+checking for -Wframe-larger-than=5120... yes
+checking for -Wimplicit-fallthrough=3... yes
+checking for -Winit-self... yes
+checking for -Winline... yes
+checking for -Winvalid-pch... yes
+checking for -Wjump-misses-init... yes
+checking for -Wlogical-op... yes
+checking for -Wmissing-declarations... yes
+checking for -Wmissing-field-initializers... yes
+checking for -Wmissing-include-dirs... yes
+checking for -Wmissing-prototypes... yes
+checking for -Wnested-externs... yes
+checking for -Wnormalized... yes
+checking for -Wnull-dereference... yes
+checking for -Wold-style-definition... yes
+checking for -Woverlength-strings... yes
+checking for -Wpointer-arith... yes
+checking for -Wredundant-decls... yes
+checking for -Wshadow... yes
+checking for -Wshift-overflow=2... yes
+checking for -Wstack-protector... yes
+checking for -Wstrict-overflow=4... yes
+checking for -Wstringop-overflow=2... yes
+checking for -Wstringop-truncation... yes
+checking for -Wsuggest-attribute=cold... yes
+checking for -Wsuggest-attribute=const... no
+checking for -Wsuggest-attribute=format... yes
+checking for -Wsuggest-attribute=malloc... yes
+checking for -Wsuggest-attribute=noreturn... yes
+checking for -Wsuggest-attribute=pure... yes
+checking for -Wsync-nand... yes
+checking for -Wtrampolines... yes
+checking for -Wundef... yes
+checking for -Wuninitialized... yes
+checking for -Wunknown-pragmas... yes
+checking for -Wunsafe-loop-optimizations... yes
+checking for -Wunsuffixed-float-constants... yes
+checking for -Wunused-const-variable=2... yes
+checking for -Wunused-macros... no
+checking for -Wvariadic-macros... yes
+checking for -Wwrite-strings... yes
+checking for function __attribute__((error(msg))) support... no
+checking for function __attribute__((warn_unused_result)) support... yes
+checking for PIE support... yes
+checking for -Wformat -Werror=format-security support... yes
+checking for -Wp,-D_FORTIFY_SOURCE=2 support... yes
+checking for -fexceptions support... yes
+checking for -fstack-protector-strong support... yes
+checking for --param=ssp-buffer-size=4 support... yes
+checking for -grecord-gcc-switches support... yes
+checking for -Wl,-z,relro support... yes
+checking for -Wl,-z,now support... yes
+checking for -O2 support... yes
+CFLAGS=-g -g -O2 -Wall -Wextra -Wunused -Wstrict-prototypes -Wabsolute-value -Waddress-of-packed-member -Walloca -Walloc-zero -Warith-conversion -Warray-bounds=2 -Wattribute-alias=2 -Wbad-function-cast -Wc11-c2x-compat -Wcast-align -Wcast-qual -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wduplicated-branches -Wduplicated-cond -Wfloat-conversion -Wfloat-equal -Wformat-overflow -Wformat-signedness -Wformat-truncation -Wframe-larger-than=5120 -Wimplicit-fallthrough=3 -Winit-self -Winline -Winvalid-pch -Wjump-misses-init -Wlogical-op -Wmissing-declarations -Wmissing-field-initializers -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnormalized -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpointer-arith -Wredundant-decls -Wshadow -Wshift-overflow=2 -Wstack-protector -Wstrict-overflow=4 -Wstringop-overflow=2 -Wstringop-truncation -Wsuggest-attribute=cold -Wsuggest-attribute=format -Wsuggest-attribute=malloc -Wsuggest-attribute=noreturn -Wsuggest-attribute=pure -Wsync-nand -Wtrampolines -Wundef -Wuninitialized -Wunknown-pragmas -Wunsafe-loop-optimizations -Wunsuffixed-float-constants -Wunused-const-variable=2 -Wvariadic-macros -Wwrite-strings -fno-strict-aliasing -fPIE -Wformat -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -O2
+checking for unaligned memory access... yes
+checking for unaligned memory access causes warnings... no
+checking for clock_gettime() requires -lrt... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for vfork.h... no
+checking for arpa/inet.h... yes
+checking for fcntl.h... yes
+checking for limits.h... yes
+checking for netdb.h... yes
+checking for netinet/in.h... yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for sys/ioctl.h... yes
+checking for sys/param.h... yes
+checking for sys/prctl.h... yes
+checking for sys/socket.h... yes
+checking for sys/time.h... yes
+checking for syslog.h... yes
+checking for unistd.h... (cached) yes
+checking for net/if_arp.h... yes
+checking for linux/types.h... yes
+checking for linux/ethtool.h... yes
+checking for linux/if_ether.h... yes
+checking for linux/if_packet.h... yes
+checking for linux/ip.h... yes
+checking for linux/sockios.h... yes
+checking for linux/fib_rules.h... yes
+checking for linux/if_addr.h... yes
+checking for linux/if_link.h... yes
+checking for linux/icmp.h... yes
+checking for linux/icmpv6.h... yes
+checking for linux/errqueue.h... yes
+checking linux/errqueue.h needs sys/time.h... no
+checking for _Bool... yes
+checking for stdbool.h that conforms to C99... yes
+checking for inline... inline
+checking for int64_t... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint64_t... yes
+checking for uint8_t... yes
+checking for an ANSI C-conforming const... yes
+checking for fork... yes
+checking for vfork... yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking for dup2... yes
+checking for dup3... yes
+checking for getcwd... yes
+checking for gettimeofday... yes
+checking for malloc... yes
+checking for memmove... yes
+checking for memset... yes
+checking for realloc... yes
+checking for select... yes
+checking for setenv... yes
+checking for socket... yes
+checking for strcasecmp... yes
+checking for strchr... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strpbrk... yes
+checking for strstr... yes
+checking for strtol... yes
+checking for strtoul... yes
+checking for uname... yes
+checking for vsyslog... yes
+checking for memfd_create... yes
+checking for gcc options needed to detect all undeclared functions... none needed
+checking whether O_TMPFILE is declared... yes
+checking whether ETHERTYPE_IPV6 is declared... yes
+checking whether IPV6_MULTICAST_ALL is declared... yes
+checking for openssl/ssl.h... yes
+checking for openssl/err.h... yes
+checking for openssl/md5.h... yes
+checking for openssl/evp.h... yes
+checking for SSL_CTX_new in -lssl... yes
+checking for EVP_DigestInit_ex in -lcrypto... yes
+checking for EVP_MD_CTX_new in -lcrypto... yes
+checking SSL_set_tlsext_host_name() - may be a definition... yes
+checking for SSL_CTX_set_verify_depth... yes
+checking for SSL_set0_rbio... yes
+checking for SSL_set0_wbio... yes
+checking for OPENSSL_init_crypto... yes
+checking for TLS_method... yes
+checking for ERR_get_error_all... yes
+checking whether IPV4_DEVCONF_ARP_IGNORE is declared... yes
+checking whether IPV4_DEVCONF_ACCEPT_LOCAL is declared... yes
+checking whether IPV4_DEVCONF_RP_FILTER is declared... yes
+checking whether IPV4_DEVCONF_ARPFILTER is declared... yes
+checking for linux/rtnetlink.h... yes
+checking for nl_socket_alloc in -lnl-3... yes
+checking for genl_connect in -lnl-genl-3... yes
+checking for netlink/netlink.h... yes
+checking for netlink/genl/ctrl.h... yes
+checking for netlink/genl/genl.h... yes
+checking for magic_open in -lmagic... no
+checking whether RTA_ENCAP is declared... yes
+checking whether RTA_EXPIRES is declared... yes
+checking whether RTA_NEWDST is declared... yes
+checking whether RTA_PREF is declared... yes
+checking whether FRA_SUPPRESS_PREFIXLEN is declared... yes
+checking whether FRA_SUPPRESS_IFGROUP is declared... yes
+checking whether FRA_TUN_ID is declared... yes
+checking whether RTAX_CC_ALGO is declared... yes
+checking whether RTAX_QUICKACK is declared... yes
+checking whether RTEXT_FILTER_SKIP_STATS is declared... yes
+checking whether FRA_L3MDEV is declared... yes
+checking whether FRA_UID_RANGE is declared... yes
+checking whether RTAX_FASTOPEN_NO_COOKIE is declared... yes
+checking whether RTA_VIA is declared... yes
+checking whether FRA_PROTOCOL is declared... yes
+checking whether FRA_IP_PROTO is declared... yes
+checking whether FRA_SPORT_RANGE is declared... yes
+checking whether FRA_DPORT_RANGE is declared... yes
+checking whether RTA_TTL_PROPAGATE is declared... yes
+checking whether IFA_FLAGS is declared... yes
+checking whether IFA_PROTO is declared... yes
+checking whether LWTUNNEL_ENCAP_MPLS is declared... yes
+checking whether LWTUNNEL_ENCAP_ILA is declared... yes
+checking for libiptc/libip6tc.h... no
+checking whether NFTA_TABLE_MAX is declared... yes
+checking whether NFTNL_EXPR_LOOKUP_FLAGS and NFT_LOOKUP_F_INV are defined... yes
+checking whether NFT_META_L4PROTO is declared... yes
+checking whether NFTA_DUP_MAX is declared... yes
+checking whether NFT_META_OIFKIND is declared... yes
+checking whether NFT_USERDATA_MAXLEN is declared... yes
+checking whether nftnl_udata_buf_alloc is declared... yes
+checking whether nftnl_udata_put_u32 is declared... yes
+checking whether NFTNL_SET_DESC_CONCAT is declared... yes
+checking whether NFTNL_SET_ELEM_KEY_END is declared... yes
+checking whether NFT_SET_CONCAT is declared... yes
+checking whether NFTNL_SET_EXPR is declared... yes
+checking for linux/if.h and net/if.h namespace collision... yes
+checking for linux/if_ether.h then netinet/in.h then linux/if.h namespace collision... no
+checking for linux/if_ether.h then netinet/if_ether.h namespace collision... no
+checking for libiptc/libiptc.h linux/if.h and net/if.h namespace collision... yes
+checking whether IPVS_DEST_ATTR_ADDR_FAMILY is declared... yes
+checking whether IPVS_DAEMON_ATTR_SYNC_MAXLEN is declared... yes
+checking whether IPVS_DAEMON_ATTR_MCAST_GROUP is declared... yes
+checking whether IPVS_DAEMON_ATTR_MCAST_GROUP6 is declared... yes
+checking whether IPVS_DAEMON_ATTR_MCAST_PORT is declared... yes
+checking whether IPVS_DAEMON_ATTR_MCAST_TTL is declared... yes
+checking whether IPVS_SVC_ATTR_STATS64 is declared... yes
+checking whether IPVS_DEST_ATTR_STATS64 is declared... yes
+checking whether IPVS_DEST_ATTR_TUN_TYPE is declared... yes
+checking whether IP_VS_TUNNEL_ENCAP_FLAG_NOCSUM is declared... yes
+checking whether IP_VS_CONN_F_TUNNEL_TYPE_GRE is declared... yes
+checking whether IFLA_IPVLAN_MODE is declared... yes
+checking whether IPVLAN_MODE_L3S is declared... yes
+checking whether IFLA_IPVLAN_FLAGS is declared... yes
+checking whether GLOB_BRACE is declared... yes
+checking whether GLOB_ALTDIRFUNC is declared... yes
+checking for timegm()... yes
+checking whether IFLA_INET6_ADDR_GEN_MODE is declared... yes
+checking whether IFLA_VRF_MAX is declared... yes
+checking whether SO_MARK is declared... yes
+./configure: line 13842: man: command not found
+ACLOCAL='${SHELL} '\''/build/build-aux/missing'\'' aclocal-1.16'
+ADD_FORTIFY_SOURCE=1
+ADD_NEW=' -lmnl'
+AMDEPBACKSLASH='\'
+AMDEP_FALSE='#'
+AMDEP_TRUE=
+AMTAR='$${TAR-tar}'
+AM_BACKSLASH='\'
+AM_DEFAULT_V='$(AM_DEFAULT_VERBOSITY)'
+AM_DEFAULT_VERBOSITY=0
+AM_V='$(V)'
+AR=ar
+ARFLAGS=cr
+AUTOCONF='${SHELL} '\''/build/build-aux/missing'\'' autoconf'
+AUTOHEADER='${SHELL} '\''/build/build-aux/missing'\'' autoheader'
+AUTOMAKE='${SHELL} '\''/build/build-aux/missing'\'' automake-1.16'
+AWK=gawk
+BASH=/bin/sh
+BASHOPTS=checkwinsize:cmdhist:complete_fullquote:extquote:force_fignore:globasciiranges:globskipdots:hostcomplete:interactive_comments:patsub_replacement:progcomp:promptvars:sourcepath
+BASH_ALIASES=()
+BASH_ARGC=([0]="4")
+BASH_ARGV=([0]="--runstatedir=/run" [1]="--localstatedir=/var" [2]="--sysconfdir=/etc" [3]="--prefix=/usr")
+BASH_CMDS=()
+BASH_LINENO=([0]="0")
+BASH_LOADABLES_PATH=/usr/local/lib/bash:/usr/lib/bash:/opt/local/lib/bash:/usr/pkg/lib/bash:/opt/pkg/lib/bash:.
+BASH_SOURCE=([0]="./configure")
+BASH_VERSINFO=([0]="5" [1]="2" [2]="15" [3]="1" [4]="release" [5]="loongarch64-openEuler-linux-gnu")
+BASH_VERSION='5.2.15(1)-release'
+BFD_SUPPORT=No
+CC=gcc
+CCDEPMODE=depmode=gcc3
+CFLAGS='-g -O2'
+CONFIG_OPTIONS=' NFTABLES LVS VRRP VRRP_AUTH VRRP_VMAC OLD_CHKSUM_COMPAT'
+CONFIG_WARNINGS=./lib/config_warnings.h.in
+CPPFLAGS='  -D_GNU_SOURCE'
+CSCOPE=cscope
+CTAGS=ctags
+CYGPATH_W=echo
+DBUS_CREATE_INSTANCE=No
+DBUS_CREATE_INSTANCE_FALSE=
+DBUS_CREATE_INSTANCE_TRUE='#'
+DBUS_DATADIR=/usr/share
+DBUS_SUPPORT=No
+DEBIAN_FRONTEND=noninteractive
+DEBUG_FALSE=
+DEBUG_TRUE='#'
+DEPDIR=.deps
+DIRSTACK=()
+DUALCASE=1
+ECHO_C=
+ECHO_N=-n
+ECHO_T=
+ENABLE_JSON=No
+ENABLE_LOG_FILE_APPEND=No
+ENABLE_REGEX_DEBUG=No
+ETAGS=etags
+EUID=0
+EXEEXT=
+EXPANDED_DATADIR=/usr/share
+EXP_VAR=RUNSTATEDIR
+EXTRA_LIBS='-lssl '
+FIREWALL_FALSE='#'
+FIREWALL_TRUE=
+FLAG=-O2
+FORTIFY_SOURCE=2
+FROM_VAR=/run
+GCC=yes
+GCC_LTO=no
+GENL_CFLAGS=' '
+GENL_CPPFLAGS=' -I/usr/include/libnl3'
+GENL_LIBS=-lnl-genl-3
+GENL_LIB_NAMES=nl-genl-3
+GNU_STD_PATHS=No
+GREP=/usr/bin/grep
+GROUPS=()
+HAVE_CN_PROC=No
+HAVE_WARNING_ABI=no
+HAVE_WARNING_ABSOLUTE_VALUE=yes
+HAVE_WARNING_ADDRESS_OF_PACKED_MEMBER=yes
+HAVE_WARNING_ALL=yes
+HAVE_WARNING_ALLOCA=yes
+HAVE_WARNING_ALLOC_LARGER_THAN=no
+HAVE_WARNING_ALLOC_ZERO=yes
+HAVE_WARNING_ARITH_CONVERSION=yes
+HAVE_WARNING_ARRAY_BOUNDS=yes
+HAVE_WARNING_ATTRIBUTE_ALIAS=yes
+HAVE_WARNING_BAD_FUNCTION_CAST=yes
+HAVE_WARNING_C11_C2X_COMPAT=yes
+HAVE_WARNING_CAST_ALIGN=yes
+HAVE_WARNING_CAST_QUAL=yes
+HAVE_WARNING_CHKP=no
+HAVE_WARNING_DATE_TIME=yes
+HAVE_WARNING_DISABLED_OPTIMIZATION=yes
+HAVE_WARNING_DOUBLE_PROMOTION=yes
+HAVE_WARNING_DUPLICATED_BRANCHES=yes
+HAVE_WARNING_DUPLICATED_COND=yes
+HAVE_WARNING_EXTRA=yes
+HAVE_WARNING_FLOAT_CONVERSION=yes
+HAVE_WARNING_FLOAT_EQUAL=yes
+HAVE_WARNING_FORMAT_OVERFLOW=yes
+HAVE_WARNING_FORMAT_SECURITY=no
+HAVE_WARNING_FORMAT_SIGNEDNESS=yes
+HAVE_WARNING_FORMAT_TRUNCATION=yes
+HAVE_WARNING_FRAME_LARGER_THAN=yes
+HAVE_WARNING_IMPLICIT_FALLTHROUGH=yes
+HAVE_WARNING_INIT_SELF=yes
+HAVE_WARNING_INLINE=yes
+HAVE_WARNING_INVALID_PCH=yes
+HAVE_WARNING_JUMP_MISSES_INIT=yes
+HAVE_WARNING_LOGICAL_OP=yes
+HAVE_WARNING_MISSING_DECLARATIONS=yes
+HAVE_WARNING_MISSING_FIELD_INITIALIZERS=yes
+HAVE_WARNING_MISSING_INCLUDE_DIRS=yes
+HAVE_WARNING_MISSING_PROTOTYPES=yes
+HAVE_WARNING_NESTED_EXTERNS=yes
+HAVE_WARNING_NORMALIZED=yes
+HAVE_WARNING_NULL_DEREFERENCE=yes
+HAVE_WARNING_OLD_STYLE_DEFINITION=yes
+HAVE_WARNING_OVERLENGTH_STRINGS=yes
+HAVE_WARNING_POINTER_ARITH=yes
+HAVE_WARNING_REDUNDANT_DECLS=yes
+HAVE_WARNING_SHADOW=yes
+HAVE_WARNING_SHIFT_OVERFLOW=yes
+HAVE_WARNING_STACK_PROTECTOR=yes
+HAVE_WARNING_STRICT_OVERFLOW=yes
+HAVE_WARNING_STRICT_PROTOTYPES=yes
+HAVE_WARNING_STRINGOP_OVERFLOW=yes
+HAVE_WARNING_STRINGOP_TRUNCATION=yes
+HAVE_WARNING_SUGGEST_ATTRIBUTE=yes
+HAVE_WARNING_SYNC_NAND=yes
+HAVE_WARNING_TRAMPOLINES=yes
+HAVE_WARNING_UNDEF=yes
+HAVE_WARNING_UNINITIALIZED=yes
+HAVE_WARNING_UNKNOWN_PRAGMAS=yes
+HAVE_WARNING_UNSAFE_LOOP_OPTIMIZATIONS=yes
+HAVE_WARNING_UNSUFFIXED_FLOAT_CONSTANTS=yes
+HAVE_WARNING_UNUSED=yes
+HAVE_WARNING_UNUSED_CONST_VARIABLE=yes
+HAVE_WARNING_UNUSED_MACROS=no
+HAVE_WARNING_VARIADIC_MACROS=yes
+HAVE_WARNING_WRITE_STRINGS=yes
+HOME=/root
+HOSTNAME=52dc05662fcb
+HOSTTYPE=loongarch64
+HOST_GID=1001
+HOST_UID=1001
+IFS=' 	
+'
+INSTALL='/usr/bin/install -c'
+INSTALL_DATA='${INSTALL} -m 644'
+INSTALL_PROGRAM='${INSTALL}'
+INSTALL_SCRIPT='${INSTALL}'
+INSTALL_STRIP_PROGRAM='$(install_sh) -c -s'
+IPTABLES_FALSE=
+IPTABLES_SILENT=Yes
+IPTABLES_TRUE='#'
+IPV4_DEVCONF=Yes
+IPVLAN_SUPPORT=Yes
+IPVS_64BIT_STATS=Yes
+IPVS_SUPPORT=Yes
+IPVS_SYNCD_ATTRIBUTES=Yes
+IPVS_USE_NL=Yes
+KA_CFLAGS='-g -g -O2 -Wall -Wextra -Wunused -Wstrict-prototypes -Wabsolute-value -Waddress-of-packed-member -Walloca -Walloc-zero -Warith-conversion -Warray-bounds=2 -Wattribute-alias=2 -Wbad-function-cast -Wc11-c2x-compat -Wcast-align -Wcast-qual -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wduplicated-branches -Wduplicated-cond -Wfloat-conversion -Wfloat-equal -Wformat-overflow -Wformat-signedness -Wformat-truncation -Wframe-larger-than=5120 -Wimplicit-fallthrough=3 -Winit-self -Winline -Winvalid-pch -Wjump-misses-init -Wlogical-op -Wmissing-declarations -Wmissing-field-initializers -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnormalized -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpointer-arith -Wredundant-decls -Wshadow -Wshift-overflow=2 -Wstack-protector -Wstrict-overflow=4 -Wstringop-overflow=2 -Wstringop-truncation -Wsuggest-attribute=cold -Wsuggest-attribute=format -Wsuggest-attribute=malloc -Wsuggest-attribute=noreturn -Wsuggest-attribute=pure -Wsync-nand -Wtrampolines -Wundef -Wuninitialized -Wunknown-pragmas -Wunsafe-loop-optimizations -Wunsuffixed-float-constants -Wunused-const-variable=2 -Wvariadic-macros -Wwrite-strings -fno-strict-aliasing -fPIE -Wformat -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -O2    '
+KA_CPPFLAGS=' -D_GNU_SOURCE   -I/usr/include/libnl3   '
+KA_LDFLAGS=' -pie  -Wl,-z,relro -Wl,-z,now'
+KA_LIBS=' -lm -lssl  -lcrypto  -lnl-3 -lnl-genl-3 -lnftnl -lmnl'
+KA_PKG_PFX=KA
+KA_TMP_DIR=/tmp
+LANGUAGE=C
+LC_ALL=C
+LDD=ldd
+LDFLAGS=
+LIBIPSET_DYNAMIC_FALSE=
+LIBIPSET_DYNAMIC_TRUE='#'
+LIBIPSET_FALSE=
+LIBIPSET_TRUE='#'
+LIBIPTC_DYNAMIC_FALSE=
+LIBIPTC_DYNAMIC_TRUE='#'
+LIBNFTNL_VERSION=0x010206U
+LIBNL1_FALSE=
+LIBNL1_TRUE='#'
+LIBNL3_FALSE='#'
+LIBNL3_TRUE=
+LIBNL_DYNAMIC_FALSE=
+LIBNL_DYNAMIC_TRUE='#'
+LIBNM_SUPPORT=No
+LIBOBJS=
+LINENO=2355
+LINE_type='unsigned int'
+LINKBEAT_SUPPORT=Yes
+LN_S='ln -s'
+LOCAL_WARN_VAR=HAVE_WARNING_WRITE_STRINGS
+MACHTYPE=loongarch64-openEuler-linux-gnu
+MACVLAN_SUPPORT=Yes
+MAGIC=0
+MAGIC_FALSE=
+MAGIC_TRUE='#'
+MAINTAINERCLEANFILES='*~ *.orig *.rej core core.*'
+MAKEFLAGS=
+MAKEINFO='${SHELL} '\''/build/build-aux/missing'\'' makeinfo'
+MAX_FRAME_SIZE=5120
+MFLAGS=
+MISSING='${SHELL} '\''/build/build-aux/missing'\'''
+MKDIR_P='/usr/bin/mkdir -p'
+NEED_EVP=yes
+NEED_LIBDL=No
+NEED_SSL=yes
+NETLINK_VER=3
+NETWORK_MANAGER_FALSE=
+NETWORK_MANAGER_TRUE='#'
+NFTABLES_FALSE='#'
+NFTABLES_SILENT=Yes
+NFTABLES_TRUE=
+NFT_RANGE_CONCATS_OK=1
+NL3_CFLAGS=' '
+NL3_CPPFLAGS=' -I/usr/include/libnl3'
+NL3_LIBS=-lnl-3
+NL3_LIB_NAMES=nl-3
+OBJEXT=o
+OLDPWD=/build/conftest.dir
+OPENSSL_CFLAGS=' '
+OPENSSL_CPPFLAGS=' '
+OPENSSL_LIBS=' -lssl -lcrypto'
+OPTERR=1
+OPTIND=1
+OSTYPE=linux-gnu
+PACKAGE=keepalived
+PACKAGE_BUGREPORT=keepalived-users@groups.io
+PACKAGE_NAME=Keepalived
+PACKAGE_STRING='Keepalived 2.3.2'
+PACKAGE_TARNAME=keepalived
+PACKAGE_URL=http://www.keepalived.org/
+PACKAGE_VERSION=2.3.2
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PATH_SEPARATOR=:
+PIPESTATUS=([0]="1")
+PKG_CONFIG=/usr/bin/pkg-config
+POSIXLY_CORRECT=y
+PPID=1
+PS1='$ '
+PS2='> '
+PS4='+ '
+PWD=/build
+RANLIB=ranlib
+REQUIRES=libnl-3.0
+REQ_LIBS=-lnl-3
+RUNSTATEDIR=/run
+RUNSTATEDIR_SPECIFIED=0
+SAMPLES_DIR='${sysconfdir}/keepalived/samples'
+SAV_CFLAGS='-g -O2'
+SAV_CPPFLAGS='  -D_GNU_SOURCE'
+SAV_LDFLAGS=
+SED=/usr/bin/sed
+SET_MAKE=
+SHELL=/bin/sh
+SHELLOPTS=braceexpand:hashall:interactive-comments:posix
+SHLVL=2
+SNMP_CHECKER_FALSE=
+SNMP_CHECKER_SUPPORT=No
+SNMP_CHECKER_TRUE='#'
+SNMP_FALSE=
+SNMP_KEEPALIVED_FALSE=
+SNMP_KEEPALIVED_SUPPORT=No
+SNMP_KEEPALIVED_TRUE='#'
+SNMP_REPLY_V3_FOR_V2_FALSE=
+SNMP_REPLY_V3_FOR_V2_TRUE='#'
+SNMP_RFCV2_FALSE=
+SNMP_RFCV2_SUPPORT=No
+SNMP_RFCV2_TRUE='#'
+SNMP_RFCV3_FALSE=
+SNMP_RFCV3_SUPPORT=No
+SNMP_RFCV3_TRUE='#'
+SNMP_RFC_FALSE=
+SNMP_RFC_SUPPORT=No
+SNMP_RFC_TRUE='#'
+SNMP_SERVICE=
+SNMP_SUPPORT=No
+SNMP_TRUE='#'
+SNMP_V3_FOR_V2=No
+SNMP_VRRP_FALSE=
+SNMP_VRRP_SUPPORT=No
+SNMP_VRRP_TRUE='#'
+SO_MARK_SUPPORT=Yes
+SRC_DIR=.
+STRICT_CONFIG=No
+STRIP=strip
+SYSTEM_OPTIONS=' VSYSLOG MEMFD_CREATE IPV6_MULTICAST_ALL IPV4_DEVCONF LIBNL3 RTA_ENCAP RTA_EXPIRES RTA_NEWDST RTA_PREF FRA_SUPPRESS_PREFIXLEN FRA_SUPPRESS_IFGROUP FRA_TUN_ID RTAX_CC_ALGO RTAX_QUICKACK RTEXT_FILTER_SKIP_STATS FRA_L3MDEV FRA_UID_RANGE RTAX_FASTOPEN_NO_COOKIE RTA_VIA FRA_PROTOCOL FRA_IP_PROTO FRA_SPORT_RANGE FRA_DPORT_RANGE RTA_TTL_PROPAGATE IFA_FLAGS IFA_PROTO LWTUNNEL_ENCAP_MPLS LWTUNNEL_ENCAP_ILA NET_LINUX_IF_H_COLLISION LIBIPTC_LINUX_NET_IF_H_COLLISION LIBIPVS_NETLINK IPVS_DEST_ATTR_ADDR_FAMILY IPVS_SYNCD_ATTRIBUTES IPVS_64BIT_STATS IPVS_TUN_TYPE IPVS_TUN_CSUM IPVS_TUN_GRE VRRP_IPVLAN IFLA_LINK_NETNSID GLOB_BRACE GLOB_ALTDIRFUNC INET6_ADDR_GEN_MODE VRF SO_MARK'
+TERM=dumb
+TMP_DIR_SPECIFIED=N
+TRACK_PROCESS_FALSE='#'
+TRACK_PROCESS_TRUE=
+UID=0
+UNALIGNED_ACCESS_WARNED=0
+UNICAST_CHKSUM_COMPAT_SUPPORT=Yes
+USE_CC='gcc cc'
+USE_IPTABLES=No
+USE_LIBIPSET=No
+USE_NFTABLES=Yes
+USE_NFT_USERDATA=Yes
+VERSION=2.3.2
+VMAC_FALSE='#'
+VMAC_TRUE=
+VRRP_AUTH_FALSE='#'
+VRRP_AUTH_SUPPORT=Yes
+VRRP_AUTH_TRUE=
+VRRP_SUPPORT=Yes
+WARN=write-strings
+WARNINGS_BASIC='all extra unused strict-prototypes'
+WARNINGS_ENABLED='all extra unused strict-prototypes abi absolute-value address-of-packed-member alloca alloc-larger-than=4096 alloc-zero arith-conversion array-bounds=2 attribute-alias=2 bad-function-cast c11-c2x-compat cast-align cast-qual chkp date-time disabled-optimization double-promotion duplicated-branches duplicated-cond float-conversion float-equal format-overflow format-security format-signedness format-truncation frame-larger-than=5120 implicit-fallthrough=3 init-self inline invalid-pch jump-misses-init logical-op missing-declarations missing-field-initializers missing-include-dirs missing-prototypes nested-externs normalized null-dereference old-style-definition overlength-strings pointer-arith redundant-decls shadow shift-overflow=2 stack-protector strict-overflow=4 stringop-overflow=2 stringop-truncation suggest-attribute=cold suggest-attribute=const suggest-attribute=format suggest-attribute=malloc suggest-attribute=noreturn suggest-attribute=pure sync-nand trampolines undef uninitialized unknown-pragmas unsafe-loop-optimizations unsuffixed-float-constants unused-const-variable=2 unused-macros variadic-macros write-strings'
+WARNINGS_EXTRA='aggregate-return cast-align=strict conversion format-nonliteral format-overflow=2 format-truncation=2 padded pedantic sign-conversion stack-usage=5120 strict-overflow=5 stringop-overflow=3 stringop-overflow=4 switch-enum system-headers traditional-conversion'
+WARNINGS_STD='abi absolute-value address-of-packed-member alloca alloc-larger-than=4096 alloc-zero arith-conversion array-bounds=2 attribute-alias=2 bad-function-cast c11-c2x-compat cast-align cast-qual chkp date-time disabled-optimization double-promotion duplicated-branches duplicated-cond float-conversion float-equal format-overflow format-security format-signedness format-truncation frame-larger-than=5120 implicit-fallthrough=3 init-self inline invalid-pch jump-misses-init logical-op missing-declarations missing-field-initializers missing-include-dirs missing-prototypes nested-externs normalized null-dereference old-style-definition overlength-strings pointer-arith redundant-decls shadow shift-overflow=2 stack-protector strict-overflow=4 stringop-overflow=2 stringop-truncation suggest-attribute=cold suggest-attribute=const suggest-attribute=format suggest-attribute=malloc suggest-attribute=noreturn suggest-attribute=pure sync-nand trampolines undef uninitialized unknown-pragmas unsafe-loop-optimizations unsuffixed-float-constants unused-const-variable=2 unused-macros variadic-macros write-strings'
+WARN_SHORT=unused-const-variable
+WARN_SIGN=-Werror=format-signedness
+WARN_VAR=_HAVE_WARNING_WRITE_STRINGS_
+WITH_BFD_FALSE=
+WITH_BFD_TRUE='#'
+WITH_DBUS_FALSE=
+WITH_DBUS_TRUE='#'
+WITH_IPVS_FALSE='#'
+WITH_IPVS_TRUE=
+WITH_JSON_FALSE=
+WITH_JSON_TRUE='#'
+WITH_REGEX=No
+WITH_REGEX_FALSE=
+WITH_REGEX_TRUE='#'
+WITH_STRICT_CONFIG_CHECKS_FALSE=
+WITH_STRICT_CONFIG_CHECKS_TRUE='#'
+WITH_TRACK_PROCESS=Yes
+WITH_VRRP_FALSE='#'
+WITH_VRRP_TRUE=
+WL_FLAGS=' -Wl,-z,relro -Wl,-z,now'
+_=as_fn_nop
+_am_result='yes (GNU style)'
+_am_tools='gnutar  pax cpio none'
+_pkg_min_version=0.9.0
+ac_abs_confdir=/build
+ac_arg=
+ac_aux=install-sh
+ac_aux_dir=./build-aux/
+ac_aux_dir_candidates=./build-aux
+ac_aux_dir_found=yes
+ac_aux_files='ar-lib compile missing install-sh'
+ac_c_conftest_c11_globals='
+// Does the compiler advertise C11 conformance?
+#if !defined __STDC_VERSION__ || __STDC_VERSION__ < 201112L
+# error "Compiler does not advertise C11 conformance"
+#endif
+
+// Check _Alignas.
+char _Alignas (double) aligned_as_double;
+char _Alignas (0) no_special_alignment;
+extern char aligned_as_int;
+char _Alignas (0) _Alignas (int) aligned_as_int;
+
+// Check _Alignof.
+enum
+{
+  int_alignment = _Alignof (int),
+  int_array_alignment = _Alignof (int[100]),
+  char_alignment = _Alignof (char)
+};
+_Static_assert (0 < -_Alignof (int), "_Alignof is signed");
+
+// Check _Noreturn.
+int _Noreturn does_not_return (void) { for (;;) continue; }
+
+// Check _Static_assert.
+struct test_static_assert
+{
+  int x;
+  _Static_assert (sizeof (int) <= sizeof (long int),
+                  "_Static_assert does not work in struct");
+  long int y;
+};
+
+// Check UTF-8 literals.
+#define u8 syntax error!
+char const utf8_literal[] = u8"happens to be ASCII" "another string";
+
+// Check duplicate typedefs.
+typedef long *long_ptr;
+typedef long int *long_ptr;
+typedef long_ptr long_ptr;
+
+// Anonymous structures and unions -- taken from C11 6.7.2.1 Example 1.
+struct anonymous
+{
+  union {
+    struct { int i; int j; };
+    struct { int k; long int l; } w;
+  };
+  int m;
+} v1;
+'
+ac_c_conftest_c11_main='
+  _Static_assert ((offsetof (struct anonymous, i)
+		   == offsetof (struct anonymous, w.k)),
+		  "Anonymous union alignment botch");
+  v1.i = 2;
+  v1.w.k = 5;
+  ok |= v1.i != 5;
+'
+ac_c_conftest_c11_program='
+/* Does the compiler advertise C89 conformance?
+   Do not test the value of __STDC__, because some compilers set it to 0
+   while being otherwise adequately conformant. */
+#if !defined __STDC__
+# error "Compiler does not advertise C89 conformance"
+#endif
+
+#include <stddef.h>
+#include <stdarg.h>
+struct stat;
+/* Most of the following tests are stolen from RCS 5.7 src/conf.sh.  */
+struct buf { int x; };
+struct buf * (*rcsopen) (struct buf *, struct stat *, int);
+static char *e (p, i)
+     char **p;
+     int i;
+{
+  return p[i];
+}
+static char *f (char * (*g) (char **, int), char **p, ...)
+{
+  char *s;
+  va_list v;
+  va_start (v,p);
+  s = g (p, va_arg (v,int));
+  va_end (v);
+  return s;
+}
+
+/* OSF 4.0 Compaq cc is some sort of almost-ANSI by default.  It has
+   function prototypes and stuff, but not \xHH hex character constants.
+   These do not provoke an error unfortunately, instead are silently treated
+   as an "x".  The following induces an error, until -std is added to get
+   proper ANSI mode.  Curiously \x00 != x always comes out true, for an
+   array size at least.  It is necessary to write \x00 == 0 to get something
+   that is true only with -std.  */
+int osf4_cc_array ['\''\x00'\'' == 0 ? 1 : -1];
+
+/* IBM C 6 for AIX is almost-ANSI by default, but it replaces macro parameters
+   inside strings and character constants.  */
+#define FOO(x) '\''x'\''
+int xlc6_cc_array[FOO(a) == '\''x'\'' ? 1 : -1];
+
+int test (int i, double x);
+struct s1 {int (*f) (int a);};
+struct s2 {int (*f) (double a);};
+int pairnames (int, char **, int *(*)(struct buf *, struct stat *, int),
+               int, int);
+
+// Does the compiler advertise C99 conformance?
+#if !defined __STDC_VERSION__ || __STDC_VERSION__ < 199901L
+# error "Compiler does not advertise C99 conformance"
+#endif
+
+#include <stdbool.h>
+extern int puts (const char *);
+extern int printf (const char *, ...);
+extern int dprintf (int, const char *, ...);
+extern void *malloc (size_t);
+
+// Check varargs macros.  These examples are taken from C99 6.10.3.5.
+// dprintf is used instead of fprintf to avoid needing to declare
+// FILE and stderr.
+#define debug(...) dprintf (2, __VA_ARGS__)
+#define showlist(...) puts (#__VA_ARGS__)
+#define report(test,...) ((test) ? puts (#test) : printf (__VA_ARGS__))
+static void
+test_varargs_macros (void)
+{
+  int x = 1234;
+  int y = 5678;
+  debug ("Flag");
+  debug ("X = %d\n", x);
+  showlist (The first, second, and third items.);
+  report (x>y, "x is %d but y is %d", x, y);
+}
+
+// Check long long types.
+#define BIG64 18446744073709551615ull
+#define BIG32 4294967295ul
+#define BIG_OK (BIG64 / BIG32 == 4294967297ull && BIG64 % BIG32 == 0)
+#if !BIG_OK
+  #error "your preprocessor is broken"
+#endif
+#if BIG_OK
+#else
+  #error "your preprocessor is broken"
+#endif
+static long long int bignum = -9223372036854775807LL;
+static unsigned long long int ubignum = BIG64;
+
+struct incomplete_array
+{
+  int datasize;
+  double data[];
+};
+
+struct named_init {
+  int number;
+  const wchar_t *name;
+  double average;
+};
+
+typedef const char *ccp;
+
+static inline int
+test_restrict (ccp restrict text)
+{
+  // See if C++-style comments work.
+  // Iterate through items via the restricted pointer.
+  // Also check for declarations in for loops.
+  for (unsigned int i = 0; *(text+i) != '\''\0'\''; ++i)
+    continue;
+  return 0;
+}
+
+// Check varargs and va_copy.
+static bool
+test_varargs (const char *format, ...)
+{
+  va_list args;
+  va_start (args, format);
+  va_list args_copy;
+  va_copy (args_copy, args);
+
+  const char *str = "";
+  int number = 0;
+  float fnumber = 0;
+
+  while (*format)
+    {
+      switch (*format++)
+	{
+	case '\''s'\'': // string
+	  str = va_arg (args_copy, const char *);
+	  break;
+	case '\''d'\'': // int
+	  number = va_arg (args_copy, int);
+	  break;
+	case '\''f'\'': // float
+	  fnumber = va_arg (args_copy, double);
+	  break;
+	default:
+	  break;
+	}
+    }
+  va_end (args_copy);
+  va_end (args);
+
+  return *str && number && fnumber;
+}
+
+
+// Does the compiler advertise C11 conformance?
+#if !defined __STDC_VERSION__ || __STDC_VERSION__ < 201112L
+# error "Compiler does not advertise C11 conformance"
+#endif
+
+// Check _Alignas.
+char _Alignas (double) aligned_as_double;
+char _Alignas (0) no_special_alignment;
+extern char aligned_as_int;
+char _Alignas (0) _Alignas (int) aligned_as_int;
+
+// Check _Alignof.
+enum
+{
+  int_alignment = _Alignof (int),
+  int_array_alignment = _Alignof (int[100]),
+  char_alignment = _Alignof (char)
+};
+_Static_assert (0 < -_Alignof (int), "_Alignof is signed");
+
+// Check _Noreturn.
+int _Noreturn does_not_return (void) { for (;;) continue; }
+
+// Check _Static_assert.
+struct test_static_assert
+{
+  int x;
+  _Static_assert (sizeof (int) <= sizeof (long int),
+                  "_Static_assert does not work in struct");
+  long int y;
+};
+
+// Check UTF-8 literals.
+#define u8 syntax error!
+char const utf8_literal[] = u8"happens to be ASCII" "another string";
+
+// Check duplicate typedefs.
+typedef long *long_ptr;
+typedef long int *long_ptr;
+typedef long_ptr long_ptr;
+
+// Anonymous structures and unions -- taken from C11 6.7.2.1 Example 1.
+struct anonymous
+{
+  union {
+    struct { int i; int j; };
+    struct { int k; long int l; } w;
+  };
+  int m;
+} v1;
+
+
+int
+main (int argc, char **argv)
+{
+  int ok = 0;
+  
+ok |= (argc == 0 || f (e, argv, 0) != argv[0] || f (e, argv, 1) != argv[1]);
+
+  
+  // Check bool.
+  _Bool success = false;
+  success |= (argc != 0);
+
+  // Check restrict.
+  if (test_restrict ("String literal") == 0)
+    success = true;
+  char *restrict newvar = "Another string";
+
+  // Check varargs.
+  success &= test_varargs ("s, d'\'' f .", "string", 65, 34.234);
+  test_varargs_macros ();
+
+  // Check flexible array members.
+  struct incomplete_array *ia =
+    malloc (sizeof (struct incomplete_array) + (sizeof (double) * 10));
+  ia->datasize = 10;
+  for (int i = 0; i < ia->datasize; ++i)
+    ia->data[i] = i * 1.234;
+
+  // Check named initializers.
+  struct named_init ni = {
+    .number = 34,
+    .name = L"Test wide string",
+    .average = 543.34343,
+  };
+
+  ni.number = 58;
+
+  int dynamic_array[ni.number];
+  dynamic_array[0] = argv[0][0];
+  dynamic_array[ni.number - 1] = 543;
+
+  // work around unused variable warnings
+  ok |= (!success || bignum == 0LL || ubignum == 0uLL || newvar[0] == '\''x'\''
+	 || dynamic_array[ni.number - 1] != 543);
+
+  
+  _Static_assert ((offsetof (struct anonymous, i)
+		   == offsetof (struct anonymous, w.k)),
+		  "Anonymous union alignment botch");
+  v1.i = 2;
+  v1.w.k = 5;
+  ok |= v1.i != 5;
+
+  return ok;
+}
+'
+ac_c_conftest_c89_globals='
+/* Does the compiler advertise C89 conformance?
+   Do not test the value of __STDC__, because some compilers set it to 0
+   while being otherwise adequately conformant. */
+#if !defined __STDC__
+# error "Compiler does not advertise C89 conformance"
+#endif
+
+#include <stddef.h>
+#include <stdarg.h>
+struct stat;
+/* Most of the following tests are stolen from RCS 5.7 src/conf.sh.  */
+struct buf { int x; };
+struct buf * (*rcsopen) (struct buf *, struct stat *, int);
+static char *e (p, i)
+     char **p;
+     int i;
+{
+  return p[i];
+}
+static char *f (char * (*g) (char **, int), char **p, ...)
+{
+  char *s;
+  va_list v;
+  va_start (v,p);
+  s = g (p, va_arg (v,int));
+  va_end (v);
+  return s;
+}
+
+/* OSF 4.0 Compaq cc is some sort of almost-ANSI by default.  It has
+   function prototypes and stuff, but not \xHH hex character constants.
+   These do not provoke an error unfortunately, instead are silently treated
+   as an "x".  The following induces an error, until -std is added to get
+   proper ANSI mode.  Curiously \x00 != x always comes out true, for an
+   array size at least.  It is necessary to write \x00 == 0 to get something
+   that is true only with -std.  */
+int osf4_cc_array ['\''\x00'\'' == 0 ? 1 : -1];
+
+/* IBM C 6 for AIX is almost-ANSI by default, but it replaces macro parameters
+   inside strings and character constants.  */
+#define FOO(x) '\''x'\''
+int xlc6_cc_array[FOO(a) == '\''x'\'' ? 1 : -1];
+
+int test (int i, double x);
+struct s1 {int (*f) (int a);};
+struct s2 {int (*f) (double a);};
+int pairnames (int, char **, int *(*)(struct buf *, struct stat *, int),
+               int, int);'
+ac_c_conftest_c89_main='
+ok |= (argc == 0 || f (e, argv, 0) != argv[0] || f (e, argv, 1) != argv[1]);
+'
+ac_c_conftest_c89_program='
+/* Does the compiler advertise C89 conformance?
+   Do not test the value of __STDC__, because some compilers set it to 0
+   while being otherwise adequately conformant. */
+#if !defined __STDC__
+# error "Compiler does not advertise C89 conformance"
+#endif
+
+#include <stddef.h>
+#include <stdarg.h>
+struct stat;
+/* Most of the following tests are stolen from RCS 5.7 src/conf.sh.  */
+struct buf { int x; };
+struct buf * (*rcsopen) (struct buf *, struct stat *, int);
+static char *e (p, i)
+     char **p;
+     int i;
+{
+  return p[i];
+}
+static char *f (char * (*g) (char **, int), char **p, ...)
+{
+  char *s;
+  va_list v;
+  va_start (v,p);
+  s = g (p, va_arg (v,int));
+  va_end (v);
+  return s;
+}
+
+/* OSF 4.0 Compaq cc is some sort of almost-ANSI by default.  It has
+   function prototypes and stuff, but not \xHH hex character constants.
+   These do not provoke an error unfortunately, instead are silently treated
+   as an "x".  The following induces an error, until -std is added to get
+   proper ANSI mode.  Curiously \x00 != x always comes out true, for an
+   array size at least.  It is necessary to write \x00 == 0 to get something
+   that is true only with -std.  */
+int osf4_cc_array ['\''\x00'\'' == 0 ? 1 : -1];
+
+/* IBM C 6 for AIX is almost-ANSI by default, but it replaces macro parameters
+   inside strings and character constants.  */
+#define FOO(x) '\''x'\''
+int xlc6_cc_array[FOO(a) == '\''x'\'' ? 1 : -1];
+
+int test (int i, double x);
+struct s1 {int (*f) (int a);};
+struct s2 {int (*f) (double a);};
+int pairnames (int, char **, int *(*)(struct buf *, struct stat *, int),
+               int, int);
+
+int
+main (int argc, char **argv)
+{
+  int ok = 0;
+  
+ok |= (argc == 0 || f (e, argv, 0) != argv[0] || f (e, argv, 1) != argv[1]);
+
+  return ok;
+}
+'
+ac_c_conftest_c99_globals='
+// Does the compiler advertise C99 conformance?
+#if !defined __STDC_VERSION__ || __STDC_VERSION__ < 199901L
+# error "Compiler does not advertise C99 conformance"
+#endif
+
+#include <stdbool.h>
+extern int puts (const char *);
+extern int printf (const char *, ...);
+extern int dprintf (int, const char *, ...);
+extern void *malloc (size_t);
+
+// Check varargs macros.  These examples are taken from C99 6.10.3.5.
+// dprintf is used instead of fprintf to avoid needing to declare
+// FILE and stderr.
+#define debug(...) dprintf (2, __VA_ARGS__)
+#define showlist(...) puts (#__VA_ARGS__)
+#define report(test,...) ((test) ? puts (#test) : printf (__VA_ARGS__))
+static void
+test_varargs_macros (void)
+{
+  int x = 1234;
+  int y = 5678;
+  debug ("Flag");
+  debug ("X = %d\n", x);
+  showlist (The first, second, and third items.);
+  report (x>y, "x is %d but y is %d", x, y);
+}
+
+// Check long long types.
+#define BIG64 18446744073709551615ull
+#define BIG32 4294967295ul
+#define BIG_OK (BIG64 / BIG32 == 4294967297ull && BIG64 % BIG32 == 0)
+#if !BIG_OK
+  #error "your preprocessor is broken"
+#endif
+#if BIG_OK
+#else
+  #error "your preprocessor is broken"
+#endif
+static long long int bignum = -9223372036854775807LL;
+static unsigned long long int ubignum = BIG64;
+
+struct incomplete_array
+{
+  int datasize;
+  double data[];
+};
+
+struct named_init {
+  int number;
+  const wchar_t *name;
+  double average;
+};
+
+typedef const char *ccp;
+
+static inline int
+test_restrict (ccp restrict text)
+{
+  // See if C++-style comments work.
+  // Iterate through items via the restricted pointer.
+  // Also check for declarations in for loops.
+  for (unsigned int i = 0; *(text+i) != '\''\0'\''; ++i)
+    continue;
+  return 0;
+}
+
+// Check varargs and va_copy.
+static bool
+test_varargs (const char *format, ...)
+{
+  va_list args;
+  va_start (args, format);
+  va_list args_copy;
+  va_copy (args_copy, args);
+
+  const char *str = "";
+  int number = 0;
+  float fnumber = 0;
+
+  while (*format)
+    {
+      switch (*format++)
+	{
+	case '\''s'\'': // string
+	  str = va_arg (args_copy, const char *);
+	  break;
+	case '\''d'\'': // int
+	  number = va_arg (args_copy, int);
+	  break;
+	case '\''f'\'': // float
+	  fnumber = va_arg (args_copy, double);
+	  break;
+	default:
+	  break;
+	}
+    }
+  va_end (args_copy);
+  va_end (args);
+
+  return *str && number && fnumber;
+}
+'
+ac_c_conftest_c99_main='
+  // Check bool.
+  _Bool success = false;
+  success |= (argc != 0);
+
+  // Check restrict.
+  if (test_restrict ("String literal") == 0)
+    success = true;
+  char *restrict newvar = "Another string";
+
+  // Check varargs.
+  success &= test_varargs ("s, d'\'' f .", "string", 65, 34.234);
+  test_varargs_macros ();
+
+  // Check flexible array members.
+  struct incomplete_array *ia =
+    malloc (sizeof (struct incomplete_array) + (sizeof (double) * 10));
+  ia->datasize = 10;
+  for (int i = 0; i < ia->datasize; ++i)
+    ia->data[i] = i * 1.234;
+
+  // Check named initializers.
+  struct named_init ni = {
+    .number = 34,
+    .name = L"Test wide string",
+    .average = 543.34343,
+  };
+
+  ni.number = 58;
+
+  int dynamic_array[ni.number];
+  dynamic_array[0] = argv[0][0];
+  dynamic_array[ni.number - 1] = 543;
+
+  // work around unused variable warnings
+  ok |= (!success || bignum == 0LL || ubignum == 0uLL || newvar[0] == '\''x'\''
+	 || dynamic_array[ni.number - 1] != 543);
+'
+ac_c_conftest_c99_program='
+/* Does the compiler advertise C89 conformance?
+   Do not test the value of __STDC__, because some compilers set it to 0
+   while being otherwise adequately conformant. */
+#if !defined __STDC__
+# error "Compiler does not advertise C89 conformance"
+#endif
+
+#include <stddef.h>
+#include <stdarg.h>
+struct stat;
+/* Most of the following tests are stolen from RCS 5.7 src/conf.sh.  */
+struct buf { int x; };
+struct buf * (*rcsopen) (struct buf *, struct stat *, int);
+static char *e (p, i)
+     char **p;
+     int i;
+{
+  return p[i];
+}
+static char *f (char * (*g) (char **, int), char **p, ...)
+{
+  char *s;
+  va_list v;
+  va_start (v,p);
+  s = g (p, va_arg (v,int));
+  va_end (v);
+  return s;
+}
+
+/* OSF 4.0 Compaq cc is some sort of almost-ANSI by default.  It has
+   function prototypes and stuff, but not \xHH hex character constants.
+   These do not provoke an error unfortunately, instead are silently treated
+   as an "x".  The following induces an error, until -std is added to get
+   proper ANSI mode.  Curiously \x00 != x always comes out true, for an
+   array size at least.  It is necessary to write \x00 == 0 to get something
+   that is true only with -std.  */
+int osf4_cc_array ['\''\x00'\'' == 0 ? 1 : -1];
+
+/* IBM C 6 for AIX is almost-ANSI by default, but it replaces macro parameters
+   inside strings and character constants.  */
+#define FOO(x) '\''x'\''
+int xlc6_cc_array[FOO(a) == '\''x'\'' ? 1 : -1];
+
+int test (int i, double x);
+struct s1 {int (*f) (int a);};
+struct s2 {int (*f) (double a);};
+int pairnames (int, char **, int *(*)(struct buf *, struct stat *, int),
+               int, int);
+
+// Does the compiler advertise C99 conformance?
+#if !defined __STDC_VERSION__ || __STDC_VERSION__ < 199901L
+# error "Compiler does not advertise C99 conformance"
+#endif
+
+#include <stdbool.h>
+extern int puts (const char *);
+extern int printf (const char *, ...);
+extern int dprintf (int, const char *, ...);
+extern void *malloc (size_t);
+
+// Check varargs macros.  These examples are taken from C99 6.10.3.5.
+// dprintf is used instead of fprintf to avoid needing to declare
+// FILE and stderr.
+#define debug(...) dprintf (2, __VA_ARGS__)
+#define showlist(...) puts (#__VA_ARGS__)
+#define report(test,...) ((test) ? puts (#test) : printf (__VA_ARGS__))
+static void
+test_varargs_macros (void)
+{
+  int x = 1234;
+  int y = 5678;
+  debug ("Flag");
+  debug ("X = %d\n", x);
+  showlist (The first, second, and third items.);
+  report (x>y, "x is %d but y is %d", x, y);
+}
+
+// Check long long types.
+#define BIG64 18446744073709551615ull
+#define BIG32 4294967295ul
+#define BIG_OK (BIG64 / BIG32 == 4294967297ull && BIG64 % BIG32 == 0)
+#if !BIG_OK
+  #error "your preprocessor is broken"
+#endif
+#if BIG_OK
+#else
+  #error "your preprocessor is broken"
+#endif
+static long long int bignum = -9223372036854775807LL;
+static unsigned long long int ubignum = BIG64;
+
+struct incomplete_array
+{
+  int datasize;
+  double data[];
+};
+
+struct named_init {
+  int number;
+  const wchar_t *name;
+  double average;
+};
+
+typedef const char *ccp;
+
+static inline int
+test_restrict (ccp restrict text)
+{
+  // See if C++-style comments work.
+  // Iterate through items via the restricted pointer.
+  // Also check for declarations in for loops.
+  for (unsigned int i = 0; *(text+i) != '\''\0'\''; ++i)
+    continue;
+  return 0;
+}
+
+// Check varargs and va_copy.
+static bool
+test_varargs (const char *format, ...)
+{
+  va_list args;
+  va_start (args, format);
+  va_list args_copy;
+  va_copy (args_copy, args);
+
+  const char *str = "";
+  int number = 0;
+  float fnumber = 0;
+
+  while (*format)
+    {
+      switch (*format++)
+	{
+	case '\''s'\'': // string
+	  str = va_arg (args_copy, const char *);
+	  break;
+	case '\''d'\'': // int
+	  number = va_arg (args_copy, int);
+	  break;
+	case '\''f'\'': // float
+	  fnumber = va_arg (args_copy, double);
+	  break;
+	default:
+	  break;
+	}
+    }
+  va_end (args_copy);
+  va_end (args);
+
+  return *str && number && fnumber;
+}
+
+
+int
+main (int argc, char **argv)
+{
+  int ok = 0;
+  
+ok |= (argc == 0 || f (e, argv, 0) != argv[0] || f (e, argv, 1) != argv[1]);
+
+  
+  // Check bool.
+  _Bool success = false;
+  success |= (argc != 0);
+
+  // Check restrict.
+  if (test_restrict ("String literal") == 0)
+    success = true;
+  char *restrict newvar = "Another string";
+
+  // Check varargs.
+  success &= test_varargs ("s, d'\'' f .", "string", 65, 34.234);
+  test_varargs_macros ();
+
+  // Check flexible array members.
+  struct incomplete_array *ia =
+    malloc (sizeof (struct incomplete_array) + (sizeof (double) * 10));
+  ia->datasize = 10;
+  for (int i = 0; i < ia->datasize; ++i)
+    ia->data[i] = i * 1.234;
+
+  // Check named initializers.
+  struct named_init ni = {
+    .number = 34,
+    .name = L"Test wide string",
+    .average = 543.34343,
+  };
+
+  ni.number = 58;
+
+  int dynamic_array[ni.number];
+  dynamic_array[0] = argv[0][0];
+  dynamic_array[ni.number - 1] = 543;
+
+  // work around unused variable warnings
+  ok |= (!success || bignum == 0LL || ubignum == 0uLL || newvar[0] == '\''x'\''
+	 || dynamic_array[ni.number - 1] != 543);
+
+  return ok;
+}
+'
+ac_c_undeclared_builtin_options=
+ac_c_werror_flag=
+ac_cache=
+ac_cache_corrupted=false
+ac_check_lib_save_LIBS=
+ac_clean_files=
+ac_clean_files_save=
+ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+ac_compiler='$CC'
+ac_compiler_gnu=yes
+ac_confdir=.
+ac_config_commands=' depfiles'
+ac_config_files=' Makefile keepalived/Makefile lib/Makefile keepalived/core/Makefile keepalived.spec Dockerfile keepalived/check/Makefile keepalived/vrrp/Makefile keepalived/bfd/Makefile doc/Makefile bin_install/Makefile keepalived/dbus/Makefile keepalived/etc/Makefile keepalived/etc/init/Makefile keepalived/etc/init.d/Makefile keepalived/etc/sysconfig/Makefile keepalived/etc/keepalived/Makefile keepalived/trackers/Makefile doc/man/man8/Makefile doc/man/man5/Makefile doc/man/man1/Makefile'
+ac_config_headers=' lib/config.h lib/config_warnings.h'
+ac_config_libobj_dir=.
+ac_configure_args=' '\''--prefix=/usr'\'' '\''--sysconfdir=/etc'\'' '\''--localstatedir=/var'\'' '\''--runstatedir=/run'\'''
+ac_configure_args_raw=' --prefix=/usr --sysconfdir=/etc --localstatedir=/var --runstatedir=/run'
+ac_cpp='$CPP $CPPFLAGS'
+ac_ct_AR=ar
+ac_ct_CC=gcc
+ac_ct_LDD=ldd
+ac_ct_RANLIB=ranlib
+ac_ct_STRIP=strip
+ac_cv_c_compiler_gnu=yes
+ac_cv_c_const=yes
+ac_cv_c_inline=inline
+ac_cv_c_int64_t=yes
+ac_cv_c_uint16_t=yes
+ac_cv_c_uint32_t=yes
+ac_cv_c_uint64_t=yes
+ac_cv_c_uint8_t=yes
+ac_cv_c_undeclared_builtin_options='none needed'
+ac_cv_env_CC_set=
+ac_cv_env_CC_value=
+ac_cv_env_CFLAGS_set=
+ac_cv_env_CFLAGS_value=
+ac_cv_env_CPPFLAGS_set=
+ac_cv_env_CPPFLAGS_value=
+ac_cv_env_LDFLAGS_set=
+ac_cv_env_LDFLAGS_value=
+ac_cv_env_LIBS_set=
+ac_cv_env_LIBS_value=
+ac_cv_env_PKG_CONFIG_LIBDIR_set=
+ac_cv_env_PKG_CONFIG_LIBDIR_value=
+ac_cv_env_PKG_CONFIG_PATH_set=
+ac_cv_env_PKG_CONFIG_PATH_value=
+ac_cv_env_PKG_CONFIG_set=
+ac_cv_env_PKG_CONFIG_value=
+ac_cv_env_build_alias_set=
+ac_cv_env_build_alias_value=
+ac_cv_env_host_alias_set=
+ac_cv_env_host_alias_value=
+ac_cv_env_target_alias_set=
+ac_cv_env_target_alias_value=
+ac_cv_func_ERR_get_error_all=yes
+ac_cv_func_OPENSSL_init_crypto=yes
+ac_cv_func_SSL_CTX_set_verify_depth=yes
+ac_cv_func_SSL_set0_rbio=yes
+ac_cv_func_SSL_set0_wbio=yes
+ac_cv_func_TLS_method=yes
+ac_cv_func_dup2=yes
+ac_cv_func_dup3=yes
+ac_cv_func_fork=yes
+ac_cv_func_fork_works=yes
+ac_cv_func_getcwd=yes
+ac_cv_func_gettimeofday=yes
+ac_cv_func_malloc=yes
+ac_cv_func_memfd_create=yes
+ac_cv_func_memmove=yes
+ac_cv_func_memset=yes
+ac_cv_func_realloc=yes
+ac_cv_func_select=yes
+ac_cv_func_setenv=yes
+ac_cv_func_socket=yes
+ac_cv_func_strcasecmp=yes
+ac_cv_func_strchr=yes
+ac_cv_func_strdup=yes
+ac_cv_func_strerror=yes
+ac_cv_func_strpbrk=yes
+ac_cv_func_strstr=yes
+ac_cv_func_strtol=yes
+ac_cv_func_strtoul=yes
+ac_cv_func_uname=yes
+ac_cv_func_vfork=yes
+ac_cv_func_vfork_works=yes
+ac_cv_func_vsyslog=yes
+ac_cv_have_decl_ETHERTYPE_IPV6=yes
+ac_cv_have_decl_FRA_DPORT_RANGE=yes
+ac_cv_have_decl_FRA_IP_PROTO=yes
+ac_cv_have_decl_FRA_L3MDEV=yes
+ac_cv_have_decl_FRA_PROTOCOL=yes
+ac_cv_have_decl_FRA_SPORT_RANGE=yes
+ac_cv_have_decl_FRA_SUPPRESS_IFGROUP=yes
+ac_cv_have_decl_FRA_SUPPRESS_PREFIXLEN=yes
+ac_cv_have_decl_FRA_TUN_ID=yes
+ac_cv_have_decl_FRA_UID_RANGE=yes
+ac_cv_have_decl_GLOB_ALTDIRFUNC=yes
+ac_cv_have_decl_GLOB_BRACE=yes
+ac_cv_have_decl_IFA_FLAGS=yes
+ac_cv_have_decl_IFA_PROTO=yes
+ac_cv_have_decl_IFLA_INET6_ADDR_GEN_MODE=yes
+ac_cv_have_decl_IFLA_IPVLAN_FLAGS=yes
+ac_cv_have_decl_IFLA_IPVLAN_MODE=yes
+ac_cv_have_decl_IFLA_VRF_MAX=yes
+ac_cv_have_decl_IPV4_DEVCONF_ACCEPT_LOCAL=yes
+ac_cv_have_decl_IPV4_DEVCONF_ARPFILTER=yes
+ac_cv_have_decl_IPV4_DEVCONF_ARP_IGNORE=yes
+ac_cv_have_decl_IPV4_DEVCONF_RP_FILTER=yes
+ac_cv_have_decl_IPV6_MULTICAST_ALL=yes
+ac_cv_have_decl_IPVLAN_MODE_L3S=yes
+ac_cv_have_decl_IPVS_DAEMON_ATTR_MCAST_GROUP=yes
+ac_cv_have_decl_IPVS_DAEMON_ATTR_MCAST_GROUP6=yes
+ac_cv_have_decl_IPVS_DAEMON_ATTR_MCAST_PORT=yes
+ac_cv_have_decl_IPVS_DAEMON_ATTR_MCAST_TTL=yes
+ac_cv_have_decl_IPVS_DAEMON_ATTR_SYNC_MAXLEN=yes
+ac_cv_have_decl_IPVS_DEST_ATTR_ADDR_FAMILY=yes
+ac_cv_have_decl_IPVS_DEST_ATTR_STATS64=yes
+ac_cv_have_decl_IPVS_DEST_ATTR_TUN_TYPE=yes
+ac_cv_have_decl_IPVS_SVC_ATTR_STATS64=yes
+ac_cv_have_decl_IP_VS_CONN_F_TUNNEL_TYPE_GRE=yes
+ac_cv_have_decl_IP_VS_TUNNEL_ENCAP_FLAG_NOCSUM=yes
+ac_cv_have_decl_LWTUNNEL_ENCAP_ILA=yes
+ac_cv_have_decl_LWTUNNEL_ENCAP_MPLS=yes
+ac_cv_have_decl_NFTA_DUP_MAX=yes
+ac_cv_have_decl_NFTA_TABLE_MAX=yes
+ac_cv_have_decl_NFTNL_SET_DESC_CONCAT=yes
+ac_cv_have_decl_NFTNL_SET_ELEM_KEY_END=yes
+ac_cv_have_decl_NFTNL_SET_EXPR=yes
+ac_cv_have_decl_NFT_META_L4PROTO=yes
+ac_cv_have_decl_NFT_META_OIFKIND=yes
+ac_cv_have_decl_NFT_SET_CONCAT=yes
+ac_cv_have_decl_NFT_USERDATA_MAXLEN=yes
+ac_cv_have_decl_O_TMPFILE=yes
+ac_cv_have_decl_RTAX_CC_ALGO=yes
+ac_cv_have_decl_RTAX_FASTOPEN_NO_COOKIE=yes
+ac_cv_have_decl_RTAX_QUICKACK=yes
+ac_cv_have_decl_RTA_ENCAP=yes
+ac_cv_have_decl_RTA_EXPIRES=yes
+ac_cv_have_decl_RTA_NEWDST=yes
+ac_cv_have_decl_RTA_PREF=yes
+ac_cv_have_decl_RTA_TTL_PROPAGATE=yes
+ac_cv_have_decl_RTA_VIA=yes
+ac_cv_have_decl_RTEXT_FILTER_SKIP_STATS=yes
+ac_cv_have_decl_SO_MARK=yes
+ac_cv_have_decl_nftnl_udata_buf_alloc=yes
+ac_cv_have_decl_nftnl_udata_put_u32=yes
+ac_cv_header_arpa_inet_h=yes
+ac_cv_header_fcntl_h=yes
+ac_cv_header_inttypes_h=yes
+ac_cv_header_libiptc_libip6tc_h=no
+ac_cv_header_limits_h=yes
+ac_cv_header_linux_errqueue_h=yes
+ac_cv_header_linux_ethtool_h=yes
+ac_cv_header_linux_fib_rules_h=yes
+ac_cv_header_linux_icmp_h=yes
+ac_cv_header_linux_icmpv6_h=yes
+ac_cv_header_linux_if_addr_h=yes
+ac_cv_header_linux_if_ether_h=yes
+ac_cv_header_linux_if_link_h=yes
+ac_cv_header_linux_if_packet_h=yes
+ac_cv_header_linux_ip_h=yes
+ac_cv_header_linux_rtnetlink_h=yes
+ac_cv_header_linux_sockios_h=yes
+ac_cv_header_linux_types_h=yes
+ac_cv_header_net_if_arp_h=yes
+ac_cv_header_netdb_h=yes
+ac_cv_header_netinet_in_h=yes
+ac_cv_header_netlink_genl_ctrl_h=yes
+ac_cv_header_netlink_genl_genl_h=yes
+ac_cv_header_netlink_netlink_h=yes
+ac_cv_header_openssl_err_h=yes
+ac_cv_header_openssl_evp_h=yes
+ac_cv_header_openssl_md5_h=yes
+ac_cv_header_openssl_ssl_h=yes
+ac_cv_header_stdbool_h=yes
+ac_cv_header_stdint_h=yes
+ac_cv_header_stdio_h=yes
+ac_cv_header_stdlib_h=yes
+ac_cv_header_string_h=yes
+ac_cv_header_strings_h=yes
+ac_cv_header_sys_ioctl_h=yes
+ac_cv_header_sys_param_h=yes
+ac_cv_header_sys_prctl_h=yes
+ac_cv_header_sys_socket_h=yes
+ac_cv_header_sys_stat_h=yes
+ac_cv_header_sys_time_h=yes
+ac_cv_header_sys_types_h=yes
+ac_cv_header_syslog_h=yes
+ac_cv_header_unistd_h=yes
+ac_cv_header_vfork_h=no
+ac_cv_lib_crypto_EVP_DigestInit_ex=yes
+ac_cv_lib_crypto_EVP_MD_CTX_new=yes
+ac_cv_lib_magic_magic_open=no
+ac_cv_lib_nl_3_nl_socket_alloc=yes
+ac_cv_lib_nl_genl_3_genl_connect=yes
+ac_cv_lib_ssl_SSL_CTX_new=yes
+ac_cv_objext=o
+ac_cv_path_GREP=/usr/bin/grep
+ac_cv_path_SED=/usr/bin/sed
+ac_cv_path_ac_pt_PKG_CONFIG=/usr/bin/pkg-config
+ac_cv_path_install='/usr/bin/install -c'
+ac_cv_path_mkdir=/usr/bin/mkdir
+ac_cv_prog_AWK=gawk
+ac_cv_prog_ac_ct_AR=ar
+ac_cv_prog_ac_ct_CC=gcc
+ac_cv_prog_ac_ct_LDD=ldd
+ac_cv_prog_ac_ct_RANLIB=ranlib
+ac_cv_prog_ac_ct_STRIP=strip
+ac_cv_prog_cc_c11=
+ac_cv_prog_cc_g=yes
+ac_cv_prog_cc_stdc=
+ac_cv_prog_make_make_set=yes
+ac_cv_type__Bool=yes
+ac_cv_type_pid_t=yes
+ac_cv_type_size_t=yes
+ac_dashdash=
+ac_default_prefix=/usr/local
+ac_env_CC_set=
+ac_env_CC_value=
+ac_env_CFLAGS_set=
+ac_env_CFLAGS_value=
+ac_env_CPPFLAGS_set=
+ac_env_CPPFLAGS_value=
+ac_env_LDFLAGS_set=
+ac_env_LDFLAGS_value=
+ac_env_LIBS_set=
+ac_env_LIBS_value=
+ac_env_PKG_CONFIG_LIBDIR_set=
+ac_env_PKG_CONFIG_LIBDIR_value=
+ac_env_PKG_CONFIG_PATH_set=
+ac_env_PKG_CONFIG_PATH_value=
+ac_env_PKG_CONFIG_set=
+ac_env_PKG_CONFIG_value=
+ac_env_build_alias_set=
+ac_env_build_alias_value=
+ac_env_host_alias_set=
+ac_env_host_alias_value=
+ac_env_target_alias_set=
+ac_env_target_alias_value=
+ac_exec_ext=
+ac_exeext=
+ac_ext=c
+ac_file=conftest.o
+ac_files='a.out conftest.exe conftest a.exe a_out.exe b.out conftest.*'
+ac_first_candidate=:
+ac_func=memfd_create
+ac_func_c_list=' fork HAVE_FORK vfork HAVE_VFORK'
+ac_have_decl=1
+ac_header=libiptc/libip6tc.h
+ac_header_c_list=' stdio.h stdio_h HAVE_STDIO_H stdlib.h stdlib_h HAVE_STDLIB_H string.h string_h HAVE_STRING_H inttypes.h inttypes_h HAVE_INTTYPES_H stdint.h stdint_h HAVE_STDINT_H strings.h strings_h HAVE_STRINGS_H sys/stat.h sys_stat_h HAVE_SYS_STAT_H sys/types.h sys_types_h HAVE_SYS_TYPES_H unistd.h unistd_h HAVE_UNISTD_H vfork.h vfork_h HAVE_VFORK_H'
+ac_hostname=52dc05662fcb
+ac_i=7
+ac_includes_default='#include <stddef.h>
+#ifdef HAVE_STDIO_H
+# include <stdio.h>
+#endif
+#ifdef HAVE_STDLIB_H
+# include <stdlib.h>
+#endif
+#ifdef HAVE_STRING_H
+# include <string.h>
+#endif
+#ifdef HAVE_INTTYPES_H
+# include <inttypes.h>
+#endif
+#ifdef HAVE_STDINT_H
+# include <stdint.h>
+#endif
+#ifdef HAVE_STRINGS_H
+# include <strings.h>
+#endif
+#ifdef HAVE_SYS_TYPES_H
+# include <sys/types.h>
+#endif
+#ifdef HAVE_SYS_STAT_H
+# include <sys/stat.h>
+#endif
+#ifdef HAVE_UNISTD_H
+# include <unistd.h>
+#endif'
+ac_init_help=
+ac_init_version=false
+ac_install_sh='./build-aux/install-sh -c'
+ac_item=HAVE_VFORK
+ac_kw=inline
+ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ac_link_default='$CC $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ac_ls_di='9445589 .'
+ac_make=make
+ac_missing_aux_files=
+ac_msg='sources are in ., but `cd .'\'' does not work'
+ac_must_keep_next=false
+ac_new_set=
+ac_new_val=
+ac_objext=o
+ac_old_set=
+ac_old_val=
+ac_optarg=/run
+ac_option=-version
+ac_pass=2
+ac_path_GREP=/usr/bin/grep
+ac_path_GREP_found=:
+ac_path_SED=/usr/bin/sed
+ac_path_SED_found=:
+ac_precious_vars='build_alias
+host_alias
+target_alias
+PKG_CONFIG
+PKG_CONFIG_PATH
+PKG_CONFIG_LIBDIR
+CC
+CFLAGS
+LDFLAGS
+LIBS
+CPPFLAGS'
+ac_prev=
+ac_prog=ar
+ac_prog_cc_stdc=c11
+ac_pt_PKG_CONFIG=/usr/bin/pkg-config
+ac_pwd=/build
+ac_pwd_ls_di='9445589 .'
+ac_res=yes
+ac_retval=0
+ac_rmfiles=' a.out conftest.exe conftest a.exe a_out.exe b.out'
+ac_safe_unquote='s/ '\''\([^|&;<>()$`\\"*?[ 	#~][^|&;<>()$`\\"*?[ 	]*\)'\''/ \1/g'
+ac_save_CC=gcc
+ac_save_CFLAGS='-g -O2'
+ac_save_FLAGS='-g -O2'
+ac_save_c_werror_flag=
+ac_signal=0
+ac_site_file=/usr/etc/config.site
+ac_site_files='/usr/share/config.site /usr/etc/config.site'
+ac_srcdir_defaulted=yes
+ac_status=0
+ac_subst_files=
+ac_subst_vars='am__EXEEXT_FALSE
+am__EXEEXT_TRUE
+LTLIBOBJS
+LIBOBJS
+INIT_SUSE_FALSE
+INIT_SUSE_TRUE
+INIT_OPENRC_FALSE
+INIT_OPENRC_TRUE
+INIT_SYSV_FALSE
+INIT_SYSV_TRUE
+INIT_SYSTEMD_FALSE
+INIT_SYSTEMD_TRUE
+INIT_UPSTART_FALSE
+INIT_UPSTART_TRUE
+REPRODUCIBLE_BUILD_FALSE
+REPRODUCIBLE_BUILD_TRUE
+KEEPALIVED_CONFIG_OPTIONS
+OLD_DEFAULT_CONFIG_FILE
+DEFAULT_CONFIG_FILENAME
+DEFAULT_CONFIG_DIR
+DEFAULT_CONFIG_FILE
+KEEPALIVED_RUNTIME_OPTIONS
+SYSTEMD_EXEC_START_OPTIONS
+WITH_SYSTEMD_NOTIFY_FALSE
+WITH_SYSTEMD_NOTIFY_TRUE
+SYSTEMD_SERVICE_TYPE
+systemdsystemunitdir
+RPM_BIP_FALSE
+RPM_BIP_TRUE
+RPM_FALSE
+RPM_TRUE
+HAVE_RPMBUILD
+HAVE_RPM
+WITH_SANITIZER_FALSE
+WITH_SANITIZER_TRUE
+PROFILE_FALSE
+PROFILE_TRUE
+ASSERTS_FALSE
+ASSERTS_TRUE
+ONE_PROCESS_DEBUG_FALSE
+ONE_PROCESS_DEBUG_TRUE
+BUILD_DOCS_FALSE
+BUILD_DOCS_TRUE
+HAVE_SPHINX_BUILD
+SPHINXBUILDNAME
+KA_TMP_DIR
+DBUS_CREATE_INSTANCE_FALSE
+DBUS_CREATE_INSTANCE_TRUE
+WITH_DBUS_FALSE
+WITH_DBUS_TRUE
+SNMP_SERVICE
+SNMP_REPLY_V3_FOR_V2_FALSE
+SNMP_REPLY_V3_FOR_V2_TRUE
+SNMP_RFCV3_FALSE
+SNMP_RFCV3_TRUE
+SNMP_RFCV2_FALSE
+SNMP_RFCV2_TRUE
+SNMP_RFC_FALSE
+SNMP_RFC_TRUE
+SNMP_CHECKER_FALSE
+SNMP_CHECKER_TRUE
+SNMP_VRRP_FALSE
+SNMP_VRRP_TRUE
+SNMP_KEEPALIVED_FALSE
+SNMP_KEEPALIVED_TRUE
+SNMP_FALSE
+SNMP_TRUE
+NETSNMP_CONFIG
+NETWORK_MANAGER_FALSE
+NETWORK_MANAGER_TRUE
+TRACK_PROCESS_FALSE
+TRACK_PROCESS_TRUE
+WITH_BFD_FALSE
+WITH_BFD_TRUE
+WITH_JSON_FALSE
+WITH_JSON_TRUE
+VMAC_FALSE
+VMAC_TRUE
+VRRP_AUTH_FALSE
+VRRP_AUTH_TRUE
+WITH_VRRP_FALSE
+WITH_VRRP_TRUE
+WITH_REGEX_FALSE
+WITH_REGEX_TRUE
+WITH_IPVS_FALSE
+WITH_IPVS_TRUE
+FIREWALL_FALSE
+FIREWALL_TRUE
+NFTABLES_FALSE
+NFTABLES_TRUE
+LIBIPSET_DYNAMIC_FALSE
+LIBIPSET_DYNAMIC_TRUE
+LIBIPTC_DYNAMIC_FALSE
+LIBIPTC_DYNAMIC_TRUE
+IPTABLES_FALSE
+IPTABLES_TRUE
+LIBIPSET_FALSE
+LIBIPSET_TRUE
+MAGIC_FALSE
+MAGIC_TRUE
+LIBNL_DYNAMIC_FALSE
+LIBNL_DYNAMIC_TRUE
+LIBNL3_FALSE
+LIBNL3_TRUE
+LIBNL1_FALSE
+LIBNL1_TRUE
+KA_LIBS
+KA_LDFLAGS
+KA_CFLAGS
+KA_CPPFLAGS
+WITH_STRICT_CONFIG_CHECKS_FALSE
+WITH_STRICT_CONFIG_CHECKS_TRUE
+DEBUG_FALSE
+DEBUG_TRUE
+RUNSTATEDIR
+DBUS_DATADIR
+EXPANDED_DATADIR
+ARFLAGS
+ac_ct_AR
+AR
+LDD
+SED
+LN_S
+GREP
+RANLIB
+am__fastdepCC_FALSE
+am__fastdepCC_TRUE
+CCDEPMODE
+am__nodep
+AMDEPBACKSLASH
+AMDEP_FALSE
+AMDEP_TRUE
+am__include
+DEPDIR
+OBJEXT
+EXEEXT
+ac_ct_CC
+CPPFLAGS
+LDFLAGS
+CFLAGS
+CC
+USE_LLD
+SAMPLES_DIR
+PKG_CONFIG_LIBDIR
+PKG_CONFIG_PATH
+PKG_CONFIG
+MAINTAINERCLEANFILES
+AM_BACKSLASH
+AM_DEFAULT_VERBOSITY
+AM_DEFAULT_V
+AM_V
+CSCOPE
+ETAGS
+CTAGS
+am__untar
+am__tar
+AMTAR
+am__leading_dot
+SET_MAKE
+AWK
+mkdir_p
+MKDIR_P
+INSTALL_STRIP_PROGRAM
+STRIP
+install_sh
+MAKEINFO
+AUTOHEADER
+AUTOMAKE
+AUTOCONF
+ACLOCAL
+VERSION
+PACKAGE
+CYGPATH_W
+am__isrc
+INSTALL_DATA
+INSTALL_SCRIPT
+INSTALL_PROGRAM
+target_alias
+host_alias
+build_alias
+LIBS
+ECHO_T
+ECHO_N
+ECHO_C
+DEFS
+mandir
+localedir
+libdir
+psdir
+pdfdir
+dvidir
+htmldir
+infodir
+docdir
+oldincludedir
+includedir
+runstatedir
+localstatedir
+sharedstatedir
+sysconfdir
+datadir
+datarootdir
+libexecdir
+sbindir
+bindir
+program_transform_name
+prefix
+exec_prefix
+PACKAGE_URL
+PACKAGE_BUGREPORT
+PACKAGE_STRING
+PACKAGE_VERSION
+PACKAGE_TARNAME
+PACKAGE_NAME
+PATH_SEPARATOR
+SHELL
+am__quote'
+ac_test_CFLAGS=
+ac_tool_prefix=
+ac_try='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+ac_try_echo='configure:13786: gcc -c -g -O2    -D_GNU_SOURCE conftest.c >&5'
+ac_type=uint8_t
+ac_unique_file=keepalived/core/main.c
+ac_unrecognized_opts=
+ac_unrecognized_sep=
+ac_unsafe_a='|&;<>()$`\\"*?[ 	#~'
+ac_unsafe_z='|&;<>()$`\\"*?[ 	'
+ac_user_opts='
+enable_option_checking
+enable_silent_rules
+enable_lvs_syncd
+enable_lvs
+enable_lvs_64bit_stats
+enable_vrrp
+enable_bfd
+with_kernel_dir
+with_samples_dir
+enable_fwmark
+enable_snmp
+enable_snmp_vrrp
+enable_snmp_keepalived
+enable_snmp_checker
+enable_snmp_rfc
+enable_snmp_rfcv2
+enable_snmp_rfcv3
+enable_snmp_reply_v3_for_v2
+enable_dbus
+enable_dbus_create_instance
+enable_regex
+enable_vmac
+enable_nm
+enable_regex_timers
+enable_json
+enable_clang
+enable_lto
+enable_reproducible_build
+with_init
+enable_vrrp_auth
+enable_checksum_compat
+enable_routes
+enable_linkbeat
+enable_sockaddr_storage
+enable_gnu_std_paths
+enable_dynamic_linking
+enable_iptables
+enable_libiptc_dynamic
+enable_libipset_dynamic
+enable_libnl_dynamic
+enable_libipset
+enable_nftables
+enable_libnl
+enable_track_process
+enable_systemd
+with_run_dir
+with_tmp_dir
+with_iproute_usr_dir
+with_iproute_etc_dir
+enable_strict_config_checks
+enable_hardening
+enable_optimise
+enable_warnings
+enable_extra_warnings
+enable_mem_check
+enable_mem_check_log
+enable_openssl_mem_check
+enable_malloc_check
+enable_timer_check
+enable_debug
+enable_netlink_timers
+enable_smtp_alert_debug
+enable_stacktrace
+enable_perf
+enable_sanitize_address
+enable_sanitize_address_options
+enable_sanitize_hwaddress
+enable_sanitize_hwaddress_options
+enable_sanitize_undefined
+enable_sanitize_undefined_options
+enable_sanitize_memory
+enable_sanitize_memory_options
+enable_sanitize_leak
+enable_sanitize_leak_options
+enable_sanitize_scudo
+enable_sanitize_scudo_options
+enable_log_file
+enable_dump_threads
+enable_epoll_debug
+enable_epoll_thread_dump
+enable_regex_debug
+enable_tsm_debug
+enable_vrrp_fd_debug
+enable_recvmsg_debug
+enable_eintr_debug
+enable_track_process_debug
+enable_parser_debug
+enable_checksum_debug
+enable_checker_debug
+enable_smtp_connect_debug
+enable_mem_err_debug
+enable_script_debug
+enable_one_process_debug
+enable_dump_keywords
+enable_network_timestamp
+enable_asserts
+with_fixed_if_type
+with_default_config_file
+with_default_runtime_options
+enable_profile
+enable_strict_cast_align
+enable_cast_align_checks
+enable_cast_via_void
+enable_conversion_checks
+enable_force_conversion_checks
+enable_Werror
+with_systemdsystemunitdir
+with_dbus_data_dir
+enable_cflags
+enable_cppflags
+enable_ldflags
+enable_dependency_tracking
+'
+ac_val=/run
+ac_var=CPPFLAGS
+ac_word=ar
+am__api_version=1.16
+am__fastdepCC_FALSE='#'
+am__fastdepCC_TRUE=
+am__include=include
+am__leading_dot=.
+am__minus_obj='-o sub/conftest.o'
+am__nodep=_no
+am__obj=sub/conftest.o
+am__quote=
+am__tar='$${TAR-tar} chof - "$$tardir"'
+am__universal=false
+am__untar='$${TAR-tar} xf -'
+am_ar_try='$AR cru libconftest.a conftest.$ac_objext >&5'
+am_aux_dir=/build/build-aux
+am_compiler_list='gcc3
+gcc
+hp
+sgi
+xlc
+aix
+tcc
+pgcc
+hp2
+tru64
+msvc7
+msvc7msys
+nosideeffect
+dashmstdout
+dashXmstdout
+makedepend
+cpp
+msvisualcpp
+msvcmsys
+none'
+am_cv_CC_dependencies_compiler_type=gcc3
+am_cv_ar_interface=ar
+am_cv_make_support_nested_variables=yes
+am_cv_prog_cc_c_o=yes
+am_depcomp=./build-aux//depcomp
+am_lf='
+'
+am_make=make
+am_missing_run='${SHELL} '\''/build/build-aux/missing'\'' '
+am_sleep_pid=2954
+args='--prefix=/usr --sysconfdir=/etc --localstatedir=/var --runstatedir=/run'
+as_ac_Header=ac_cv_header_libiptc_libip6tc_h
+as_ac_Lib=ac_cv_lib_nl_genl_3_genl_connect
+as_basename=basename
+as_bourne_compatible='as_nop=:
+if test ${ZSH_VERSION+y} && (emulate sh) >/dev/null 2>&1
+then :
+  emulate sh
+  NULLCMD=:
+  # Pre-4.2 versions of Zsh do word splitting on ${1+"$@"}, which
+  # is contrary to our usage.  Disable this feature.
+  alias -g '\''${1+"$@"}'\''='\''"$@"'\''
+  setopt NO_GLOB_SUBST
+else $as_nop
+  case `(set -o) 2>/dev/null` in #(
+  *posix*) :
+    set -o posix ;; #(
+  *) :
+     ;;
+esac
+fi
+'
+as_cr_LETTERS=ABCDEFGHIJKLMNOPQRSTUVWXYZ
+as_cr_Letters=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+as_cr_alnum=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+as_cr_digits=0123456789
+as_cr_letters=abcdefghijklmnopqrstuvwxyz
+as_decl_name=SO_MARK
+as_decl_use=SO_MARK
+as_dir=/usr/bin/
+as_dirname=dirname
+as_echo='printf %s\n'
+as_echo_n='printf %s'
+as_executable_p=as_fn_executable_p
+as_expr=expr
+as_found=:
+as_have_required=yes
+as_lineno_1=488
+as_lineno_1a=488
+as_lineno_2=489
+as_lineno_2a=489
+as_lineno_stack=
+as_ln_s='ln -s'
+as_me=configure
+as_mkdir_p='mkdir -p "$as_dir"'
+as_myself=./configure
+as_nl='
+'
+as_nop=as_fn_nop
+as_required='as_fn_return () { (exit $1); }
+as_fn_success () { as_fn_return 0; }
+as_fn_failure () { as_fn_return 1; }
+as_fn_ret_success () { return 0; }
+as_fn_ret_failure () { return 1; }
+
+exitcode=0
+as_fn_success || { exitcode=1; echo as_fn_success failed.; }
+as_fn_failure && { exitcode=1; echo as_fn_failure succeeded.; }
+as_fn_ret_success || { exitcode=1; echo as_fn_ret_success failed.; }
+as_fn_ret_failure && { exitcode=1; echo as_fn_ret_failure succeeded.; }
+if ( set x; as_fn_ret_success y && test x = "$1" )
+then :
+
+else $as_nop
+  exitcode=1; echo positional parameters were not saved.
+fi
+test x$exitcode = x0 || exit 1
+blah=$(echo $(echo blah))
+test x"$blah" = xblah || exit 1
+test -x / || exit 1'
+as_save_IFS=' 	
+'
+as_suggested='  as_lineno_1=182 as_lineno_1a=$LINENO
+  as_lineno_2=183 as_lineno_2a=$LINENO
+  eval '\''test "x$as_lineno_1'\''$as_run'\''" != "x$as_lineno_2'\''$as_run'\''" &&
+  test "x`expr $as_lineno_1'\''$as_run'\'' + 1`" = "x$as_lineno_2'\''$as_run'\''"'\'' || exit 1
+test $(( 1 + 1 )) = 2 || exit 1'
+as_test_x='test -x'
+as_tr_cpp='eval sed '\''y%*abcdefghijklmnopqrstuvwxyz%PABCDEFGHIJKLMNOPQRSTUVWXYZ%;s%[^_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789]%_%g'\'''
+as_tr_sh='eval sed '\''y%*+%pp%;s%[^_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789]%_%g'\'''
+as_unset=as_fn_unset
+as_var=CDPATH
+bindir='${exec_prefix}/bin'
+build=
+cache_file=/dev/null
+cross_compiling=no
+datadir='${datarootdir}'
+datarootdir='${prefix}/share'
+decl_var=yes
+default_config_file=
+default_runtime_options=-D
+depcc=gcc
+depmode=gcc3
+docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
+dvidir='${docdir}'
+enable_optimise=not-specified
+enable_warnings=yes
+exec_prefix=NONE
+exec_prefix_save=NONE
+field=ts.tv_nsec
+flag=LWTUNNEL_ENCAP_ILA
+full_var=/run
+host=
+htmldir='${docdir}'
+i=6
+includedir='${prefix}/include'
+infodir='${datarootdir}/info'
+init_type=
+install_sh='${SHELL} /build/build-aux/install-sh'
+item=-lmnl
+kernelinc=
+l=-lnl-3
+len=ll
+libdir='${exec_prefix}/lib'
+libexecdir='${exec_prefix}/libexec'
+localedir='${datarootdir}/locale'
+localstatedir=/var
+mandir='${datarootdir}/man'
+method_func=TLS_method
+mkdir_p='$(MKDIR_P)'
+name=ts_nsec
+new_full_var=/run
+no_create=
+no_recursion=
+oldincludedir=/usr/include
+openssl_init_no_load_bug=0
+optimise_level=2
+pdfdir='${docdir}'
+prefix=/usr
+prefix_save=/usr
+program_prefix=NONE
+program_suffix=NONE
+program_transform_name=s,x,x,
+psdir='${docdir}'
+r=libnl-3.0
+runstatedir=/run
+s=GNU
+sbindir='${exec_prefix}/sbin'
+sharedstatedir='${prefix}/com'
+sign=u
+signs='d u'
+silent=
+site=
+srcdir=.
+subdirs=
+sysconfdir=/etc
+target=
+var=' -lm -lssl  -lcrypto  -lnl-3 -lnl-genl-3 -lnftnl'
+verbose=
+with_systemdsystemunitdir=auto
+x_includes=NONE
+x_libraries=NONE
+checking for sphinx-build... No
+enable_Sanitize_undefined =
+checking for rpm... Yes
+checking for rpmbuild... No
+
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating keepalived/Makefile
+config.status: creating lib/Makefile
+config.status: creating keepalived/core/Makefile
+config.status: creating keepalived.spec
+config.status: creating Dockerfile
+config.status: creating keepalived/check/Makefile
+config.status: creating keepalived/vrrp/Makefile
+config.status: creating keepalived/bfd/Makefile
+config.status: creating doc/Makefile
+config.status: creating bin_install/Makefile
+config.status: creating keepalived/dbus/Makefile
+config.status: creating keepalived/etc/Makefile
+config.status: creating keepalived/etc/init/Makefile
+config.status: creating keepalived/etc/init.d/Makefile
+config.status: creating keepalived/etc/sysconfig/Makefile
+config.status: creating keepalived/etc/keepalived/Makefile
+config.status: creating keepalived/trackers/Makefile
+config.status: creating doc/man/man8/Makefile
+config.status: creating doc/man/man5/Makefile
+config.status: creating doc/man/man1/Makefile
+config.status: creating lib/config.h
+config.status: creating lib/config_warnings.h
+config.status: executing depfiles commands
+
+Keepalived configuration
+------------------------
+Keepalived version       : 2.3.2
+Compiler                 : gcc gcc (GCC) 12.3.1 (openEuler 12.3.1-93.oe2403sp2)
+Preprocessor flags       : -D_GNU_SOURCE -I/usr/include/libnl3
+Compiler flags           : -g -g -O2 -Wall -Wextra -Wunused -Wstrict-prototypes -Wabsolute-value -Waddress-of-packed-member -Walloca -Walloc-zero -Warith-conversion -Warray-bounds=2 -Wattribute-alias=2 -Wbad-function-cast -Wc11-c2x-compat -Wcast-align -Wcast-qual -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wduplicated-branches -Wduplicated-cond -Wfloat-conversion -Wfloat-equal -Wformat-overflow -Wformat-signedness -Wformat-truncation -Wframe-larger-than=5120 -Wimplicit-fallthrough=3 -Winit-self -Winline -Winvalid-pch -Wjump-misses-init -Wlogical-op -Wmissing-declarations -Wmissing-field-initializers -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnormalized -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpointer-arith -Wredundant-decls -Wshadow -Wshift-overflow=2 -Wstack-protector -Wstrict-overflow=4 -Wstringop-overflow=2 -Wstringop-truncation -Wsuggest-attribute=cold -Wsuggest-attribute=format -Wsuggest-attribute=malloc -Wsuggest-attribute=noreturn -Wsuggest-attribute=pure -Wsync-nand -Wtrampolines -Wundef -Wuninitialized -Wunknown-pragmas -Wunsafe-loop-optimizations -Wunsuffixed-float-constants -Wunused-const-variable=2 -Wvariadic-macros -Wwrite-strings -fno-strict-aliasing -fPIE -Wformat -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -O2
+Linker flags             : -pie -Wl,-z,relro -Wl,-z,now
+Extra Lib                : -lm -lssl -lcrypto -lnl-3 -lnl-genl-3 -lnftnl -lmnl -lsystemd
+Use IPVS Framework       : Yes
+IPVS use libnl           : Yes
+IPVS syncd attributes    : Yes
+IPVS 64 bit stats        : Yes
+HTTP_GET regex support   : No
+fwmark socket support    : Yes
+Use VRRP Framework       : Yes
+Use VRRP VMAC            : Yes
+Use VRRP authentication  : Yes
+With track_process       : Yes
+With linkbeat            : Yes
+Use NetworkManager       : No
+Use BFD Framework        : No
+SNMP vrrp support        : No
+SNMP checker support     : No
+SNMP RFCv2 support       : No
+SNMP RFCv3 support       : No
+DBUS support             : No
+Use JSON output          : No
+libnl version            : 3
+Use IPv4 devconf         : Yes
+Use iptables             : No
+Use nftables             : Yes
+init type                : systemd
+systemd notify           : Yes
+Strict config checks     : No
+Build documentation      : No
+iproute usr directory    : /usr/share/iproute2
+iproute etc directory    : /etc/iproute2
+Default runtime options  : -D
++ make -j4
+Making all in lib
+make[1]: Entering directory '/build/lib'
+make  all-am
+make[2]: Entering directory '/build/lib'
+  CC       memory.o
+  CC       notify.o
+  CC       utils.o
+  CC       timer.o
+  CC       scheduler.o
+  CC       vector.o
+  CC       html.o
+  CC       parser.o
+  CC       signals.o
+  CC       logger.o
+  CC       list_head.o
+  CC       rbtree.o
+  CC       process.o
+  CC       json_writer.o
+  CC       rttables.o
+  CC       systemd.o
+  AR       liblib.a
+make[2]: Leaving directory '/build/lib'
+make[1]: Leaving directory '/build/lib'
+Making all in keepalived
+make[1]: Entering directory '/build/keepalived'
+Making all in core
+make[2]: Entering directory '/build/keepalived/core'
+  CC       main.o
+  CC       daemon.o
+  CC       pidfile.o
+  CC       layer4.o
+  CC       smtp.o
+  CC       global_data.o
+  CC       global_parser.o
+  CC       keepalived_netlink.o
+  CC       namespaces.o
+  CC       nftables.o
+  CC       track_process.o
+  CC       reload_monitor.o
+  CC       config_notify.o
+  AR       libcore.a
+make[2]: Leaving directory '/build/keepalived/core'
+Making all in vrrp
+make[2]: Entering directory '/build/keepalived/vrrp'
+  CC       vrrp_daemon.o
+  CC       vrrp_print.o
+  CC       vrrp_data.o
+  CC       vrrp_parser.o
+  CC       vrrp.o
+  CC       vrrp_notify.o
+  CC       vrrp_scheduler.o
+  CC       vrrp_sync.o
+  CC       vrrp_arp.o
+  CC       vrrp_if.o
+  CC       vrrp_track.o
+  CC       vrrp_ipaddress.o
+  CC       vrrp_ndisc.o
+  CC       vrrp_if_config.o
+  CC       vrrp_static_track.o
+  CC       vrrp_iproute.o
+  CC       vrrp_iprule.o
+  CC       vrrp_ip_rule_route_parser.o
+  CC       vrrp_vmac.o
+  CC       vrrp_ipsecah.o
+  CC       vrrp_firewall.o
+  CC       vrrp_nftables.o
+  AR       libvrrp.a
+make[2]: Leaving directory '/build/keepalived/vrrp'
+Making all in check
+make[2]: Entering directory '/build/keepalived/check'
+  CC       check_daemon.o
+  CC       check_data.o
+  CC       check_parser.o
+  CC       check_api.o
+  CC       check_tcp.o
+  CC       check_http.o
+  CC       check_ssl.o
+  CC       check_genhash.o
+  CC       check_smtp.o
+  CC       check_misc.o
+  CC       check_dns.o
+  CC       check_print.o
+  CC       ipwrapper.o
+  CC       ipvswrapper.o
+  CC       libipvs.o
+  CC       check_udp.o
+  CC       check_ping.o
+  CC       check_file.o
+  CC       check_nftables.o
+  AR       libcheck.a
+make[2]: Leaving directory '/build/keepalived/check'
+Making all in trackers
+make[2]: Entering directory '/build/keepalived/trackers'
+  CC       track_file.o
+  AR       libtracker.a
+make[2]: Leaving directory '/build/keepalived/trackers'
+Making all in etc
+make[2]: Entering directory '/build/keepalived/etc'
+Making all in init
+make[3]: Entering directory '/build/keepalived/etc/init'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/build/keepalived/etc/init'
+Making all in init.d
+make[3]: Entering directory '/build/keepalived/etc/init.d'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/build/keepalived/etc/init.d'
+Making all in keepalived
+make[3]: Entering directory '/build/keepalived/etc/keepalived'
+  CP       keepalived.conf.sample
+make[3]: Leaving directory '/build/keepalived/etc/keepalived'
+Making all in sysconfig
+make[3]: Entering directory '/build/keepalived/etc/sysconfig'
+  EDIT     keepalived
+make[3]: Leaving directory '/build/keepalived/etc/sysconfig'
+make[3]: Entering directory '/build/keepalived/etc'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/build/keepalived/etc'
+make[2]: Leaving directory '/build/keepalived/etc'
+make[2]: Entering directory '/build/keepalived'
+  CC       main.o
+  EDIT     keepalived-non-root.service
+  EDIT     keepalived.service
+  CCLD     keepalived
+make[2]: Leaving directory '/build/keepalived'
+make[1]: Leaving directory '/build/keepalived'
+Making all in doc
+make[1]: Entering directory '/build/doc'
+Making all in man/man8
+make[2]: Entering directory '/build/doc/man/man8'
+  EDIT     keepalived.8
+make[2]: Leaving directory '/build/doc/man/man8'
+Making all in man/man5
+make[2]: Entering directory '/build/doc/man/man5'
+  EDIT     keepalived.conf.5
+make[2]: Leaving directory '/build/doc/man/man5'
+Making all in man/man1
+make[2]: Entering directory '/build/doc/man/man1'
+  EDIT     genhash.1
+make[2]: Leaving directory '/build/doc/man/man1'
+make[2]: Entering directory '/build/doc'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/build/doc'
+make[1]: Leaving directory '/build/doc'
+Making all in bin_install
+make[1]: Entering directory '/build/bin_install'
+make[1]: Leaving directory '/build/bin_install'
+make[1]: Entering directory '/build'
+  EDIT     README
+make[1]: Leaving directory '/build'
++ OUT=/src/out
++ ROOT=/src/out/rootfs
++ NAME=keepalived-2.3.2-kylin-v11-loongarch64
++ rm -rf /src/out/rootfs
++ mkdir -p /src/out/rootfs
++ make install DESTDIR=/src/out/rootfs
+Making install in lib
+make[1]: Entering directory '/build/lib'
+make  install-am
+make[2]: Entering directory '/build/lib'
+make[3]: Entering directory '/build/lib'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/build/lib'
+make[2]: Leaving directory '/build/lib'
+make[1]: Leaving directory '/build/lib'
+Making install in keepalived
+make[1]: Entering directory '/build/keepalived'
+Making install in core
+make[2]: Entering directory '/build/keepalived/core'
+make[3]: Entering directory '/build/keepalived/core'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/build/keepalived/core'
+make[2]: Leaving directory '/build/keepalived/core'
+Making install in vrrp
+make[2]: Entering directory '/build/keepalived/vrrp'
+make[3]: Entering directory '/build/keepalived/vrrp'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/build/keepalived/vrrp'
+make[2]: Leaving directory '/build/keepalived/vrrp'
+Making install in check
+make[2]: Entering directory '/build/keepalived/check'
+make[3]: Entering directory '/build/keepalived/check'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/build/keepalived/check'
+make[2]: Leaving directory '/build/keepalived/check'
+Making install in trackers
+make[2]: Entering directory '/build/keepalived/trackers'
+make[3]: Entering directory '/build/keepalived/trackers'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/build/keepalived/trackers'
+make[2]: Leaving directory '/build/keepalived/trackers'
+Making install in etc
+make[2]: Entering directory '/build/keepalived/etc'
+Making install in init
+make[3]: Entering directory '/build/keepalived/etc/init'
+make[4]: Entering directory '/build/keepalived/etc/init'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Leaving directory '/build/keepalived/etc/init'
+make[3]: Leaving directory '/build/keepalived/etc/init'
+Making install in init.d
+make[3]: Entering directory '/build/keepalived/etc/init.d'
+make[4]: Entering directory '/build/keepalived/etc/init.d'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Leaving directory '/build/keepalived/etc/init.d'
+make[3]: Leaving directory '/build/keepalived/etc/init.d'
+Making install in keepalived
+make[3]: Entering directory '/build/keepalived/etc/keepalived'
+make[4]: Entering directory '/build/keepalived/etc/keepalived'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/src/out/rootfs/etc/keepalived'
+ /usr/bin/install -c -m 644 keepalived.conf.sample '/src/out/rootfs/etc/keepalived'
+make  install-data-hook
+make[5]: Entering directory '/build/keepalived/etc/keepalived'
+make[5]: Leaving directory '/build/keepalived/etc/keepalived'
+make[4]: Leaving directory '/build/keepalived/etc/keepalived'
+make[3]: Leaving directory '/build/keepalived/etc/keepalived'
+Making install in sysconfig
+make[3]: Entering directory '/build/keepalived/etc/sysconfig'
+make[4]: Entering directory '/build/keepalived/etc/sysconfig'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/src/out/rootfs/etc/sysconfig'
+ /usr/bin/install -c -m 644 keepalived '/src/out/rootfs/etc/sysconfig'
+make[4]: Leaving directory '/build/keepalived/etc/sysconfig'
+make[3]: Leaving directory '/build/keepalived/etc/sysconfig'
+make[3]: Entering directory '/build/keepalived/etc'
+make[4]: Entering directory '/build/keepalived/etc'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/build/keepalived/etc'
+make[3]: Leaving directory '/build/keepalived/etc'
+make[2]: Leaving directory '/build/keepalived/etc'
+make[2]: Entering directory '/build/keepalived'
+make[3]: Entering directory '/build/keepalived'
+ /usr/bin/mkdir -p '/src/out/rootfs/usr/sbin'
+  /usr/bin/install -c keepalived '/src/out/rootfs/usr/sbin'
+make  install-exec-hook
+make[4]: Entering directory '/build/keepalived'
+/usr/bin/mkdir -p /src/out/rootfs//usr/bin
+make[4]: Leaving directory '/build/keepalived'
+ /usr/bin/mkdir -p '/src/out/rootfs/usr/lib/systemd/system'
+ /usr/bin/install -c -m 644 keepalived.service '/src/out/rootfs/usr/lib/systemd/system'
+make[3]: Leaving directory '/build/keepalived'
+make[2]: Leaving directory '/build/keepalived'
+make[1]: Leaving directory '/build/keepalived'
+Making install in doc
+make[1]: Entering directory '/build/doc'
+Making install in man/man8
+make[2]: Entering directory '/build/doc/man/man8'
+make[3]: Entering directory '/build/doc/man/man8'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/src/out/rootfs/usr/share/man/man8'
+ /usr/bin/install -c -m 644 keepalived.8 '/src/out/rootfs/usr/share/man/man8'
+make[3]: Leaving directory '/build/doc/man/man8'
+make[2]: Leaving directory '/build/doc/man/man8'
+Making install in man/man5
+make[2]: Entering directory '/build/doc/man/man5'
+make[3]: Entering directory '/build/doc/man/man5'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/src/out/rootfs/usr/share/man/man5'
+ /usr/bin/install -c -m 644 keepalived.conf.5 '/src/out/rootfs/usr/share/man/man5'
+make[3]: Leaving directory '/build/doc/man/man5'
+make[2]: Leaving directory '/build/doc/man/man5'
+Making install in man/man1
+make[2]: Entering directory '/build/doc/man/man1'
+make[3]: Entering directory '/build/doc/man/man1'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/src/out/rootfs/usr/share/man/man1'
+ /usr/bin/install -c -m 644 genhash.1 '/src/out/rootfs/usr/share/man/man1'
+make[3]: Leaving directory '/build/doc/man/man1'
+make[2]: Leaving directory '/build/doc/man/man1'
+make[2]: Entering directory '/build/doc'
+make[3]: Entering directory '/build/doc'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/src/out/rootfs/usr/share/snmp/mibs'
+ /usr/bin/mkdir -p '/src/out/rootfs/etc/keepalived/samples'
+ /usr/bin/install -c -m 644 ./samples/keepalived.conf.HTTP_GET.port ./samples/keepalived.conf.IPv6 ./samples/keepalived.conf.PING_CHECK ./samples/keepalived.conf.SMTP_CHECK ./samples/keepalived.conf.SSL_GET ./samples/keepalived.conf.UDP_CHECK ./samples/keepalived.conf.conditional_conf ./samples/keepalived.conf.fwmark ./samples/keepalived.conf.inhibit ./samples/keepalived.conf.misc_check ./samples/keepalived.conf.misc_check_arg ./samples/keepalived.conf.quorum ./samples/keepalived.conf.sample ./samples/keepalived.conf.status_code ./samples/keepalived.conf.track_interface ./samples/keepalived.conf.virtual_server_group ./samples/keepalived.conf.virtualhost ./samples/keepalived.conf.vrrp ./samples/keepalived.conf.vrrp.localcheck ./samples/keepalived.conf.vrrp.lvs_syncd ./samples/keepalived.conf.vrrp.routes ./samples/keepalived.conf.vrrp.rules ./samples/keepalived.conf.vrrp.scripts ./samples/keepalived.conf.vrrp.static_ipaddress ./samples/keepalived.conf.vrrp.sync ./samples/sample.misccheck.smbcheck.sh ./samples/sample_notify_fifo.sh '/src/out/rootfs/etc/keepalived/samples'
+make[3]: Leaving directory '/build/doc'
+make[2]: Leaving directory '/build/doc'
+make[1]: Leaving directory '/build/doc'
+Making install in bin_install
+make[1]: Entering directory '/build/bin_install'
+make[2]: Entering directory '/build/bin_install'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/build/bin_install'
+make[1]: Leaving directory '/build/bin_install'
+make[1]: Entering directory '/build'
+make[2]: Entering directory '/build'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/src/out/rootfs/usr/share/doc/keepalived'
+ /usr/bin/install -c -m 644 README '/src/out/rootfs/usr/share/doc/keepalived'
+make  install-data-hook
+make[3]: Entering directory '/build'
+make[3]: Nothing to be done for 'install-data-hook'.
+make[3]: Leaving directory '/build'
+make[2]: Leaving directory '/build'
+make[1]: Leaving directory '/build'
++ cp /src/out/rootfs/usr/sbin/keepalived /src/out/keepalived
++ tar -C /src/out/rootfs -czf /src/out/keepalived-2.3.2-kylin-v11-loongarch64.tar.gz .
++ sha256sum /src/out/keepalived-2.3.2-kylin-v11-loongarch64.tar.gz /src/out/keepalived
++ echo 'name: keepalived-2.3.2-kylin-v11-loongarch64'
+++ date -u +%Y-%m-%dT%H:%M:%SZ
++ echo 'build date: 2026-11-26T05:25:32Z'
+++ uname -m
++ echo 'architecture: loongarch64'
+++ ldd --version
+++ head -n 1
++ echo 'build glibc: ldd (GNU libc) 2.38'
+++ cat /etc/os-release
+++ tr '\n' ' '
++ echo 'build os: NAME="openEuler" VERSION="24.03 (LTS-SP2)" ID="openEuler" VERSION_ID="24.03" PRETTY_NAME="openEuler 24.03 (LTS-SP2)" ANSI_COLOR="0;31"  '
++ echo
++ echo 'keepalived --version:'
++ /src/out/rootfs/usr/sbin/keepalived --version
++ echo
++ echo 'linked libraries:'
++ ldd /src/out/rootfs/usr/sbin/keepalived
++ echo
++ echo 'GLIBC symbol versions required (lowest..highest):'
++ objdump -T /src/out/rootfs/usr/sbin/keepalived
++ sort -Vu
++ grep -o 'GLIBC_[0-9.]*'
++ tr '\n' ' '
++ echo
++ echo 'GLIBCXX/CXXABI symbol versions required:'
++ objdump -T /src/out/rootfs/usr/sbin/keepalived
++ sort -Vu
++ tr '\n' ' '
++ grep -oE '(GLIBCXX|CXXABI)_[0-9.]*'
++ true
++ echo
++ echo '=== BUILD-INFO.txt ==='
+=== BUILD-INFO.txt ===
++ cat /src/out/BUILD-INFO.txt
+name: keepalived-2.3.2-kylin-v11-loongarch64
+build date: 2026-11-26T05:25:32Z
+architecture: loongarch64
+build glibc: ldd (GNU libc) 2.38
+build os: NAME="openEuler" VERSION="24.03 (LTS-SP2)" ID="openEuler" VERSION_ID="24.03" PRETTY_NAME="openEuler 24.03 (LTS-SP2)" ANSI_COLOR="0;31"  
+
+keepalived --version:
+Keepalived v2.3.2 (11/26,2026)
+
+Copyright(C) 2001-2026 Alexandre Cassen, <acassen@gmail.com>
+
+Built with kernel headers for Linux 6.6.0
+Running on Linux 7.0.0-1017-azure #17~24.04.1-Ubuntu SMP PREEMPT Thu Sep 24 18:46:57 UTC 2026
+Distro: openEuler 24.03 (LTS-SP2)
+
+configure options: --prefix=/usr --sysconfdir=/etc --localstatedir=/var --runstatedir=/run
+
+Config options:  NFTABLES LVS VRRP VRRP_AUTH VRRP_VMAC OLD_CHKSUM_COMPAT IPROUTE_ETC_DIR=/etc/iproute2 IPROUTE_USR_DIR=/usr/share/iproute2 INIT=systemd SYSTEMD_NOTIFY
+
+System options:  VSYSLOG MEMFD_CREATE IPV6_MULTICAST_ALL IPV4_DEVCONF LIBNL3 RTA_ENCAP RTA_EXPIRES RTA_NEWDST RTA_PREF FRA_SUPPRESS_PREFIXLEN FRA_SUPPRESS_IFGROUP FRA_TUN_ID RTAX_CC_ALGO RTAX_QUICKACK RTEXT_FILTER_SKIP_STATS FRA_L3MDEV FRA_UID_RANGE RTAX_FASTOPEN_NO_COOKIE RTA_VIA FRA_PROTOCOL FRA_IP_PROTO FRA_SPORT_RANGE FRA_DPORT_RANGE RTA_TTL_PROPAGATE IFA_FLAGS IFA_PROTO LWTUNNEL_ENCAP_MPLS LWTUNNEL_ENCAP_ILA NET_LINUX_IF_H_COLLISION LIBIPTC_LINUX_NET_IF_H_COLLISION LIBIPVS_NETLINK IPVS_DEST_ATTR_ADDR_FAMILY IPVS_SYNCD_ATTRIBUTES IPVS_64BIT_STATS IPVS_TUN_TYPE IPVS_TUN_CSUM IPVS_TUN_GRE VRRP_IPVLAN IFLA_LINK_NETNSID GLOB_BRACE GLOB_ALTDIRFUNC INET6_ADDR_GEN_MODE VRF SO_MARK
+
+linked libraries:
+	linux-vdso.so.1 (0x00007fc4115c3000)
+	libm.so.6 => /lib64/libm.so.6 (0x00007fc411428000)
+	libssl.so.3 => /lib64/libssl.so.3 (0x00007fc40834c000)
+	libcrypto.so.3 => /lib64/libcrypto.so.3 (0x00007fc407f44000)
+	libnl-3.so.200 => /lib64/libnl-3.so.200 (0x00007fc407f18000)
+	libnl-genl-3.so.200 => /lib64/libnl-genl-3.so.200 (0x00007fc411418000)
+	libnftnl.so.11 => /lib64/libnftnl.so.11 (0x00007fc407ed8000)
+	libmnl.so.0 => /lib64/libmnl.so.0 (0x00007fc411408000)
+	libsystemd.so.0 => /lib64/libsystemd.so.0 (0x00007fc407de0000)
+	libc.so.6 => /lib64/libc.so.6 (0x00007fc407c3c000)
+	/lib64/ld-linux-loongarch-lp64d.so.1 (0x00007fc411594000)
+	libz.so.1 => /lib64/libz.so.1 (0x00007fc407c1c000)
+	libcap.so.2 => /lib64/libcap.so.2 (0x00007fc407c08000)
+	libgcrypt.so.20 => /lib64/libgcrypt.so.20 (0x00007fc407b0c000)
+	liblz4.so.1 => /lib64/liblz4.so.1 (0x00007fc407ae0000)
+	liblzma.so.5 => /lib64/liblzma.so.5 (0x00007fc407aa8000)
+	libgpg-error.so.0 => /lib64/libgpg-error.so.0 (0x00007fc407a74000)
+
+GLIBC symbol versions required (lowest..highest):
+GLIBC_2.36 GLIBC_2.38 
+GLIBCXX/CXXABI symbol versions required:
+
++ cleanup
++ chown -R 1001:1001 /src/out /src/pkgcache

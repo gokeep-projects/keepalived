@@ -1,0 +1,16 @@
++ IMAGE_FILE=/tmp/loong64-image.txt
++ rm -f /tmp/loong64-image.txt
++ for ver in 24.03-LTS-SP2 24.03-LTS-SP1 24.03-LTS
++ for u in "https://repo.openeuler.org/openEuler-${ver}/docker_img/loongarch64/openEuler-docker.loongarch64.tar.xz" "https://repo.openeuler.org/openEuler-${ver}/docker_img/loongarch64/openEuler-docker-rootfs.loongarch64.tar.xz"
++ echo 'trying https://repo.openeuler.org/openEuler-24.03-LTS-SP2/docker_img/loongarch64/openEuler-docker.loongarch64.tar.xz'
+trying https://repo.openeuler.org/openEuler-24.03-LTS-SP2/docker_img/loongarch64/openEuler-docker.loongarch64.tar.xz
++ curl -fsSL --retry 2 --connect-timeout 20 -o /tmp/oe.tar.xz https://repo.openeuler.org/openEuler-24.03-LTS-SP2/docker_img/loongarch64/openEuler-docker.loongarch64.tar.xz
++ docker load -i /tmp/oe.tar.xz
++ cat /tmp/oe-load.txt
+Loaded image: openeuler-24.03-lts-sp2:latest
+++ awk '/^Loaded image:/{print $3}' /tmp/oe-load.txt
+++ head -n 1
++ img=openeuler-24.03-lts-sp2:latest
++ '[' -n openeuler-24.03-lts-sp2:latest ']'
++ echo openeuler-24.03-lts-sp2:latest
++ exit 0

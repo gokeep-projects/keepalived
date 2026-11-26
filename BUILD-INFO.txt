@@ -1,0 +1,44 @@
+name: keepalived-2.3.2-kylin-v11-loongarch64
+build date: 2026-11-26T05:25:32Z
+architecture: loongarch64
+build glibc: ldd (GNU libc) 2.38
+build os: NAME="openEuler" VERSION="24.03 (LTS-SP2)" ID="openEuler" VERSION_ID="24.03" PRETTY_NAME="openEuler 24.03 (LTS-SP2)" ANSI_COLOR="0;31"  
+
+keepalived --version:
+Keepalived v2.3.2 (11/26,2026)
+
+Copyright(C) 2001-2026 Alexandre Cassen, <acassen@gmail.com>
+
+Built with kernel headers for Linux 6.6.0
+Running on Linux 7.0.0-1017-azure #17~24.04.1-Ubuntu SMP PREEMPT Thu Sep 24 18:46:57 UTC 2026
+Distro: openEuler 24.03 (LTS-SP2)
+
+configure options: --prefix=/usr --sysconfdir=/etc --localstatedir=/var --runstatedir=/run
+
+Config options:  NFTABLES LVS VRRP VRRP_AUTH VRRP_VMAC OLD_CHKSUM_COMPAT IPROUTE_ETC_DIR=/etc/iproute2 IPROUTE_USR_DIR=/usr/share/iproute2 INIT=systemd SYSTEMD_NOTIFY
+
+System options:  VSYSLOG MEMFD_CREATE IPV6_MULTICAST_ALL IPV4_DEVCONF LIBNL3 RTA_ENCAP RTA_EXPIRES RTA_NEWDST RTA_PREF FRA_SUPPRESS_PREFIXLEN FRA_SUPPRESS_IFGROUP FRA_TUN_ID RTAX_CC_ALGO RTAX_QUICKACK RTEXT_FILTER_SKIP_STATS FRA_L3MDEV FRA_UID_RANGE RTAX_FASTOPEN_NO_COOKIE RTA_VIA FRA_PROTOCOL FRA_IP_PROTO FRA_SPORT_RANGE FRA_DPORT_RANGE RTA_TTL_PROPAGATE IFA_FLAGS IFA_PROTO LWTUNNEL_ENCAP_MPLS LWTUNNEL_ENCAP_ILA NET_LINUX_IF_H_COLLISION LIBIPTC_LINUX_NET_IF_H_COLLISION LIBIPVS_NETLINK IPVS_DEST_ATTR_ADDR_FAMILY IPVS_SYNCD_ATTRIBUTES IPVS_64BIT_STATS IPVS_TUN_TYPE IPVS_TUN_CSUM IPVS_TUN_GRE VRRP_IPVLAN IFLA_LINK_NETNSID GLOB_BRACE GLOB_ALTDIRFUNC INET6_ADDR_GEN_MODE VRF SO_MARK
+
+linked libraries:
+	linux-vdso.so.1 (0x00007fc4115c3000)
+	libm.so.6 => /lib64/libm.so.6 (0x00007fc411428000)
+	libssl.so.3 => /lib64/libssl.so.3 (0x00007fc40834c000)
+	libcrypto.so.3 => /lib64/libcrypto.so.3 (0x00007fc407f44000)
+	libnl-3.so.200 => /lib64/libnl-3.so.200 (0x00007fc407f18000)
+	libnl-genl-3.so.200 => /lib64/libnl-genl-3.so.200 (0x00007fc411418000)
+	libnftnl.so.11 => /lib64/libnftnl.so.11 (0x00007fc407ed8000)
+	libmnl.so.0 => /lib64/libmnl.so.0 (0x00007fc411408000)
+	libsystemd.so.0 => /lib64/libsystemd.so.0 (0x00007fc407de0000)
+	libc.so.6 => /lib64/libc.so.6 (0x00007fc407c3c000)
+	/lib64/ld-linux-loongarch-lp64d.so.1 (0x00007fc411594000)
+	libz.so.1 => /lib64/libz.so.1 (0x00007fc407c1c000)
+	libcap.so.2 => /lib64/libcap.so.2 (0x00007fc407c08000)
+	libgcrypt.so.20 => /lib64/libgcrypt.so.20 (0x00007fc407b0c000)
+	liblz4.so.1 => /lib64/liblz4.so.1 (0x00007fc407ae0000)
+	liblzma.so.5 => /lib64/liblzma.so.5 (0x00007fc407aa8000)
+	libgpg-error.so.0 => /lib64/libgpg-error.so.0 (0x00007fc407a74000)
+
+GLIBC symbol versions required (lowest..highest):
+GLIBC_2.36 GLIBC_2.38 
+GLIBCXX/CXXABI symbol versions required:
+
