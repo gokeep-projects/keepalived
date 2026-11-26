@@ -1,0 +1,94 @@
+name: Build Kylin V11 loongarch64
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_image:
+        description: 'loongarch64 base image (empty = auto-detect)'
+        required: false
+        default: ''
+  push:
+    branches:
+      - build/kylin-v11-loongarch64
+    paths:
+      - '.github/workflows/build-kylin-v11-loongarch64.yml'
+      - '.github/scripts/build-kylin-v11-loongarch64.sh'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: keepalived 2.3.2 / loongarch64
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Verify version
+        run: |
+          git describe --tags --always
+          git describe --tags --always | grep -q '^v2\.3\.2' \
+            || { echo "ERROR: expected v2.3.2 tree"; exit 1; }
+
+      - name: Enable loongarch64 emulation
+        uses: docker/setup-qemu-action@v3
+        with:
+          platforms: loong64
+
+      - name: Select base image
+        id: base
+        run: |
+          for img in "${{ inputs.base_image }}" debian:trixie debian:sid \
+                     ghcr.io/loongson-community/debian:bookworm \
+                     loongarch64/debian:bookworm; do
+            [ -n "$img" ] || continue
+            echo "::group::trying $img"
+            if docker pull --platform linux/loong64 "$img"; then
+              echo "image=$img" >> "$GITHUB_OUTPUT"
+              echo "::endgroup::"
+              echo "Using $img"
+              exit 0
+            fi
+            echo "::endgroup::"
+          done
+          echo "ERROR: no usable loongarch64 image found"
+          exit 1
+
+      - name: Build in loongarch64 container
+        env:
+          BASE_IMAGE: ${{ steps.base.outputs.image }}
+        run: |
+          docker run --rm --platform linux/loong64 \
+            -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" \
+            -v "$PWD":/src -w /src \
+            "$BASE_IMAGE" \
+            bash /src/.github/scripts/build-kylin-v11-loongarch64.sh
+
+      - name: Show build info
+        run: |
+          cat out/BUILD-INFO.txt
+          ls -l out
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: keepalived-2.3.2-kylin-v11-loongarch64
+          path: out/
+          if-no-files-found: error
+
+      - name: Publish to artifacts branch
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd out
+          rm -rf .git
+          git init -q
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "keepalived 2.3.2 loongarch64 build $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push --force "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:artifacts
