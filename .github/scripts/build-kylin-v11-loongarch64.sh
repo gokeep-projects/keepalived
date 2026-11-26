@@ -55,7 +55,7 @@ echo "Building keepalived ${VERSION}"
 	--prefix=/usr \
 	--sysconfdir=/etc \
 	--localstatedir=/var \
-	--run-dir=/run
+	--runstatedir=/run
 
 make -j4
 
