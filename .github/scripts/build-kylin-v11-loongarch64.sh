@@ -80,6 +80,11 @@ rm -rf "${ROOT}"
 mkdir -p "${ROOT}"
 make install DESTDIR="${ROOT}"
 
+cp "${ROOT}/usr/sbin/keepalived" "${OUT}/keepalived"
+tar -C "${ROOT}" -czf "${OUT}/${NAME}.tar.gz" .
+sha256sum "${OUT}/${NAME}.tar.gz" "${OUT}/keepalived" > "${OUT}/SHA256SUMS"
+
+# Informational only - never fail the build on this.
 {
 	echo "name: ${NAME}"
 	echo "build date: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
@@ -95,17 +100,13 @@ make install DESTDIR="${ROOT}"
 	echo
 	echo "GLIBC symbol versions required (lowest..highest):"
 	objdump -T "${ROOT}/usr/sbin/keepalived" 2>/dev/null \
-		| grep -o 'GLIBC_[0-9.]*' | sort -Vu | tr '\n' ' '
+		| grep -o 'GLIBC_[0-9.]*' | sort -Vu | tr '\n' ' ' || true
 	echo
 	echo "GLIBCXX/CXXABI symbol versions required:"
 	objdump -T "${ROOT}/usr/sbin/keepalived" 2>/dev/null \
-		| grep -oE '(GLIBCXX|CXXABI)_[0-9.]*' | sort -Vu | tr '\n' ' '
+		| grep -oE '(GLIBCXX|CXXABI)_[0-9.]*' | sort -Vu | tr '\n' ' ' || true
 	echo
-} > "${OUT}/BUILD-INFO.txt"
-
-cp "${ROOT}/usr/sbin/keepalived" "${OUT}/keepalived"
-tar -C "${ROOT}" -czf "${OUT}/${NAME}.tar.gz" .
-sha256sum "${OUT}/${NAME}.tar.gz" "${OUT}/keepalived" > "${OUT}/SHA256SUMS"
+} > "${OUT}/BUILD-INFO.txt" || true
 
 echo "=== BUILD-INFO.txt ==="
 cat "${OUT}/BUILD-INFO.txt"
