@@ -6,8 +6,8 @@ set -euxo pipefail
 export DEBIAN_FRONTEND=noninteractive
 
 if command -v apt-get >/dev/null 2>&1; then
-	apt-get update
-	apt-get install -y --no-install-recommends \
+	apt-get update -o Acquire::Retries=10
+	apt-get install -y --no-install-recommends -o Acquire::Retries=10 \
 		build-essential autoconf automake libtool pkg-config \
 		file ca-certificates tar gzip \
 		libssl-dev libnl-3-dev libnl-genl-3-dev libnl-route-3-dev \
@@ -15,16 +15,30 @@ if command -v apt-get >/dev/null 2>&1; then
 	# Optional feature dependencies: install what the distro provides.
 	for p in libnfnetlink-dev libipset-dev libmnl-dev libnftnl-dev \
 		libpcre2-dev libdbus-1-dev libsnmp-dev libsystemd-dev; do
-		apt-get install -y --no-install-recommends "$p" \
+		apt-get install -y --no-install-recommends -o Acquire::Retries=10 "$p" \
 			|| echo "WARNING: optional package $p not available"
 	done
 elif command -v dnf >/dev/null 2>&1; then
-	dnf install -y \
-		gcc gcc-c++ make autoconf automake libtool pkgconf-pkg-config \
-		openssl-devel libnl3-devel popt-devel file tar gzip which findutils
+	dnf_install() {
+		dnf install -y --setopt=install_weak_deps=False \
+			--setopt=max_parallel_downloads=1 --setopt=retries=20 \
+			--setopt=timeout=120 "$@"
+	}
+	retry_dnf() {
+		local i
+		for i in 1 2 3 4; do
+			dnf_install "$@" && return 0
+			echo "WARNING: dnf install failed (attempt $i), retrying: $*"
+			dnf clean packages >/dev/null 2>&1 || true
+			sleep 10
+		done
+		return 1
+	}
+	retry_dnf gcc make autoconf automake libtool pkgconf-pkg-config \
+		openssl-devel libnl3-devel popt-devel file tar gzip which
 	for p in libnfnetlink-devel ipset-devel libmnl-devel libnftnl-devel \
 		libdbus-1-devel net-snmp-devel systemd-devel glib2-devel; do
-		dnf install -y "$p" || echo "WARNING: optional package $p not available"
+		retry_dnf "$p" || echo "WARNING: optional package $p not available"
 	done
 else
 	echo "ERROR: unsupported distribution" >&2
