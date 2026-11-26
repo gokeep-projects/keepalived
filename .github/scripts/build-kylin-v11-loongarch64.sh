@@ -19,8 +19,13 @@ if command -v apt-get >/dev/null 2>&1; then
 			|| echo "WARNING: optional package $p not available"
 	done
 elif command -v dnf >/dev/null 2>&1; then
-	dnf install -y gcc gcc-c++ make autoconf automake libtool pkgconf-pkg-config \
+	dnf install -y \
+		gcc gcc-c++ make autoconf automake libtool pkgconf-pkg-config \
 		openssl-devel libnl3-devel popt-devel file tar gzip which findutils
+	for p in libnfnetlink-devel ipset-devel libmnl-devel libnftnl-devel \
+		libdbus-1-devel net-snmp-devel systemd-devel glib2-devel; do
+		dnf install -y "$p" || echo "WARNING: optional package $p not available"
+	done
 else
 	echo "ERROR: unsupported distribution" >&2
 	exit 1
@@ -61,7 +66,7 @@ NAME="keepalived-${VERSION}-kylin-v11-loongarch64"
 	echo "linked libraries:"
 	ldd "${ROOT}/usr/sbin/keepalived" 2>&1 || true
 	echo
-	echo "GLIBC symbol versions required (highest last):"
+	echo "GLIBC symbol versions required (lowest..highest):"
 	objdump -T "${ROOT}/usr/sbin/keepalived" 2>/dev/null \
 		| grep -o 'GLIBC_[0-9.]*' | sort -Vu | tr '\n' ' '
 	echo
