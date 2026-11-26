@@ -30,9 +30,10 @@ jobs:
 
       - name: Verify version
         run: |
-          git describe --tags --always
-          git describe --tags --always | grep -q '^v2\.3\.2' \
-            || { echo "ERROR: expected v2.3.2 tree"; exit 1; }
+          version=$(sed -n 's/^AC_INIT(\[Keepalived\], \[\([^]]*\)\].*/\1/p' configure.ac)
+          echo "keepalived version: $version"
+          [ "$version" = "2.3.2" ] \
+            || { echo "ERROR: expected keepalived 2.3.2"; exit 1; }
 
       - name: Enable loongarch64 emulation
         uses: docker/setup-qemu-action@v3
